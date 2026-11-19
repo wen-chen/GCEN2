@@ -1,0 +1,127 @@
+"""The golden-output regression suite: every analysis command of GCEN2 run on
+small, fixed inputs (``inputs/``), its outputs compared with the outputs frozen
+in ``expected/`` (``make_golden.py``). It is the baseline for performance work:
+an optimisation must leave every output the same (text exactly; numbers to a
+relative 1e-9, which allows a different summation order).
+
+Each step is ``(name, gcen2 arguments, stdout file or None)``; ``{I}`` is the
+inputs directory, ``{O}`` the output directory (steps run in order, later
+steps read earlier outputs)."""
+
+T = ["-t", "2"]
+
+STEPS = [
+    # bulk: preprocessing and networks
+    ("normalize_tmm", ["normalize", "-i", "{I}/bulk.tsv", "-o", "{O}/norm_tmm.tsv",
+                       "-m", "tmm"], None),
+    ("normalize_deseq", ["normalize", "-i", "{I}/bulk.tsv", "-o", "{O}/norm_deseq.tsv",
+                         "-m", "deseq"], None),
+    ("normalize_upqt_log2", ["normalize", "-i", "{I}/bulk.tsv", "-o", "{O}/norm_upqt.tsv",
+                             "-m", "upqt", "-l", "log2"], None),
+    ("normalize_median", ["normalize", "-i", "{I}/bulk.tsv", "-o", "{O}/norm_median.tsv",
+                          "-m", "median"], None),
+    ("filter", ["filter", "-i", "{O}/norm_tmm.tsv", "-o", "{O}/filt.tsv", "-p", "0.75",
+                "--percent-sd", "0.9"], None),
+    ("build_pearson", ["build", "-i", "{O}/filt.tsv", "-o", "{O}/pear.network", "-m",
+                       "pearson", "-c", "0.85", "-p", "0.001", "-l", "log2", *T], None),
+    ("build_spearman_fdr", ["build", "-i", "{O}/filt.tsv", "-o", "{O}/spear.network", "-m",
+                            "spearman", "-c", "0.8", "-p", "0.01", "-f", *T], None),
+    ("build_gemm_signed", ["build", "-i", "{O}/filt.tsv", "-o", "{O}/gemm.network", "-m",
+                           "pearson", "-c", "0.85", "-p", "0.001", "-s", "-l", "log2",
+                           "--kernel", "gemm", *T], None),
+    ("build_tom", ["build", "-i", "{O}/filt.tsv", "-o", "{O}/tom.network", "-m", "pearson",
+                   "-c", "0.85", "-p", "0.001", "-l", "log2", "--tom", "--power", "6",
+                   *T], None),
+    ("build_all_small", ["build", "-i", "{I}/bulk_small.tsv", "-o", "{O}/all.network",
+                         "-a", "-l", "log2", *T], None),
+    ("stats", ["stats", "-i", "{O}/pear.network", *T], "stats.txt"),
+    ("module_jaccard", ["module", "-i", "{O}/pear.network", "-o", "{O}/jaccard.txt", "-s",
+                        "0.5", *T], None),
+    ("module_wgcna", ["module", "-e", "{O}/filt.tsv", "-o", "{O}/wgcna_modules.tsv", "-l",
+                      "log2", "--signed", "--power", "auto", "--min-size", "10",
+                      "--me", "{O}/wgcna_me.tsv", "--kme", "{O}/wgcna_kme.tsv",
+                      "--hubs", "{O}/wgcna_hubs.tsv", "--n-hubs", "5",
+                      "--traits", "{I}/traits.tsv", "--trait-cor", "{O}/wgcna_trait_cor.tsv",
+                      "--soft-power", "{O}/wgcna_soft_power.tsv",
+                      "--dendrogram", "{O}/wgcna_dendrogram.json",
+                      "--tom-hubs", "{O}/wgcna_tom_hubs.tsv", "--gs", "{O}/wgcna_gs.tsv",
+                      *T], None),
+    ("module_hdwgcna", ["module", "-e", "{O}/filt.tsv", "-o", "{O}/hdwgcna_modules.tsv",
+                        "-l", "log2", "--preset", "hdwgcna", "--min-size", "10", *T], None),
+    ("consensus_modules", ["consensus-modules", "-e", "{I}/set1.tsv", "-e", "{I}/set2.tsv",
+                           "-o", "{O}/consensus", "-l", "log2", "--signed", "--min-size",
+                           "10", *T], None),
+    # network operations
+    ("merge", ["merge", "-i", "{O}/pear.network", "-i", "{O}/spear.network", "-o",
+               "{O}/merged.network", "-c", "1.0"], None),
+    ("extract", ["extract", "-i", "{O}/pear.network", "-g", "{I}/seeds.txt", "-o",
+                 "{O}/sub.network"], None),
+    ("shuffle", ["shuffle", "-i", "{O}/pear.network", "-o", "{O}/shuf.network",
+                 "--swap-factor", "10", "--seed", "7"], None),
+    ("diff", ["diff", "-A", "{O}/pear.network", "-B", "{O}/spear.network", "-o",
+              "{O}/diff.tsv", "--n-a", "15", "--n-b", "15"], None),
+    ("diff_spearman_fdr", ["diff", "-A", "{O}/spear.network", "-B", "{O}/pear.network", "-o",
+                           "{O}/diff_spearman_fdr.tsv", "--n-a", "15", "--n-b", "15", "-m",
+                           "spearman", "-f", "-p", "0.5"], None),
+    ("fuse", ["fuse", "-i", "{O}/pear.network", "-i", "{O}/spear.network", "--name", "pear",
+              "--name", "spear", "-w", "1", "-w", "0.5", "-o", "{O}/fused.tsv"], None),
+    # function
+    ("rwr", ["rwr", "-n", "{O}/pear.network", "-g", "{I}/seeds.txt", "-o", "{O}/rwr.tsv",
+             "--prob-cutoff", "0"], None),
+    ("rwr_multiplex", ["rwr-multiplex", "-n", "{O}/pear.network", "-n", "{O}/spear.network",
+                       "-g", "{I}/seeds.txt", "-o", "{O}/rwr_multiplex.tsv", "--weighted"],
+     None),
+    ("rwr_multiplex_layer", ["rwr-multiplex", "-n", "{O}/pear.network", "-n",
+                             "{O}/spear.network", "-g", "{I}/seeds.txt", "-o",
+                             "{O}/rwr_multiplex_layer.tsv", "--transition", "layer"], None),
+    ("annotate_modules", ["annotate", "-g", "{I}/go.obo", "-a", "{I}/gene_go.assoc", "-m",
+                          "{I}/annot_modules.txt", "-o", "{O}/annot_m", "-p", "1", *T], None),
+    ("annotate_network", ["annotate", "-g", "{I}/go.obo", "-a", "{I}/gene_go.assoc", "-n",
+                          "{I}/annot.network", "-o", "{O}/annot_n", "-p", "1", *T], None),
+    ("enrich", ["enrich", "-e", "{I}/query.txt", "-b", "{I}/background.txt", "-g",
+                "{I}/go.obo", "-a", "{I}/gene_go.assoc", "-o", "{O}/enrich.tsv", "-p", "1"],
+     None),
+    # single cell
+    ("build_h5ad", ["build", "-i", "{I}/sc.h5ad", "-o", "{O}/sc_A.network", "--groupby",
+                    "ct", "--group", "A", "-c", "0.3", "-p", "0.001", "-l", "log", *T], None),
+    ("celltype", ["celltype", "-i", "{I}/sc.h5ad", "--groupby", "ct", "-o", "{O}/celltype",
+                  "-k", "10", "--min-cells", "50", "-c", "0.4", "--diff", *T], None),
+    ("celltype_modules", ["celltype-modules", "-i", "{I}/sc.h5ad", "--groupby", "ct", "-o",
+                          "{O}/ctm", "-k", "10", "--max-shared", "3", "--min-cells", "50",
+                          "--min-size", "10", "--n-hubs", "3", "--write-metacells",
+                          "--write-tom", "--dme-by", "batch", "--trait", "age",
+                          "--trait-groupby", "batch", "--harmonize-by", "batch", "--npcs",
+                          "10", *T], None),
+    ("celltype_modules_consensus", ["celltype-modules", "-i", "{I}/sc.h5ad", "--groupby",
+                                    "ct", "-o", "{O}/ctm_cons", "-k", "10", "--max-shared",
+                                    "3", "--min-cells", "50", "--min-size", "10",
+                                    "--consensus-by", "batch", *T], None),
+    ("project_modules", ["project-modules", "-i", "{I}/sc.h5ad", "-m", "{O}/ctm/A/modules.tsv",
+                         "-o", "{O}/projected", "--groupby", "ct", "--group", "B"], None),
+    ("module_preservation", ["module-preservation", "-r", "{O}/ctm/A/metacells.tsv", "-m",
+                             "{O}/ctm/A/modules.tsv", "-q", "{I}/sc_query.h5ad", "-o",
+                             "{O}/preservation", "--permutations", "20", "-k", "10",
+                             "--max-shared", "3", *T], None),
+    ("trajectory", ["trajectory", "-i", "{I}/sc.h5ad", "--pseudotime", "pseudotime", "-o",
+                    "{O}/trajectory", "-w", "0.3", "-c", "0.3", "-l", "log", *T], None),
+    # spatial
+    ("spatial_filtered", ["spatial-build", "-i", "{I}/sp.h5ad", "-o",
+                          "{O}/sp_filtered.network", "-m", "filtered", "-c", "0.15",
+                          "--n-neighbors", "6", "--moran", "{O}/sp_moran.tsv", *T], None),
+    # Pearson: Spearman ranks of smoothed values (sums of different terms that
+    # can be equal in exact arithmetic) reorder with the last bit of log1p,
+    # which differs between CPUs; Spearman is covered by the other two modes
+    ("spatial_weighted", ["spatial-build", "-i", "{I}/sp.h5ad", "-o",
+                          "{O}/sp_weighted.network", "-m", "weighted", "-c", "0.5",
+                          "--method", "pearson",
+                          "--n-neighbors", "6", "--moran", "{O}/sp_moran_w.tsv", *T], None),
+    ("spatial_regions", ["spatial-build", "-i", "{I}/sp.h5ad", "-o", "{O}/sp_regions", "-m",
+                         "regions", "--region-key", "region", "-c", "0.3", *T], None),
+    ("spatial_modules", ["spatial-modules", "-i", "{I}/sp.h5ad", "-o", "{O}/spm",
+                         "--groupby", "region", "--metaspots", "knn", "-k", "7",
+                         "--min-spots", "50", "--min-size", "10", "--write-metaspots",
+                         *T], None),
+]
+
+# outputs not compared: figures, reports, logs
+SKIP_SUFFIXES = (".png", ".pdf", ".svg", ".html", ".h5ad", ".log")

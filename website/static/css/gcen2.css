@@ -1,0 +1,207 @@
+/* GCEN2 website: brand and components on top of Bootstrap 5.3.9. */
+
+:root,
+[data-bs-theme="light"] {
+  --gc-brand: #2d6760;          /* BioChen navbar teal, as on the GCEN v1 site */
+  --gc-brand-deep: #073839;     /* BioChen footer */
+  --gc-link: #27756b;           /* GCEN v1 link teal, two steps darker for AA contrast on the tints */
+  --gc-link-hover: #1d5b53;
+  --gc-tint: #eef6f4;
+  --gc-code-bg: #f6f8fa;
+  --gc-code-border: #e1e4e8;
+  --gc-card-border: #e3e7ea;
+  --bs-link-color: var(--gc-link);
+  --bs-link-color-rgb: 39, 117, 107;
+  --bs-link-hover-color: var(--gc-link-hover);
+  --bs-link-hover-color-rgb: 29, 91, 83;
+  --bs-primary: #27756b;
+  --bs-primary-rgb: 39, 117, 107;
+  --bs-code-color: #1d5b53;
+}
+
+[data-bs-theme="dark"] {
+  --gc-brand: #1f4b46;
+  --gc-brand-deep: #0b2224;
+  --gc-link: #6cc5b8;
+  --gc-link-hover: #96dbd1;
+  --gc-tint: #17302d;
+  --gc-code-bg: #161b22;
+  --gc-code-border: #30363d;
+  --gc-card-border: #343a40;
+  --bs-link-color: var(--gc-link);
+  --bs-link-color-rgb: 108, 197, 184;
+  --bs-link-hover-color: var(--gc-link-hover);
+  --bs-link-hover-color-rgb: 150, 219, 209;
+  --bs-primary: #6cc5b8;
+  --bs-primary-rgb: 108, 197, 184;
+  --bs-code-color: #96dbd1;
+}
+
+html { scroll-padding-top: 5rem; }
+body { min-height: 100vh; display: flex; flex-direction: column; }
+main { flex: 1 0 auto; }
+a { text-underline-offset: .15em; }
+
+/* Buttons in the brand colour */
+.btn-brand {
+  --bs-btn-color: #fff;
+  --bs-btn-bg: #27756b;
+  --bs-btn-border-color: #27756b;
+  --bs-btn-hover-color: #fff;
+  --bs-btn-hover-bg: #1d5b53;
+  --bs-btn-hover-border-color: #1d5b53;
+  --bs-btn-active-color: #fff;
+  --bs-btn-active-bg: #174a44;
+  --bs-btn-active-border-color: #174a44;
+  --bs-btn-focus-shadow-rgb: 39, 117, 107;
+}
+[data-bs-theme="dark"] .btn-brand {
+  --bs-btn-color: #0b2224;
+  --bs-btn-bg: #6cc5b8;
+  --bs-btn-border-color: #6cc5b8;
+  --bs-btn-hover-color: #0b2224;
+  --bs-btn-hover-bg: #96dbd1;
+  --bs-btn-hover-border-color: #96dbd1;
+  --bs-btn-active-color: #0b2224;
+  --bs-btn-active-bg: #b5e8e0;
+  --bs-btn-active-border-color: #b5e8e0;
+}
+.btn-outline-brand {
+  --bs-btn-color: var(--gc-link);
+  --bs-btn-border-color: var(--gc-link);
+  --bs-btn-hover-color: #fff;
+  --bs-btn-hover-bg: #27756b;
+  --bs-btn-hover-border-color: #27756b;
+  --bs-btn-active-color: #fff;
+  --bs-btn-active-bg: #1d5b53;
+  --bs-btn-active-border-color: #1d5b53;
+  --bs-btn-focus-shadow-rgb: 39, 117, 107;
+}
+[data-bs-theme="dark"] .btn-outline-brand {
+  --bs-btn-hover-color: #0b2224;
+  --bs-btn-hover-bg: #6cc5b8;
+  --bs-btn-hover-border-color: #6cc5b8;
+  --bs-btn-active-color: #0b2224;
+  --bs-btn-active-bg: #96dbd1;
+}
+
+/* Navbar and footer */
+.gc-navbar { background: var(--gc-brand); }
+.gc-navbar .navbar-brand { font-weight: 700; letter-spacing: .01em; display: flex; align-items: center; gap: .5rem; }
+.gc-navbar .navbar-brand img { width: 28px; height: 28px; }
+.gc-navbar .nav-link { color: rgba(255, 255, 255, .86); }
+.gc-navbar .nav-link:hover,
+.gc-navbar .nav-link:focus { color: #fff; }
+.gc-navbar .nav-link.active,
+.gc-navbar .nav-link[aria-current="page"] { color: #fff; font-weight: 600; }
+.gc-navbar .navbar-nav .nav-link.active { box-shadow: inset 0 -2px 0 #9fe0d6; }
+@media (max-width: 991.98px) {
+  .gc-navbar .navbar-nav .nav-link.active { box-shadow: none; }
+}
+.gc-navbar .btn-icon { color: rgba(255, 255, 255, .86); border: 0; background: transparent; padding: .375rem .5rem; line-height: 1; }
+.gc-navbar .btn-icon:hover, .gc-navbar .btn-icon:focus-visible { color: #fff; }
+.gc-navbar .dropdown-menu { --bs-dropdown-link-active-bg: #27756b; }
+.gc-icon { width: 1.15em; height: 1.15em; vertical-align: -.2em; fill: currentColor; }
+
+.gc-footer { background: var(--gc-brand-deep); color: rgba(255, 255, 255, .78); font-size: .9rem; }
+.gc-footer a { color: #fff; text-decoration: none; }
+.gc-footer a:hover { text-decoration: underline; }
+
+/* Page header used on inner pages */
+.gc-page-head { background: var(--gc-tint); border-bottom: 1px solid var(--gc-card-border); }
+.gc-page-head h1 { font-weight: 700; letter-spacing: -.01em; }
+.gc-page-head .lead { max-width: 52rem; }
+
+/* Home hero */
+.gc-hero { background: var(--gc-tint); border-bottom: 1px solid var(--gc-card-border); }
+.gc-hero h1 { font-size: clamp(2.6rem, 6vw, 4rem); font-weight: 800; letter-spacing: -.02em; }
+.gc-hero .gc-tagline { font-size: clamp(1.15rem, 2.2vw, 1.45rem); font-weight: 500; }
+.gc-hero .lead { max-width: 40rem; }
+
+.gc-eyebrow { font-size: .78rem; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; color: var(--gc-link); }
+.gc-section { padding-top: 4rem; padding-bottom: 4rem; }
+.gc-section + .gc-section { border-top: 1px solid var(--gc-card-border); }
+.gc-section h2 { font-weight: 700; letter-spacing: -.01em; }
+
+/* Code blocks with a copy button */
+.gc-code { position: relative; background: var(--gc-code-bg); border: 1px solid var(--gc-code-border); border-radius: .5rem; }
+.gc-code { padding-right: 2.6rem; }
+.gc-code pre { margin: 0; padding: .9rem .25rem .9rem 1rem; font-size: .86rem; line-height: 1.55; white-space: pre; overflow-x: auto; color: var(--bs-body-color); }
+.gc-code .gc-prompt { color: var(--bs-secondary-color); user-select: none; }
+.gc-code .gc-comment { color: var(--bs-secondary-color); }
+.gc-copy { position: absolute; top: .45rem; right: .45rem; border: 1px solid var(--gc-code-border); background: var(--bs-body-bg); color: var(--bs-secondary-color); border-radius: .375rem; padding: .25rem .4rem; line-height: 1; font-size: .8rem; }
+.gc-copy:hover, .gc-copy:focus-visible { color: var(--bs-body-color); }
+.gc-copy.copied { color: var(--gc-link); }
+.gc-install .nav-tabs { border-bottom: 0; }
+.gc-install .nav-tabs .nav-link { padding: .35rem .8rem; font-size: .9rem; }
+.gc-install .nav-tabs .nav-link.active { background: var(--gc-code-bg); border-color: var(--gc-code-border) var(--gc-code-border) var(--gc-code-bg); }
+.gc-install .tab-content .gc-code { border-top-left-radius: 0; }
+
+/* Workflow figure */
+.gc-figure { border: 1px solid var(--gc-card-border); border-radius: .75rem; background: #fff; padding: .75rem; }
+.gc-figure img { width: 100%; height: auto; }
+.gc-figure-scroll { overflow-x: auto; }
+@media (max-width: 767.98px) {
+  .gc-figure-scroll img { min-width: 720px; }
+}
+
+/* Capability cards */
+.gc-card { border: 1px solid var(--gc-card-border); border-radius: .75rem; height: 100%; background: var(--bs-body-bg); transition: border-color .15s, box-shadow .15s; }
+.gc-card:hover { border-color: rgba(var(--bs-primary-rgb), .45); box-shadow: 0 .25rem 1rem rgba(0, 0, 0, .06); }
+.gc-card h3 { font-size: 1.1rem; font-weight: 700; }
+.gc-dot { display: inline-block; width: .7rem; height: .7rem; border-radius: 50%; margin-right: .5rem; vertical-align: .05em; }
+.gc-cmd { font-family: var(--bs-font-monospace); font-size: .78rem; background: var(--gc-code-bg); border: 1px solid var(--gc-code-border); border-radius: .3rem; padding: .05rem .35rem; white-space: nowrap; color: var(--bs-body-color); }
+
+/* Headline numbers */
+.gc-stat { border-left: 3px solid rgba(var(--bs-primary-rgb), .5); padding-left: 1rem; }
+.gc-stat .gc-stat-value { font-size: 2.4rem; font-weight: 800; line-height: 1.1; color: var(--gc-link); letter-spacing: -.02em; font-variant-numeric: tabular-nums; }
+.gc-stat .gc-stat-label { color: var(--bs-secondary-color); }
+
+/* Tables */
+.gc-table { font-size: .93rem; }
+.gc-table th { font-weight: 600; white-space: nowrap; }
+.gc-table-wrap th { white-space: normal; }
+.gc-table td.gc-speed { min-width: 9rem; font-weight: 600; font-variant-numeric: tabular-nums; }
+.gc-check { color: #198754; font-weight: 700; }
+[data-bs-theme="dark"] .gc-check { color: #75b798; }
+
+/* Gallery */
+.gc-filter .btn { border-radius: 2rem; font-size: .88rem; }
+.gc-thumb { border: 1px solid var(--gc-card-border); border-radius: .75rem; overflow: hidden; height: 100%; background: var(--bs-body-bg); display: flex; flex-direction: column; }
+.gc-thumb .gc-thumb-img { display: flex; align-items: center; justify-content: center; background: #fff; border: 0; padding: .5rem; width: 100%; aspect-ratio: 4 / 3; overflow: hidden; cursor: zoom-in; }
+.gc-thumb .gc-thumb-img img { max-width: 100%; max-height: 100%; width: auto; height: auto; object-fit: contain; }
+.gc-thumb .gc-thumb-body { padding: .9rem 1rem 1rem; border-top: 1px solid var(--gc-card-border); flex: 1; display: flex; flex-direction: column; }
+.gc-thumb h3 { font-size: 1rem; font-weight: 700; margin-bottom: .25rem; }
+.gc-thumb code { display: block; font-size: .74rem; white-space: pre-wrap; word-break: break-word; color: var(--bs-body-color); background: var(--gc-code-bg); border: 1px solid var(--gc-code-border); border-radius: .375rem; padding: .45rem .55rem; margin-top: auto; }
+.gc-badge { font-size: .74rem; font-weight: 600; border-radius: 2rem; padding: .15rem .6rem; border: 1px solid var(--gc-card-border); display: inline-flex; align-items: center; color: var(--bs-body-color); background: var(--bs-tertiary-bg); }
+.gc-badge .gc-dot { width: .55rem; height: .55rem; margin-right: .4rem; }
+#figureModal .modal-body img { width: 100%; height: auto; background: #fff; }
+
+/* FAQ */
+.gc-faq .accordion-button { font-weight: 600; }
+.gc-faq .accordion-button:not(.collapsed) { color: var(--gc-link); background: var(--gc-tint); box-shadow: none; }
+.gc-faq .accordion-button:focus { box-shadow: 0 0 0 .2rem rgba(var(--bs-primary-rgb), .25); }
+
+/* Notice */
+.gc-notice { background: #fff8e1; border: 1px solid #f1d58a; color: #5c4400; }
+[data-bs-theme="dark"] .gc-notice { background: #2b2410; border-color: #6b5520; color: #f3dc9b; }
+
+.gc-cite { background: var(--gc-code-bg); border: 1px solid var(--gc-code-border); border-radius: .5rem; padding: 1rem 1.1rem; }
+
+/* Focus visibility for keyboard users */
+a:focus-visible, button:focus-visible { outline: 2px solid var(--gc-link); outline-offset: 2px; }
+
+/* A quiet outlined button in the body colours (both modes) */
+.btn-outline-quiet {
+  --bs-btn-color: var(--bs-body-color);
+  --bs-btn-border-color: var(--bs-border-color);
+  --bs-btn-hover-color: var(--bs-body-color);
+  --bs-btn-hover-bg: var(--bs-tertiary-bg);
+  --bs-btn-hover-border-color: var(--bs-secondary-color);
+  --bs-btn-active-color: var(--bs-body-color);
+  --bs-btn-active-bg: var(--bs-secondary-bg);
+  --bs-btn-active-border-color: var(--bs-secondary-color);
+}
+@media (min-width: 576px) {
+  .gc-code { padding-right: 5rem; }
+}

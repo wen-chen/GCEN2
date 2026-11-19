@@ -1,0 +1,90 @@
+{% extends "base.html" %}
+{% from "partials/_blocks.html" import code, page_head, notice %}
+{% block content %}
+{{ page_head("Install GCEN2", "GCEN2 is distributed as source code, on PyPI with pre-built wheels and on Bioconda, for Linux, Windows and macOS on Apple Silicon, with Python 3.9 to 3.14.") }}
+<div class="container-xl py-5">
+  <div class="row g-4">
+    <div class="col-lg-8">
+      {% if not site.released %}<div class="mb-4">{{ notice(site) }}</div>{% endif %}
+
+      <h2 class="h4" id="platforms">Platforms</h2>
+      <div class="table-responsive mb-2">
+        <table class="table gc-table gc-table-wrap align-middle">
+          <caption class="visually-hidden">Supported installation methods by platform</caption>
+          <thead><tr><th scope="col">Method</th>{% for p in platforms %}<th scope="col">{{ p }}</th>{% endfor %}</tr></thead>
+          <tbody>
+            {%- for row in matrix %}
+            <tr><th scope="row" class="fw-normal">{{ row.method }}</th>{% for cell in row.cells %}<td>{% if cell == "✓" %}<span class="gc-check" aria-label="supported">✓</span>{% else %}<span class="text-body-secondary">{{ cell }}</span>{% endif %}</td>{% endfor %}</tr>
+            {%- endfor %}
+          </tbody>
+        </table>
+      </div>
+
+      <p class="small text-body-secondary mb-5">{% for n in matrix_notes %}— {{ n }}.{% endfor %}</p>
+
+      <h2 class="h4" id="source">From the source code</h2>
+      <p>Needs a C++17 compiler and CMake (<code>pip</code> fetches CMake if it is missing): GCC or Clang on Linux, Xcode command-line tools on macOS, Visual Studio Build Tools on Windows.</p>
+      {{ code(["git clone " ~ site.github, "cd GCEN2", 'pip install ".[all]"'], "the source installation", prompt=True) }}
+
+      <h2 class="h4 mt-5" id="pypi">From PyPI</h2>
+      <p>Pre-built wheels for the three platforms; no compiler needed.</p>
+      {{ code(['pip install "gcen2[all]"'], "the pip command", prompt=True) }}
+
+      <h2 class="h4 mt-5" id="bioconda">From Bioconda</h2>
+      <p>On Linux and macOS. Bioconda does not build packages for Windows; use <code>pip</code> there.</p>
+      {{ code(["conda install -c conda-forge -c bioconda gcen2"], "the conda command", prompt=True) }}
+
+      <h2 class="h4 mt-5" id="extras">Optional parts</h2>
+      <p>The core package has the network, module and function analyses. The extras add the rest; <code>all</code> installs everything.</p>
+      <div class="table-responsive">
+        <table class="table gc-table">
+          <thead><tr><th scope="col">Extra</th><th scope="col">Adds</th><th scope="col">Packages</th></tr></thead>
+          <tbody>
+            {%- for e in extras %}
+            <tr><td><code>{{ e.name }}</code></td><td>{{ e.adds }}</td><td class="small text-body-secondary">{{ e.packages }}</td></tr>
+            {%- endfor %}
+          </tbody>
+        </table>
+      </div>
+
+      <h2 class="h4 mt-5" id="check">Check the installation</h2>
+      {{ code(["gcen2 --help", 'python -c "import gcen2; print(gcen2.__version__)"'], "the check commands", prompt=True) }}
+
+      <h2 class="h4 mt-5" id="data">Example data</h2>
+      <p>The repository has example data for every tutorial in <a href="{{ site.github }}/tree/master/data/example"><code>data/example/</code></a>:</p>
+      <ul>
+        <li><strong>bulk/</strong> — the GCEN sample data (expression matrix, GO and KEGG annotation, gene lists);</li>
+        <li><strong>single_cell/</strong> — 1,800 cells of three cell types from the 10x PBMC 10k data set (<code>.h5ad</code>);</li>
+        <li><strong>spatial/</strong> — a 10x Visium section of the mouse brain, 2,695 spots and 2,000 genes (<code>.h5ad</code>).</li>
+      </ul>
+
+      <h2 class="h4 mt-5" id="annotation">GO and KEGG annotation</h2>
+      <p class="mb-0">GO annotations for most model organisms are available from the <a href="https://geneontology.org/">Gene Ontology Consortium</a>, and <code>go-basic.obo</code> with them. KEGG annotations of protein-coding genes can be obtained with <a href="https://www.genome.jp/kegg/kaas/">KAAS</a>; InterProScan gives both for proteins. The <a href="https://www.biochen.org/gcen/download">GCEN download page</a> provides annotation files for human, mouse and zebrafish and the KEGG information file <code>K2ko.tsv</code>; GCEN2 reads them unchanged.</p>
+    </div>
+
+    <aside class="col-lg-4">
+      <div class="gc-card h-auto p-4 position-sticky" style="top: 5.5rem">
+        <h2 class="h6 text-uppercase text-body-secondary mb-3">On this page</h2>
+        <nav aria-label="On this page">
+          <ul class="list-unstyled mb-4">
+            <li class="mb-1"><a href="#platforms">Platforms</a></li>
+            <li class="mb-1"><a href="#source">From the source code</a></li>
+            <li class="mb-1"><a href="#pypi">From PyPI</a></li>
+            <li class="mb-1"><a href="#bioconda">From Bioconda</a></li>
+            <li class="mb-1"><a href="#extras">Optional parts</a></li>
+            <li class="mb-1"><a href="#check">Check the installation</a></li>
+            <li class="mb-1"><a href="#data">Example data</a></li>
+            <li><a href="#annotation">GO and KEGG annotation</a></li>
+          </ul>
+        </nav>
+        <h2 class="h6 text-uppercase text-body-secondary mb-3">Next</h2>
+        <ul class="list-unstyled mb-0">
+          <li class="mb-1"><a href="docs/quickstart.html">Quickstart</a></li>
+          <li class="mb-1"><a href="docs/tutorials/bulk.html">Tutorials</a></li>
+          <li><a href="docs/migration.html">Coming from GCEN</a></li>
+        </ul>
+      </div>
+    </aside>
+  </div>
+</div>
+{% endblock %}

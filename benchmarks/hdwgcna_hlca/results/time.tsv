@@ -1,0 +1,11 @@
+run	size	seconds	peak_GB	n
+gcen2_all	50k	171.970	2.454	2
+gcen2_all	all	465.660	11.893	2
+gcen2_all_backed	50k	176.480	1.748	2
+gcen2_all_backed	all	460.575	4.636	2
+gcen2_top10	50k	74.500	2.454	2
+gcen2_top10	all	211.125	11.929	2
+gcen2_top10_backed	50k	70.525	1.747	2
+gcen2_top10_backed	all	206.150	4.632	2
+hdwgcna_top10	50k	821.350	8.136	1
+hdwgcna_top10	all	2951.610	43.946	1

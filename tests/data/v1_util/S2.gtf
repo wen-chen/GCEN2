@@ -1,0 +1,17 @@
+# stringtie
+chr1	StringTie	transcript	1	100	1000	+	.	gene_id "G0"; transcript_id "T0.0"; cov "3.1"; FPKM "25.544444"; TPM "60.242417";
+chr1	StringTie	exon	1	100	1000	+	.	gene_id "G0"; transcript_id "T0.0"; exon_number "1"; cov "3.1";
+chr1	StringTie	transcript	1	100	1000	+	.	gene_id "G0"; transcript_id "T0.1"; cov "3.1"; FPKM "7.396102"; TPM "65.570138";
+chr1	StringTie	exon	1	100	1000	+	.	gene_id "G0"; transcript_id "T0.1"; exon_number "1"; cov "3.1";
+chr1	StringTie	transcript	1	100	1000	+	.	gene_id "G1"; transcript_id "T1.0"; cov "3.1"; FPKM "34.164345"; TPM "62.967755";
+chr1	StringTie	exon	1	100	1000	+	.	gene_id "G1"; transcript_id "T1.0"; exon_number "1"; cov "3.1";
+chr1	StringTie	transcript	1	100	1000	+	.	gene_id "G1"; transcript_id "T1.1"; cov "3.1"; FPKM "9.580813"; TPM "64.189133";
+chr1	StringTie	exon	1	100	1000	+	.	gene_id "G1"; transcript_id "T1.1"; exon_number "1"; cov "3.1";
+chr1	StringTie	transcript	1	100	1000	+	.	gene_id "G2"; transcript_id "T2.0"; cov "3.1"; FPKM "9.566196"; TPM "6.524209";
+chr1	StringTie	exon	1	100	1000	+	.	gene_id "G2"; transcript_id "T2.0"; exon_number "1"; cov "3.1";
+chr1	StringTie	transcript	1	100	1000	+	.	gene_id "G2"; transcript_id "T2.1"; cov "3.1"; FPKM "42.761349"; TPM "68.902680";
+chr1	StringTie	exon	1	100	1000	+	.	gene_id "G2"; transcript_id "T2.1"; exon_number "1"; cov "3.1";
+chr1	StringTie	transcript	1	100	1000	+	.	gene_id "G3"; transcript_id "T3.0"; cov "3.1"; FPKM "43.826855"; TPM "37.752778";
+chr1	StringTie	exon	1	100	1000	+	.	gene_id "G3"; transcript_id "T3.0"; exon_number "1"; cov "3.1";
+chr1	StringTie	transcript	1	100	1000	+	.	gene_id "G3"; transcript_id "T3.1"; cov "3.1"; FPKM "13.702419"; TPM "0.567346";
+chr1	StringTie	exon	1	100	1000	+	.	gene_id "G3"; transcript_id "T3.1"; exon_number "1"; cov "3.1";

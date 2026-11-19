@@ -1,0 +1,22 @@
+name: Feature request
+description: A new analysis, option, figure or output
+labels: [enhancement]
+body:
+  - type: textarea
+    id: need
+    attributes:
+      label: What you would like to do
+      description: The analysis or task, and why the current commands do not cover it.
+    validations:
+      required: true
+  - type: textarea
+    id: proposal
+    attributes:
+      label: Proposal
+      description: >
+        How it could work (command, option, output). If it follows another tool
+        (e.g. a WGCNA or hdWGCNA function), name it.
+  - type: textarea
+    id: other
+    attributes:
+      label: Anything else

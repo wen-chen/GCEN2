@@ -1,0 +1,21 @@
+# Python side of the benchmarks (the versions of the published runs:
+# Python 3.14.10). GCEN2 itself is installed from this repository:
+#
+#   python -m venv .venv && source .venv/bin/activate
+#   pip install scikit-build-core pybind11 cmake ninja
+#   pip install --no-build-isolation -e ".[all]"
+#   pip install -r benchmarks/requirements-python.txt
+#
+# GCEN v1 (compare_v1_v2.py) is GCEN 0.6.3, built from
+# https://github.com/wen-chen/GCEN/releases/tag/v0.6.3 (its bin/ directory
+# is given with --v1).
+numpy==2.5.4
+pandas==3.1.1
+scipy==1.18.1
+anndata==0.13.4
+scanpy==1.12.5
+scikit-learn==1.9.1
+h5py==3.16.0
+matplotlib==3.11.2
+threadpoolctl==3.8.0
+typer==0.29.1

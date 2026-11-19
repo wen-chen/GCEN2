@@ -1,0 +1,71 @@
+/* GCEN2 documentation: Sphinx's generated markup in the site's style. */
+
+body { font-family: var(--bs-body-font-family); }
+div.body, .gc-docs-body { min-width: 0; max-width: none; }
+.gc-docs-body { line-height: 1.65; overflow-wrap: break-word; }
+.gc-docs-body code, .gc-docs-body .sig, #search-results a, #search-results .context { overflow-wrap: anywhere; }
+.gc-docs-body h1 { font-size: 2rem; font-weight: 700; letter-spacing: -.01em; margin-bottom: 1.25rem; }
+.gc-docs-body h2 { font-size: 1.45rem; font-weight: 700; margin-top: 2.5rem; padding-top: .5rem; }
+.gc-docs-body h3 { font-size: 1.15rem; font-weight: 700; margin-top: 2rem; }
+.gc-docs-body h4 { font-size: 1rem; font-weight: 700; margin-top: 1.5rem; }
+.gc-docs-body a.headerlink { visibility: hidden; text-decoration: none; margin-left: .35rem; color: var(--bs-secondary-color); font-weight: 400; }
+.gc-docs-body h1:hover a.headerlink, .gc-docs-body h2:hover a.headerlink, .gc-docs-body h3:hover a.headerlink,
+.gc-docs-body h4:hover a.headerlink, .gc-docs-body dt:hover a.headerlink, .gc-docs-body a.headerlink:focus { visibility: visible; }
+
+/* Sidebar */
+.gc-docs-sidebar-inner { position: sticky; top: 5rem; max-height: calc(100vh - 6rem); overflow-y: auto; font-size: .92rem; }
+.gc-docs-toc ul { list-style: none; padding-left: 0; margin: 0; }
+.gc-docs-toc ul ul { padding-left: .9rem; border-left: 1px solid var(--gc-card-border); margin: .15rem 0 .35rem .35rem; }
+.gc-docs-toc a { display: block; padding: .22rem .5rem; border-radius: .375rem; color: var(--bs-body-color); text-decoration: none; }
+.gc-docs-toc a:hover { background: var(--gc-tint); color: var(--gc-link); }
+.gc-docs-toc li.current > a, .gc-docs-toc a.current { color: var(--gc-link); font-weight: 600; background: var(--gc-tint); }
+.gc-docs-toc p.caption { font-size: .72rem; font-weight: 700; text-transform: uppercase; letter-spacing: .08em; color: var(--bs-secondary-color); margin: 1rem 0 .3rem .5rem; }
+.gc-docs-home { font-weight: 700; }
+@media (max-width: 991.98px) {
+  .gc-docs-sidebar-inner { position: static; max-height: none; }
+}
+
+/* Code */
+.gc-docs-body pre { background: var(--gc-code-bg); border: 1px solid var(--gc-code-border); border-radius: .5rem; padding: .85rem 1rem; font-size: .85rem; line-height: 1.55; overflow-x: auto; color: var(--bs-body-color); }
+.gc-docs-body div.highlight { background: transparent; }
+.gc-docs-body div.highlight pre { background: var(--gc-code-bg); }
+.gc-docs-body code, .gc-docs-body code.literal { color: var(--bs-body-color); background: var(--gc-code-bg); border: 1px solid var(--gc-code-border); border-radius: .3rem; padding: .05rem .3rem; font-size: .86em; }
+.gc-docs-body pre code, .gc-docs-body a code, .gc-docs-body dt code { border: 0; background: transparent; padding: 0; }
+.gc-docs-body a code.literal { color: var(--gc-link); }
+
+/* Tables */
+.gc-docs-body table.docutils { width: 100%; margin: 1rem 0 1.5rem; border-collapse: collapse; font-size: .92rem; display: block; overflow-x: auto; }
+.gc-docs-body table.docutils th, .gc-docs-body table.docutils td { border: 0; border-bottom: 1px solid var(--gc-card-border); padding: .5rem .65rem; vertical-align: top; text-align: left; }
+.gc-docs-body table.docutils thead th { border-bottom: 2px solid var(--gc-card-border); font-weight: 600; }
+.gc-docs-body table.docutils p { margin: 0; }
+
+/* Admonitions */
+.gc-docs-body div.admonition { background: var(--gc-tint); border: 1px solid var(--gc-card-border); border-radius: .5rem; padding: .85rem 1rem; margin: 1.25rem 0; }
+.gc-docs-body div.admonition p.admonition-title { font-weight: 700; margin-bottom: .35rem; }
+.gc-docs-body div.admonition p.admonition-title::after { content: ""; }
+.gc-docs-body div.warning, .gc-docs-body div.caution, .gc-docs-body div.important { background: #fff8e1; border-color: #f1d58a; }
+[data-bs-theme="dark"] .gc-docs-body div.warning, [data-bs-theme="dark"] .gc-docs-body div.caution,
+[data-bs-theme="dark"] .gc-docs-body div.important { background: #2b2410; border-color: #6b5520; }
+
+/* API signatures */
+.gc-docs-body dl.py > dt, .gc-docs-body dl.function > dt, .gc-docs-body dl.class > dt { background: var(--gc-tint); border-radius: .375rem; padding: .4rem .6rem; font-family: var(--bs-font-monospace); font-size: .86rem; overflow-wrap: anywhere; }
+.gc-docs-body dl.py > dd { margin-left: 1.25rem; margin-top: .5rem; }
+.gc-docs-body dl.field-list > dt { font-weight: 600; }
+.gc-docs-body .sig-name { font-weight: 700; color: var(--gc-link); }
+.gc-docs-body em.property, .gc-docs-body .sig-prename { color: var(--bs-secondary-color); }
+
+/* Search results and index */
+#search-results ul.search li { padding: .5rem 0; border-bottom: 1px solid var(--gc-card-border); }
+#search-results .context { color: var(--bs-secondary-color); font-size: .9rem; }
+.gc-docs-body table.indextable { display: table; }
+
+/* Pager */
+.gc-pager { text-decoration: none; font-weight: 600; max-width: 48%; }
+.gc-pager:hover { text-decoration: underline; }
+
+/* Sphinx basic.css sets a few things Bootstrap already handles. */
+div.document, div.documentwrapper, div.bodywrapper { margin: 0; width: auto; }
+img { max-width: 100%; height: auto; }
+
+/* basic.css keeps inline code on one line (span.pre: nowrap); long API names must wrap on phones. */
+.gc-docs-body code span.pre, .gc-docs-body .sig span.pre { white-space: pre-wrap; }

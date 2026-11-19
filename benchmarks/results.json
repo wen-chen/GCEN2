@@ -1,0 +1,810 @@
+[
+ {
+  "genes": 0,
+  "step": "startup",
+  "tool": "v2",
+  "seconds": 0.11,
+  "peak_mb": 31.9,
+  "ok": true
+ },
+ {
+  "genes": 5014,
+  "step": "build",
+  "tool": "v1",
+  "seconds": 0.46,
+  "peak_mb": 7.6,
+  "ok": true
+ },
+ {
+  "genes": 5014,
+  "step": "build",
+  "tool": "v2",
+  "seconds": 0.19,
+  "peak_mb": 46.3,
+  "ok": true,
+  "agreement": {
+   "edges_v1": 85936,
+   "edges_v2": 85936,
+   "only_v1": 0,
+   "only_v2": 0,
+   "max_abs_dr": 0.0
+  }
+ },
+ {
+  "genes": 5014,
+  "step": "module",
+  "tool": "v1",
+  "seconds": 0.41,
+  "peak_mb": 27.4,
+  "ok": true
+ },
+ {
+  "genes": 5014,
+  "step": "module",
+  "tool": "v2",
+  "seconds": 0.16,
+  "peak_mb": 57.6,
+  "ok": true,
+  "agreement": {
+   "modules_v1": 364,
+   "modules_v2": 364,
+   "common": 364,
+   "identical": true
+  }
+ },
+ {
+  "genes": 5014,
+  "step": "rwr",
+  "tool": "v1",
+  "seconds": 0.69,
+  "peak_mb": 138.4,
+  "ok": true
+ },
+ {
+  "genes": 5014,
+  "step": "rwr",
+  "tool": "v2",
+  "seconds": 0.16,
+  "peak_mb": 57.6,
+  "ok": true,
+  "agreement": {
+   "genes_v1": 3141,
+   "genes_v2": 3141,
+   "common": 3141,
+   "max_abs_dp": 2.179196756553481e-08,
+   "spearman": 0.9999999999999998,
+   "top100_overlap": 100
+  }
+ },
+ {
+  "genes": 5014,
+  "step": "annotate",
+  "tool": "v1",
+  "seconds": 3.68,
+  "peak_mb": 177.8,
+  "ok": true,
+  "output_files": 1278
+ },
+ {
+  "genes": 5014,
+  "step": "annotate",
+  "tool": "v2",
+  "seconds": 0.84,
+  "peak_mb": 181.2,
+  "ok": true,
+  "output_files": 1278
+ },
+ {
+  "genes": 5014,
+  "step": "stats",
+  "tool": "v1",
+  "seconds": 0.56,
+  "peak_mb": 21.6,
+  "ok": true
+ },
+ {
+  "genes": 5014,
+  "step": "stats",
+  "tool": "v2",
+  "seconds": 0.16,
+  "peak_mb": 57.8,
+  "ok": true,
+  "agreement": {
+   "nodes": [
+    3863.0,
+    3863.0
+   ],
+   "edges": [
+    85936.0,
+    85936.0
+   ],
+   "components": [
+    190.0,
+    190.0
+   ],
+   "giant": [
+    3161.0,
+    3161.0
+   ],
+   "density": [
+    0.0115204,
+    0.01152
+   ],
+   "average_degree": [
+    44.4918,
+    44.49
+   ],
+   "clustering": [
+    0.448314,
+    0.4483
+   ],
+   "transitivity": [
+    0.550319,
+    0.5503
+   ]
+  }
+ },
+ {
+  "genes": 5014,
+  "step": "extract",
+  "tool": "v1",
+  "seconds": 0.03,
+  "peak_mb": 2.7,
+  "ok": true
+ },
+ {
+  "genes": 5014,
+  "step": "extract",
+  "tool": "v2",
+  "seconds": 0.16,
+  "peak_mb": 56.9,
+  "ok": true,
+  "agreement": {
+   "edges_v1": 1241,
+   "edges_v2": 1241,
+   "identical": true
+  }
+ },
+ {
+  "genes": 5014,
+  "step": "merge",
+  "tool": "v1",
+  "seconds": 0.18,
+  "peak_mb": 29.2,
+  "ok": true
+ },
+ {
+  "genes": 5014,
+  "step": "merge",
+  "tool": "v2",
+  "seconds": 0.27,
+  "peak_mb": 91.7,
+  "ok": true,
+  "agreement": {
+   "edges_v1": 218006,
+   "edges_v2": 218006
+  }
+ },
+ {
+  "genes": 5014,
+  "step": "shuffle",
+  "tool": "v1",
+  "seconds": 0.8,
+  "peak_mb": 20.7,
+  "ok": true
+ },
+ {
+  "genes": 5014,
+  "step": "shuffle",
+  "tool": "v2",
+  "seconds": 0.26,
+  "peak_mb": 75.5,
+  "ok": true,
+  "agreement": {
+   "degrees_kept_v1": true,
+   "edges_changed_v1": 0.7742,
+   "degrees_kept_v2": true,
+   "edges_changed_v2": 0.8011
+  }
+ },
+ {
+  "genes": 10012,
+  "step": "build",
+  "tool": "v1",
+  "seconds": 2.33,
+  "peak_mb": 8.6,
+  "ok": true
+ },
+ {
+  "genes": 10012,
+  "step": "build",
+  "tool": "v2",
+  "seconds": 0.4,
+  "peak_mb": 47.8,
+  "ok": true,
+  "agreement": {
+   "edges_v1": 356978,
+   "edges_v2": 356978,
+   "only_v1": 0,
+   "only_v2": 0,
+   "max_abs_dr": 0.0
+  }
+ },
+ {
+  "genes": 10012,
+  "step": "module",
+  "tool": "v1",
+  "seconds": 2.92,
+  "peak_mb": 87.9,
+  "ok": true
+ },
+ {
+  "genes": 10012,
+  "step": "module",
+  "tool": "v2",
+  "seconds": 0.27,
+  "peak_mb": 59.3,
+  "ok": true,
+  "agreement": {
+   "modules_v1": 668,
+   "modules_v2": 668,
+   "common": 668,
+   "identical": true
+  }
+ },
+ {
+  "genes": 10012,
+  "step": "rwr",
+  "tool": "v1",
+  "seconds": 3.51,
+  "peak_mb": 603.4,
+  "ok": true
+ },
+ {
+  "genes": 10012,
+  "step": "rwr",
+  "tool": "v2",
+  "seconds": 0.21,
+  "peak_mb": 62.8,
+  "ok": true,
+  "agreement": {
+   "genes_v1": 6719,
+   "genes_v2": 6719,
+   "common": 6719,
+   "max_abs_dp": 2.2954389137727627e-08,
+   "spearman": 0.9999999998417559,
+   "top100_overlap": 100
+  }
+ },
+ {
+  "genes": 10012,
+  "step": "annotate",
+  "tool": "v1",
+  "seconds": 10.48,
+  "peak_mb": 186.6,
+  "ok": true,
+  "output_files": 2872
+ },
+ {
+  "genes": 10012,
+  "step": "annotate",
+  "tool": "v2",
+  "seconds": 1.04,
+  "peak_mb": 183.3,
+  "ok": true,
+  "output_files": 2872
+ },
+ {
+  "genes": 10012,
+  "step": "stats",
+  "tool": "v1",
+  "seconds": 4.49,
+  "peak_mb": 66.2,
+  "ok": true
+ },
+ {
+  "genes": 10012,
+  "step": "stats",
+  "tool": "v2",
+  "seconds": 0.25,
+  "peak_mb": 59.3,
+  "ok": true,
+  "agreement": {
+   "nodes": [
+    8303.0,
+    8303.0
+   ],
+   "edges": [
+    356978.0,
+    356978.0
+   ],
+   "components": [
+    351.0,
+    351.0
+   ],
+   "giant": [
+    6739.0,
+    6739.0
+   ],
+   "density": [
+    0.0103575,
+    0.010357
+   ],
+   "average_degree": [
+    85.9877,
+    85.99
+   ],
+   "clustering": [
+    0.466326,
+    0.4663
+   ],
+   "transitivity": [
+    0.578394,
+    0.5784
+   ]
+  }
+ },
+ {
+  "genes": 10012,
+  "step": "extract",
+  "tool": "v1",
+  "seconds": 0.08,
+  "peak_mb": 2.7,
+  "ok": true
+ },
+ {
+  "genes": 10012,
+  "step": "extract",
+  "tool": "v2",
+  "seconds": 0.22,
+  "peak_mb": 56.6,
+  "ok": true,
+  "agreement": {
+   "edges_v1": 2579,
+   "edges_v2": 2579,
+   "identical": true
+  }
+ },
+ {
+  "genes": 10012,
+  "step": "merge",
+  "tool": "v1",
+  "seconds": 0.86,
+  "peak_mb": 106.9,
+  "ok": true
+ },
+ {
+  "genes": 10012,
+  "step": "merge",
+  "tool": "v2",
+  "seconds": 0.68,
+  "peak_mb": 186.0,
+  "ok": true,
+  "agreement": {
+   "edges_v1": 873497,
+   "edges_v2": 873497
+  }
+ },
+ {
+  "genes": 10012,
+  "step": "shuffle",
+  "tool": "v1",
+  "seconds": 5.0,
+  "peak_mb": 63.7,
+  "ok": true
+ },
+ {
+  "genes": 10012,
+  "step": "shuffle",
+  "tool": "v2",
+  "seconds": 0.43,
+  "peak_mb": 107.8,
+  "ok": true,
+  "agreement": {
+   "degrees_kept_v1": true,
+   "edges_changed_v1": 0.7346,
+   "degrees_kept_v2": true,
+   "edges_changed_v2": 0.7629
+  }
+ },
+ {
+  "genes": 20003,
+  "step": "build",
+  "tool": "v1",
+  "seconds": 8.45,
+  "peak_mb": 10.6,
+  "ok": true
+ },
+ {
+  "genes": 20003,
+  "step": "build",
+  "tool": "v2",
+  "seconds": 1.23,
+  "peak_mb": 50.2,
+  "ok": true,
+  "agreement": {
+   "edges_v1": 1412301,
+   "edges_v2": 1412301,
+   "only_v1": 0,
+   "only_v2": 0,
+   "max_abs_dr": 0.0
+  }
+ },
+ {
+  "genes": 20003,
+  "step": "module",
+  "tool": "v1",
+  "seconds": 24.8,
+  "peak_mb": 293.0,
+  "ok": true
+ },
+ {
+  "genes": 20003,
+  "step": "module",
+  "tool": "v2",
+  "seconds": 0.74,
+  "peak_mb": 71.0,
+  "ok": true,
+  "agreement": {
+   "modules_v1": 1173,
+   "modules_v2": 1173,
+   "common": 1173,
+   "identical": true
+  }
+ },
+ {
+  "genes": 20003,
+  "step": "rwr",
+  "tool": "v1",
+  "seconds": 17.84,
+  "peak_mb": 2670.4,
+  "ok": true
+ },
+ {
+  "genes": 20003,
+  "step": "rwr",
+  "tool": "v2",
+  "seconds": 0.37,
+  "peak_mb": 80.7,
+  "ok": true,
+  "agreement": {
+   "genes_v1": 14939,
+   "genes_v2": 14939,
+   "common": 14939,
+   "max_abs_dp": 1.4466073079005826e-08,
+   "spearman": 0.9999999999523094,
+   "top100_overlap": 100
+  }
+ },
+ {
+  "genes": 20003,
+  "step": "annotate",
+  "tool": "v1",
+  "seconds": 57.29,
+  "peak_mb": 216.3,
+  "ok": true,
+  "output_files": 6762
+ },
+ {
+  "genes": 20003,
+  "step": "annotate",
+  "tool": "v2",
+  "seconds": 1.65,
+  "peak_mb": 200.2,
+  "ok": true,
+  "output_files": 6761
+ },
+ {
+  "genes": 20003,
+  "step": "stats",
+  "tool": "v1",
+  "seconds": 33.18,
+  "peak_mb": 221.5,
+  "ok": true
+ },
+ {
+  "genes": 20003,
+  "step": "stats",
+  "tool": "v2",
+  "seconds": 0.52,
+  "peak_mb": 72.4,
+  "ok": true,
+  "agreement": {
+   "nodes": [
+    17756.0,
+    17756.0
+   ],
+   "edges": [
+    1412301.0,
+    1412301.0
+   ],
+   "components": [
+    495.0,
+    495.0
+   ],
+   "giant": [
+    14959.0,
+    14959.0
+   ],
+   "density": [
+    0.00895966,
+    0.00896
+   ],
+   "average_degree": [
+    159.079,
+    159.08
+   ],
+   "clustering": [
+    0.466883,
+    0.4669
+   ],
+   "transitivity": [
+    0.573246,
+    0.5732
+   ]
+  }
+ },
+ {
+  "genes": 20003,
+  "step": "extract",
+  "tool": "v1",
+  "seconds": 0.3,
+  "peak_mb": 2.9,
+  "ok": true
+ },
+ {
+  "genes": 20003,
+  "step": "extract",
+  "tool": "v2",
+  "seconds": 0.4,
+  "peak_mb": 57.6,
+  "ok": true,
+  "agreement": {
+   "edges_v1": 5139,
+   "edges_v2": 5139,
+   "identical": true
+  }
+ },
+ {
+  "genes": 20003,
+  "step": "merge",
+  "tool": "v1",
+  "seconds": 4.05,
+  "peak_mb": 417.9,
+  "ok": true
+ },
+ {
+  "genes": 20003,
+  "step": "merge",
+  "tool": "v2",
+  "seconds": 2.72,
+  "peak_mb": 585.7,
+  "ok": true,
+  "agreement": {
+   "edges_v1": 3494608,
+   "edges_v2": 3494608
+  }
+ },
+ {
+  "genes": 20003,
+  "step": "shuffle",
+  "tool": "v1",
+  "seconds": 32.35,
+  "peak_mb": 215.8,
+  "ok": true
+ },
+ {
+  "genes": 20003,
+  "step": "shuffle",
+  "tool": "v2",
+  "seconds": 1.31,
+  "peak_mb": 251.8,
+  "ok": true,
+  "agreement": {
+   "degrees_kept_v1": true,
+   "edges_changed_v1": 0.7435,
+   "degrees_kept_v2": true,
+   "edges_changed_v2": 0.7711
+  }
+ },
+ {
+  "genes": 32940,
+  "step": "build",
+  "tool": "v1",
+  "seconds": 19.1,
+  "peak_mb": 12.8,
+  "ok": true
+ },
+ {
+  "genes": 32940,
+  "step": "build",
+  "tool": "v2",
+  "seconds": 3.12,
+  "peak_mb": 51.6,
+  "ok": true,
+  "agreement": {
+   "edges_v1": 3892110,
+   "edges_v2": 3892110,
+   "only_v1": 0,
+   "only_v2": 0,
+   "max_abs_dr": 0.0
+  }
+ },
+ {
+  "genes": 32940,
+  "step": "module",
+  "tool": "v1",
+  "seconds": 111.81,
+  "peak_mb": 747.7,
+  "ok": true
+ },
+ {
+  "genes": 32940,
+  "step": "module",
+  "tool": "v2",
+  "seconds": 2.52,
+  "peak_mb": 101.1,
+  "ok": true,
+  "agreement": {
+   "modules_v1": 1657,
+   "modules_v2": 1657,
+   "common": 1657,
+   "identical": true
+  }
+ },
+ {
+  "genes": 32940,
+  "step": "rwr",
+  "tool": "v1",
+  "seconds": 54.95,
+  "peak_mb": 7720.4,
+  "ok": true
+ },
+ {
+  "genes": 32940,
+  "step": "rwr",
+  "tool": "v2",
+  "seconds": 0.78,
+  "peak_mb": 120.1,
+  "ok": true,
+  "agreement": {
+   "genes_v1": 26274,
+   "genes_v2": 26274,
+   "common": 26274,
+   "max_abs_dp": 2.496916080797426e-09,
+   "spearman": 0.9999999999717162,
+   "top100_overlap": 100
+  }
+ },
+ {
+  "genes": 32940,
+  "step": "annotate",
+  "tool": "v1",
+  "seconds": 213.31,
+  "peak_mb": 281.1,
+  "ok": true,
+  "output_files": 11902
+ },
+ {
+  "genes": 32940,
+  "step": "annotate",
+  "tool": "v2",
+  "seconds": 2.84,
+  "peak_mb": 252.5,
+  "ok": true,
+  "output_files": 11901
+ },
+ {
+  "genes": 32940,
+  "step": "stats",
+  "tool": "v1",
+  "seconds": 140.35,
+  "peak_mb": 577.9,
+  "ok": true
+ },
+ {
+  "genes": 32940,
+  "step": "stats",
+  "tool": "v2",
+  "seconds": 1.57,
+  "peak_mb": 102.1,
+  "ok": true,
+  "agreement": {
+   "nodes": [
+    30347.0,
+    30347.0
+   ],
+   "edges": [
+    3892110.0,
+    3892110.0
+   ],
+   "components": [
+    574.0,
+    574.0
+   ],
+   "giant": [
+    26294.0,
+    26294.0
+   ],
+   "density": [
+    0.00845275,
+    0.008453
+   ],
+   "average_degree": [
+    256.507,
+    256.51
+   ],
+   "clustering": [
+    0.466732,
+    0.4667
+   ],
+   "transitivity": [
+    0.554604,
+    0.5546
+   ]
+  }
+ },
+ {
+  "genes": 32940,
+  "step": "extract",
+  "tool": "v1",
+  "seconds": 0.81,
+  "peak_mb": 2.7,
+  "ok": true
+ },
+ {
+  "genes": 32940,
+  "step": "extract",
+  "tool": "v2",
+  "seconds": 0.74,
+  "peak_mb": 58.0,
+  "ok": true,
+  "agreement": {
+   "edges_v1": 8401,
+   "edges_v2": 8401,
+   "identical": true
+  }
+ },
+ {
+  "genes": 32940,
+  "step": "merge",
+  "tool": "v1",
+  "seconds": 12.16,
+  "peak_mb": 1169.0,
+  "ok": true
+ },
+ {
+  "genes": 32940,
+  "step": "merge",
+  "tool": "v2",
+  "seconds": 7.95,
+  "peak_mb": 1256.2,
+  "ok": true,
+  "agreement": {
+   "edges_v1": 9820818,
+   "edges_v2": 9820818
+  }
+ },
+ {
+  "genes": 32940,
+  "step": "shuffle",
+  "tool": "v1",
+  "seconds": 126.37,
+  "peak_mb": 566.9,
+  "ok": true
+ },
+ {
+  "genes": 32940,
+  "step": "shuffle",
+  "tool": "v2",
+  "seconds": 3.78,
+  "peak_mb": 387.3,
+  "ok": true,
+  "agreement": {
+   "degrees_kept_v1": true,
+   "edges_changed_v1": 0.7683,
+   "degrees_kept_v2": true,
+   "edges_changed_v2": 0.7932
+  }
+ }
+]

@@ -1,0 +1,75 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+*.pyd
+*.egg
+*.egg-info/
+dist/
+build/
+.eggs/
+pip-wheel-metadata/
+*.whl
+
+# Virtual environments
+.venv/
+venv/
+env/
+.env
+
+# C++ build artifacts
+_skbuild/
+_cmake_test_compile/
+CMakeFiles/
+CMakeCache.txt
+cmake_install.cmake
+Makefile
+!docs/Makefile
+*.o
+*.a
+
+# Testing / coverage
+.pytest_cache/
+.coverage
+.coverage.*
+htmlcov/
+coverage.xml
+*.lcov
+
+# IDE / editor
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.DS_Store
+
+# Jupyter notebooks checkpoints
+.ipynb_checkpoints/
+
+# Sphinx docs
+docs/_build/
+docs/api/
+
+# Distribution
+MANIFEST
+*.tar.gz
+
+# OS
+Thumbs.db
+
+# Local Claude Code settings
+.claude/settings.local.json
+
+# Local data (e.g. the full GCEN v1 sample package in data/sample) is not part
+# of the repository; the example data in data/example is.
+data/*
+!data/example/
+!tests/data/
+docs/*.docx
+
+# Website build output and test screenshots
+website/_site/
+website/_doctrees/
+website/tests/screenshots/

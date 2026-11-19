@@ -1,0 +1,22 @@
+stage	measure	value
+tree	largest difference of the merge heights	4.99e-09
+tree cut (pamStage FALSE)	unassigned genes, WGCNA	1737
+tree cut (pamStage FALSE)	unassigned genes, PyWGCNA	3628
+tree cut (pamStage FALSE)	clusters, WGCNA	20
+tree cut (pamStage FALSE)	clusters, PyWGCNA	22
+tree cut (pamStage FALSE)	ARI, all genes	0.187
+tree cut (pamStage FALSE)	genes assigned by both	1265
+tree cut (pamStage FALSE)	ARI, genes assigned by both	0.965
+tree cut (pamStage FALSE)	renumbered: label of the unassigned genes	21
+tree cut (pamStage FALSE)	renumbered: genes labelled 0 (unassigned)	223
+tree cut (pamStage FALSE)	renumbered: branch labels of the genes labelled 0	1
+with PAM stage (pamRespectsDendro FALSE)	unassigned genes, WGCNA	8
+with PAM stage (pamRespectsDendro FALSE)	unassigned genes, PyWGCNA	5
+with PAM stage (pamRespectsDendro FALSE)	clusters, WGCNA	20
+with PAM stage (pamRespectsDendro FALSE)	clusters, PyWGCNA	22
+with PAM stage (pamRespectsDendro FALSE)	ARI, all genes	0.34
+with PAM stage (pamRespectsDendro FALSE)	genes assigned by both	4990
+with PAM stage (pamRespectsDendro FALSE)	ARI, genes assigned by both	0.34
+with PAM stage (pamRespectsDendro FALSE)	renumbered: label of the unassigned genes	22
+with PAM stage (pamRespectsDendro FALSE)	renumbered: genes labelled 0 (unassigned)	654
+with PAM stage (pamRespectsDendro FALSE)	renumbered: branch labels of the genes labelled 0	1

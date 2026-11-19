@@ -1,0 +1,1165 @@
+format-version: 1.2
+
+[Term]
+id: GO:1000000
+name: biological term 0
+namespace: biological_process
+
+[Term]
+id: GO:1000001
+name: biological term 1
+namespace: biological_process
+is_a: GO:1000000 ! parent
+
+[Term]
+id: GO:1000002
+name: biological term 2
+namespace: biological_process
+is_a: GO:1000000 ! parent
+
+[Term]
+id: GO:1000003
+name: biological term 3
+namespace: biological_process
+is_a: GO:1000001 ! parent
+is_a: GO:1000002 ! parent
+
+[Term]
+id: GO:1000004
+name: biological term 4
+namespace: biological_process
+is_a: GO:1000000 ! parent
+
+[Term]
+id: GO:1000005
+name: biological term 5
+namespace: biological_process
+is_a: GO:1000000 ! parent
+is_a: GO:1000001 ! parent
+
+[Term]
+id: GO:1000006
+name: biological term 6
+namespace: biological_process
+is_a: GO:1000003 ! parent
+
+[Term]
+id: GO:1000007
+name: biological term 7
+namespace: biological_process
+is_a: GO:1000000 ! parent
+is_a: GO:1000001 ! parent
+
+[Term]
+id: GO:1000008
+name: biological term 8
+namespace: biological_process
+is_a: GO:1000003 ! parent
+
+[Term]
+id: GO:1000009
+name: biological term 9
+namespace: biological_process
+is_a: GO:1000004 ! parent
+is_a: GO:1000007 ! parent
+
+[Term]
+id: GO:1000010
+name: biological term 10
+namespace: biological_process
+is_a: GO:1000004 ! parent
+
+[Term]
+id: GO:1000011
+name: biological term 11
+namespace: biological_process
+is_a: GO:1000003 ! parent
+is_a: GO:1000008 ! parent
+
+[Term]
+id: GO:1000012
+name: biological term 12
+namespace: biological_process
+is_a: GO:1000010 ! parent
+
+[Term]
+id: GO:1000013
+name: biological term 13
+namespace: biological_process
+is_a: GO:1000006 ! parent
+is_a: GO:1000007 ! parent
+
+[Term]
+id: GO:1000014
+name: biological term 14
+namespace: biological_process
+is_a: GO:1000008 ! parent
+
+[Term]
+id: GO:1000015
+name: biological term 15
+namespace: biological_process
+is_a: GO:1000003 ! parent
+is_a: GO:1000007 ! parent
+
+[Term]
+id: GO:1000016
+name: biological term 16
+namespace: biological_process
+is_a: GO:1000007 ! parent
+
+[Term]
+id: GO:1000017
+name: biological term 17
+namespace: biological_process
+is_a: GO:1000000 ! parent
+is_a: GO:1000016 ! parent
+
+[Term]
+id: GO:1000018
+name: biological term 18
+namespace: biological_process
+is_a: GO:1000000 ! parent
+
+[Term]
+id: GO:1000019
+name: biological term 19
+namespace: biological_process
+is_a: GO:1000007 ! parent
+is_a: GO:1000014 ! parent
+
+[Term]
+id: GO:1000020
+name: biological term 20
+namespace: biological_process
+is_a: GO:1000000 ! parent
+
+[Term]
+id: GO:1000021
+name: biological term 21
+namespace: biological_process
+is_a: GO:1000002 ! parent
+is_a: GO:1000005 ! parent
+
+[Term]
+id: GO:1000022
+name: biological term 22
+namespace: biological_process
+is_a: GO:1000009 ! parent
+
+[Term]
+id: GO:1000023
+name: biological term 23
+namespace: biological_process
+is_a: GO:1000007 ! parent
+is_a: GO:1000014 ! parent
+
+[Term]
+id: GO:1000024
+name: biological term 24
+namespace: biological_process
+is_a: GO:1000000 ! parent
+
+[Term]
+id: GO:1000025
+name: biological term 25
+namespace: biological_process
+is_a: GO:1000004 ! parent
+is_a: GO:1000018 ! parent
+
+[Term]
+id: GO:1000026
+name: biological term 26
+namespace: biological_process
+is_a: GO:1000019 ! parent
+
+[Term]
+id: GO:1000027
+name: biological term 27
+namespace: biological_process
+is_a: GO:1000003 ! parent
+is_a: GO:1000024 ! parent
+
+[Term]
+id: GO:1000028
+name: biological term 28
+namespace: biological_process
+is_a: GO:1000011 ! parent
+
+[Term]
+id: GO:1000029
+name: biological term 29
+namespace: biological_process
+is_a: GO:1000002 ! parent
+is_a: GO:1000003 ! parent
+
+[Term]
+id: GO:1000030
+name: biological term 30
+namespace: biological_process
+is_a: GO:1000018 ! parent
+
+[Term]
+id: GO:1000031
+name: biological term 31
+namespace: biological_process
+is_a: GO:1000003 ! parent
+is_a: GO:1000027 ! parent
+
+[Term]
+id: GO:1000032
+name: biological term 32
+namespace: biological_process
+is_a: GO:1000023 ! parent
+
+[Term]
+id: GO:1000033
+name: biological term 33
+namespace: biological_process
+is_a: GO:1000004 ! parent
+is_a: GO:1000024 ! parent
+
+[Term]
+id: GO:1000034
+name: biological term 34
+namespace: biological_process
+is_a: GO:1000009 ! parent
+
+[Term]
+id: GO:1000035
+name: biological term 35
+namespace: biological_process
+is_a: GO:1000003 ! parent
+is_a: GO:1000007 ! parent
+
+[Term]
+id: GO:1000036
+name: biological term 36
+namespace: biological_process
+is_a: GO:1000008 ! parent
+
+[Term]
+id: GO:1000037
+name: biological term 37
+namespace: biological_process
+is_a: GO:1000033 ! parent
+is_a: GO:1000036 ! parent
+
+[Term]
+id: GO:1000038
+name: biological term 38
+namespace: biological_process
+is_a: GO:1000025 ! parent
+
+[Term]
+id: GO:1000039
+name: biological term 39
+namespace: biological_process
+is_a: GO:1000001 ! parent
+is_a: GO:1000015 ! parent
+
+[Term]
+id: GO:1000040
+name: biological term 40
+namespace: biological_process
+is_a: GO:1000031 ! parent
+
+[Term]
+id: GO:1000041
+name: biological term 41
+namespace: biological_process
+is_a: GO:1000031 ! parent
+is_a: GO:1000037 ! parent
+
+[Term]
+id: GO:1000042
+name: biological term 42
+namespace: biological_process
+is_a: GO:1000012 ! parent
+
+[Term]
+id: GO:1000043
+name: biological term 43
+namespace: biological_process
+is_a: GO:1000023 ! parent
+is_a: GO:1000039 ! parent
+
+[Term]
+id: GO:1000044
+name: biological term 44
+namespace: biological_process
+is_a: GO:1000005 ! parent
+
+[Term]
+id: GO:1000045
+name: biological term 45
+namespace: biological_process
+is_a: GO:1000040 ! parent
+is_a: GO:1000044 ! parent
+
+[Term]
+id: GO:1000046
+name: biological term 46
+namespace: biological_process
+is_a: GO:1000011 ! parent
+
+[Term]
+id: GO:1000047
+name: biological term 47
+namespace: biological_process
+is_a: GO:1000016 ! parent
+is_a: GO:1000025 ! parent
+
+[Term]
+id: GO:1000048
+name: biological term 48
+namespace: biological_process
+is_a: GO:1000002 ! parent
+
+[Term]
+id: GO:1000049
+name: biological term 49
+namespace: biological_process
+is_a: GO:1000018 ! parent
+is_a: GO:1000028 ! parent
+
+[Term]
+id: GO:1000050
+name: biological term 50
+namespace: biological_process
+is_a: GO:1000032 ! parent
+
+[Term]
+id: GO:1000051
+name: biological term 51
+namespace: biological_process
+is_a: GO:1000003 ! parent
+is_a: GO:1000009 ! parent
+
+[Term]
+id: GO:1000052
+name: biological term 52
+namespace: biological_process
+is_a: GO:1000012 ! parent
+
+[Term]
+id: GO:1000053
+name: biological term 53
+namespace: biological_process
+is_a: GO:1000018 ! parent
+is_a: GO:1000031 ! parent
+
+[Term]
+id: GO:1000054
+name: biological term 54
+namespace: biological_process
+is_a: GO:1000042 ! parent
+
+[Term]
+id: GO:1000055
+name: biological term 55
+namespace: biological_process
+is_a: GO:1000029 ! parent
+is_a: GO:1000045 ! parent
+
+[Term]
+id: GO:1000056
+name: biological term 56
+namespace: biological_process
+is_a: GO:1000029 ! parent
+
+[Term]
+id: GO:1000057
+name: biological term 57
+namespace: biological_process
+is_a: GO:1000004 ! parent
+is_a: GO:1000049 ! parent
+
+[Term]
+id: GO:1000058
+name: biological term 58
+namespace: biological_process
+is_a: GO:1000028 ! parent
+
+[Term]
+id: GO:1000059
+name: biological term 59
+namespace: biological_process
+is_a: GO:1000011 ! parent
+is_a: GO:1000026 ! parent
+
+[Term]
+id: GO:2000000
+name: molecular term 0
+namespace: molecular_function
+
+[Term]
+id: GO:2000001
+name: molecular term 1
+namespace: molecular_function
+is_a: GO:2000000 ! parent
+
+[Term]
+id: GO:2000002
+name: molecular term 2
+namespace: molecular_function
+is_a: GO:2000000 ! parent
+
+[Term]
+id: GO:2000003
+name: molecular term 3
+namespace: molecular_function
+is_a: GO:2000000 ! parent
+is_a: GO:2000001 ! parent
+
+[Term]
+id: GO:2000004
+name: molecular term 4
+namespace: molecular_function
+is_a: GO:2000001 ! parent
+
+[Term]
+id: GO:2000005
+name: molecular term 5
+namespace: molecular_function
+is_a: GO:2000000 ! parent
+is_a: GO:2000004 ! parent
+
+[Term]
+id: GO:2000006
+name: molecular term 6
+namespace: molecular_function
+is_a: GO:2000004 ! parent
+
+[Term]
+id: GO:2000007
+name: molecular term 7
+namespace: molecular_function
+is_a: GO:2000001 ! parent
+is_a: GO:2000006 ! parent
+
+[Term]
+id: GO:2000008
+name: molecular term 8
+namespace: molecular_function
+is_a: GO:2000004 ! parent
+
+[Term]
+id: GO:2000009
+name: molecular term 9
+namespace: molecular_function
+is_a: GO:2000004 ! parent
+is_a: GO:2000006 ! parent
+
+[Term]
+id: GO:2000010
+name: molecular term 10
+namespace: molecular_function
+is_a: GO:2000006 ! parent
+
+[Term]
+id: GO:2000011
+name: molecular term 11
+namespace: molecular_function
+is_a: GO:2000001 ! parent
+is_a: GO:2000002 ! parent
+
+[Term]
+id: GO:2000012
+name: molecular term 12
+namespace: molecular_function
+is_a: GO:2000005 ! parent
+
+[Term]
+id: GO:2000013
+name: molecular term 13
+namespace: molecular_function
+is_a: GO:2000003 ! parent
+is_a: GO:2000006 ! parent
+
+[Term]
+id: GO:2000014
+name: molecular term 14
+namespace: molecular_function
+is_a: GO:2000010 ! parent
+
+[Term]
+id: GO:2000015
+name: molecular term 15
+namespace: molecular_function
+is_a: GO:2000000 ! parent
+is_a: GO:2000003 ! parent
+
+[Term]
+id: GO:2000016
+name: molecular term 16
+namespace: molecular_function
+is_a: GO:2000010 ! parent
+
+[Term]
+id: GO:2000017
+name: molecular term 17
+namespace: molecular_function
+is_a: GO:2000004 ! parent
+is_a: GO:2000015 ! parent
+
+[Term]
+id: GO:2000018
+name: molecular term 18
+namespace: molecular_function
+is_a: GO:2000015 ! parent
+
+[Term]
+id: GO:2000019
+name: molecular term 19
+namespace: molecular_function
+is_a: GO:2000011 ! parent
+is_a: GO:2000018 ! parent
+
+[Term]
+id: GO:2000020
+name: molecular term 20
+namespace: molecular_function
+is_a: GO:2000007 ! parent
+
+[Term]
+id: GO:2000021
+name: molecular term 21
+namespace: molecular_function
+is_a: GO:2000008 ! parent
+is_a: GO:2000015 ! parent
+
+[Term]
+id: GO:2000022
+name: molecular term 22
+namespace: molecular_function
+is_a: GO:2000011 ! parent
+
+[Term]
+id: GO:2000023
+name: molecular term 23
+namespace: molecular_function
+is_a: GO:2000004 ! parent
+is_a: GO:2000018 ! parent
+
+[Term]
+id: GO:2000024
+name: molecular term 24
+namespace: molecular_function
+is_a: GO:2000003 ! parent
+
+[Term]
+id: GO:2000025
+name: molecular term 25
+namespace: molecular_function
+is_a: GO:2000010 ! parent
+is_a: GO:2000013 ! parent
+
+[Term]
+id: GO:2000026
+name: molecular term 26
+namespace: molecular_function
+is_a: GO:2000015 ! parent
+
+[Term]
+id: GO:2000027
+name: molecular term 27
+namespace: molecular_function
+is_a: GO:2000021 ! parent
+is_a: GO:2000022 ! parent
+
+[Term]
+id: GO:2000028
+name: molecular term 28
+namespace: molecular_function
+is_a: GO:2000021 ! parent
+
+[Term]
+id: GO:2000029
+name: molecular term 29
+namespace: molecular_function
+is_a: GO:2000003 ! parent
+is_a: GO:2000005 ! parent
+
+[Term]
+id: GO:2000030
+name: molecular term 30
+namespace: molecular_function
+is_a: GO:2000019 ! parent
+
+[Term]
+id: GO:2000031
+name: molecular term 31
+namespace: molecular_function
+is_a: GO:2000017 ! parent
+is_a: GO:2000021 ! parent
+
+[Term]
+id: GO:2000032
+name: molecular term 32
+namespace: molecular_function
+is_a: GO:2000006 ! parent
+
+[Term]
+id: GO:2000033
+name: molecular term 33
+namespace: molecular_function
+is_a: GO:2000025 ! parent
+is_a: GO:2000030 ! parent
+
+[Term]
+id: GO:2000034
+name: molecular term 34
+namespace: molecular_function
+is_a: GO:2000014 ! parent
+
+[Term]
+id: GO:2000035
+name: molecular term 35
+namespace: molecular_function
+is_a: GO:2000001 ! parent
+is_a: GO:2000005 ! parent
+
+[Term]
+id: GO:2000036
+name: molecular term 36
+namespace: molecular_function
+is_a: GO:2000019 ! parent
+
+[Term]
+id: GO:2000037
+name: molecular term 37
+namespace: molecular_function
+is_a: GO:2000004 ! parent
+is_a: GO:2000009 ! parent
+
+[Term]
+id: GO:2000038
+name: molecular term 38
+namespace: molecular_function
+is_a: GO:2000015 ! parent
+
+[Term]
+id: GO:2000039
+name: molecular term 39
+namespace: molecular_function
+is_a: GO:2000028 ! parent
+is_a: GO:2000035 ! parent
+
+[Term]
+id: GO:2000040
+name: molecular term 40
+namespace: molecular_function
+is_a: GO:2000013 ! parent
+
+[Term]
+id: GO:2000041
+name: molecular term 41
+namespace: molecular_function
+is_a: GO:2000006 ! parent
+is_a: GO:2000015 ! parent
+
+[Term]
+id: GO:2000042
+name: molecular term 42
+namespace: molecular_function
+is_a: GO:2000018 ! parent
+
+[Term]
+id: GO:2000043
+name: molecular term 43
+namespace: molecular_function
+is_a: GO:2000010 ! parent
+is_a: GO:2000024 ! parent
+
+[Term]
+id: GO:2000044
+name: molecular term 44
+namespace: molecular_function
+is_a: GO:2000010 ! parent
+
+[Term]
+id: GO:2000045
+name: molecular term 45
+namespace: molecular_function
+is_a: GO:2000022 ! parent
+is_a: GO:2000042 ! parent
+
+[Term]
+id: GO:2000046
+name: molecular term 46
+namespace: molecular_function
+is_a: GO:2000000 ! parent
+
+[Term]
+id: GO:2000047
+name: molecular term 47
+namespace: molecular_function
+is_a: GO:2000010 ! parent
+is_a: GO:2000016 ! parent
+
+[Term]
+id: GO:2000048
+name: molecular term 48
+namespace: molecular_function
+is_a: GO:2000006 ! parent
+
+[Term]
+id: GO:2000049
+name: molecular term 49
+namespace: molecular_function
+is_a: GO:2000030 ! parent
+is_a: GO:2000048 ! parent
+
+[Term]
+id: GO:2000050
+name: molecular term 50
+namespace: molecular_function
+is_a: GO:2000022 ! parent
+
+[Term]
+id: GO:2000051
+name: molecular term 51
+namespace: molecular_function
+is_a: GO:2000026 ! parent
+is_a: GO:2000047 ! parent
+
+[Term]
+id: GO:2000052
+name: molecular term 52
+namespace: molecular_function
+is_a: GO:2000049 ! parent
+
+[Term]
+id: GO:2000053
+name: molecular term 53
+namespace: molecular_function
+is_a: GO:2000001 ! parent
+is_a: GO:2000028 ! parent
+
+[Term]
+id: GO:2000054
+name: molecular term 54
+namespace: molecular_function
+is_a: GO:2000001 ! parent
+
+[Term]
+id: GO:2000055
+name: molecular term 55
+namespace: molecular_function
+is_a: GO:2000025 ! parent
+is_a: GO:2000045 ! parent
+
+[Term]
+id: GO:2000056
+name: molecular term 56
+namespace: molecular_function
+is_a: GO:2000051 ! parent
+
+[Term]
+id: GO:2000057
+name: molecular term 57
+namespace: molecular_function
+is_a: GO:2000005 ! parent
+is_a: GO:2000031 ! parent
+
+[Term]
+id: GO:2000058
+name: molecular term 58
+namespace: molecular_function
+is_a: GO:2000034 ! parent
+
+[Term]
+id: GO:2000059
+name: molecular term 59
+namespace: molecular_function
+is_a: GO:2000006 ! parent
+is_a: GO:2000017 ! parent
+
+[Term]
+id: GO:3000000
+name: cellular term 0
+namespace: cellular_component
+
+[Term]
+id: GO:3000001
+name: cellular term 1
+namespace: cellular_component
+is_a: GO:3000000 ! parent
+
+[Term]
+id: GO:3000002
+name: cellular term 2
+namespace: cellular_component
+is_a: GO:3000001 ! parent
+
+[Term]
+id: GO:3000003
+name: cellular term 3
+namespace: cellular_component
+is_a: GO:3000001 ! parent
+is_a: GO:3000002 ! parent
+
+[Term]
+id: GO:3000004
+name: cellular term 4
+namespace: cellular_component
+is_a: GO:3000003 ! parent
+
+[Term]
+id: GO:3000005
+name: cellular term 5
+namespace: cellular_component
+is_a: GO:3000001 ! parent
+is_a: GO:3000004 ! parent
+
+[Term]
+id: GO:3000006
+name: cellular term 6
+namespace: cellular_component
+is_a: GO:3000004 ! parent
+
+[Term]
+id: GO:3000007
+name: cellular term 7
+namespace: cellular_component
+is_a: GO:3000004 ! parent
+is_a: GO:3000006 ! parent
+
+[Term]
+id: GO:3000008
+name: cellular term 8
+namespace: cellular_component
+is_a: GO:3000005 ! parent
+
+[Term]
+id: GO:3000009
+name: cellular term 9
+namespace: cellular_component
+is_a: GO:3000006 ! parent
+is_a: GO:3000008 ! parent
+
+[Term]
+id: GO:3000010
+name: cellular term 10
+namespace: cellular_component
+is_a: GO:3000002 ! parent
+
+[Term]
+id: GO:3000011
+name: cellular term 11
+namespace: cellular_component
+is_a: GO:3000001 ! parent
+is_a: GO:3000010 ! parent
+
+[Term]
+id: GO:3000012
+name: cellular term 12
+namespace: cellular_component
+is_a: GO:3000004 ! parent
+
+[Term]
+id: GO:3000013
+name: cellular term 13
+namespace: cellular_component
+is_a: GO:3000004 ! parent
+is_a: GO:3000008 ! parent
+
+[Term]
+id: GO:3000014
+name: cellular term 14
+namespace: cellular_component
+is_a: GO:3000009 ! parent
+
+[Term]
+id: GO:3000015
+name: cellular term 15
+namespace: cellular_component
+is_a: GO:3000001 ! parent
+is_a: GO:3000002 ! parent
+
+[Term]
+id: GO:3000016
+name: cellular term 16
+namespace: cellular_component
+is_a: GO:3000001 ! parent
+
+[Term]
+id: GO:3000017
+name: cellular term 17
+namespace: cellular_component
+is_a: GO:3000010 ! parent
+is_a: GO:3000015 ! parent
+
+[Term]
+id: GO:3000018
+name: cellular term 18
+namespace: cellular_component
+is_a: GO:3000017 ! parent
+
+[Term]
+id: GO:3000019
+name: cellular term 19
+namespace: cellular_component
+is_a: GO:3000003 ! parent
+is_a: GO:3000006 ! parent
+
+[Term]
+id: GO:3000020
+name: cellular term 20
+namespace: cellular_component
+is_a: GO:3000005 ! parent
+
+[Term]
+id: GO:3000021
+name: cellular term 21
+namespace: cellular_component
+is_a: GO:3000001 ! parent
+is_a: GO:3000005 ! parent
+
+[Term]
+id: GO:3000022
+name: cellular term 22
+namespace: cellular_component
+is_a: GO:3000003 ! parent
+
+[Term]
+id: GO:3000023
+name: cellular term 23
+namespace: cellular_component
+is_a: GO:3000004 ! parent
+is_a: GO:3000014 ! parent
+
+[Term]
+id: GO:3000024
+name: cellular term 24
+namespace: cellular_component
+is_a: GO:3000006 ! parent
+
+[Term]
+id: GO:3000025
+name: cellular term 25
+namespace: cellular_component
+is_a: GO:3000003 ! parent
+is_a: GO:3000014 ! parent
+
+[Term]
+id: GO:3000026
+name: cellular term 26
+namespace: cellular_component
+is_a: GO:3000014 ! parent
+
+[Term]
+id: GO:3000027
+name: cellular term 27
+namespace: cellular_component
+is_a: GO:3000016 ! parent
+is_a: GO:3000020 ! parent
+
+[Term]
+id: GO:3000028
+name: cellular term 28
+namespace: cellular_component
+is_a: GO:3000006 ! parent
+
+[Term]
+id: GO:3000029
+name: cellular term 29
+namespace: cellular_component
+is_a: GO:3000022 ! parent
+is_a: GO:3000027 ! parent
+
+[Term]
+id: GO:3000030
+name: cellular term 30
+namespace: cellular_component
+is_a: GO:3000008 ! parent
+
+[Term]
+id: GO:3000031
+name: cellular term 31
+namespace: cellular_component
+is_a: GO:3000008 ! parent
+is_a: GO:3000011 ! parent
+
+[Term]
+id: GO:3000032
+name: cellular term 32
+namespace: cellular_component
+is_a: GO:3000014 ! parent
+
+[Term]
+id: GO:3000033
+name: cellular term 33
+namespace: cellular_component
+is_a: GO:3000013 ! parent
+is_a: GO:3000014 ! parent
+
+[Term]
+id: GO:3000034
+name: cellular term 34
+namespace: cellular_component
+is_a: GO:3000006 ! parent
+
+[Term]
+id: GO:3000035
+name: cellular term 35
+namespace: cellular_component
+is_a: GO:3000002 ! parent
+is_a: GO:3000024 ! parent
+
+[Term]
+id: GO:3000036
+name: cellular term 36
+namespace: cellular_component
+is_a: GO:3000021 ! parent
+
+[Term]
+id: GO:3000037
+name: cellular term 37
+namespace: cellular_component
+is_a: GO:3000014 ! parent
+is_a: GO:3000020 ! parent
+
+[Term]
+id: GO:3000038
+name: cellular term 38
+namespace: cellular_component
+is_a: GO:3000004 ! parent
+
+[Term]
+id: GO:3000039
+name: cellular term 39
+namespace: cellular_component
+is_a: GO:3000007 ! parent
+is_a: GO:3000013 ! parent
+
+[Term]
+id: GO:3000040
+name: cellular term 40
+namespace: cellular_component
+is_a: GO:3000020 ! parent
+
+[Term]
+id: GO:3000041
+name: cellular term 41
+namespace: cellular_component
+is_a: GO:3000013 ! parent
+is_a: GO:3000040 ! parent
+
+[Term]
+id: GO:3000042
+name: cellular term 42
+namespace: cellular_component
+is_a: GO:3000008 ! parent
+
+[Term]
+id: GO:3000043
+name: cellular term 43
+namespace: cellular_component
+is_a: GO:3000030 ! parent
+is_a: GO:3000035 ! parent
+
+[Term]
+id: GO:3000044
+name: cellular term 44
+namespace: cellular_component
+is_a: GO:3000003 ! parent
+
+[Term]
+id: GO:3000045
+name: cellular term 45
+namespace: cellular_component
+is_a: GO:3000014 ! parent
+is_a: GO:3000035 ! parent
+
+[Term]
+id: GO:3000046
+name: cellular term 46
+namespace: cellular_component
+is_a: GO:3000007 ! parent
+
+[Term]
+id: GO:3000047
+name: cellular term 47
+namespace: cellular_component
+is_a: GO:3000039 ! parent
+is_a: GO:3000041 ! parent
+
+[Term]
+id: GO:3000048
+name: cellular term 48
+namespace: cellular_component
+is_a: GO:3000010 ! parent
+
+[Term]
+id: GO:3000049
+name: cellular term 49
+namespace: cellular_component
+is_a: GO:3000021 ! parent
+is_a: GO:3000024 ! parent
+
+[Term]
+id: GO:3000050
+name: cellular term 50
+namespace: cellular_component
+is_a: GO:3000044 ! parent
+
+[Term]
+id: GO:3000051
+name: cellular term 51
+namespace: cellular_component
+is_a: GO:3000011 ! parent
+is_a: GO:3000037 ! parent
+
+[Term]
+id: GO:3000052
+name: cellular term 52
+namespace: cellular_component
+is_a: GO:3000029 ! parent
+
+[Term]
+id: GO:3000053
+name: cellular term 53
+namespace: cellular_component
+is_a: GO:3000008 ! parent
+is_a: GO:3000047 ! parent
+
+[Term]
+id: GO:3000054
+name: cellular term 54
+namespace: cellular_component
+is_a: GO:3000046 ! parent
+
+[Term]
+id: GO:3000055
+name: cellular term 55
+namespace: cellular_component
+is_a: GO:3000001 ! parent
+is_a: GO:3000051 ! parent
+
+[Term]
+id: GO:3000056
+name: cellular term 56
+namespace: cellular_component
+is_a: GO:3000040 ! parent
+
+[Term]
+id: GO:3000057
+name: cellular term 57
+namespace: cellular_component
+is_a: GO:3000022 ! parent
+is_a: GO:3000050 ! parent
+
+[Term]
+id: GO:3000058
+name: cellular term 58
+namespace: cellular_component
+is_a: GO:3000015 ! parent
+
+[Term]
+id: GO:3000059
+name: cellular term 59
+namespace: cellular_component
+is_a: GO:3000020 ! parent
+is_a: GO:3000043 ! parent

@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="container-xl py-5 my-lg-5">
+  <p class="gc-eyebrow mb-2">404</p>
+  <h1 class="display-6 mb-3">Page not found</h1>
+  <p class="lead text-body-secondary mb-4">The page you asked for is not on the GCEN2 site. It may have moved into the documentation.</p>
+  <div class="d-flex flex-wrap gap-2">
+    <a class="btn btn-brand" href="{{ site.url }}">GCEN2 home</a>
+    <a class="btn btn-outline-brand" href="{{ site.url }}docs/index.html">Documentation</a>
+  </div>
+</div>
+{% endblock %}

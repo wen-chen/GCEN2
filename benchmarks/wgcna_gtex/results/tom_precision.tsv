@@ -1,0 +1,5 @@
+variant	power	diss_abs_diff_max	diss_abs_diff_median	cut_modules	cut_ARI	cut_genes_moved	modules	final_ARI	final_genes_moved	unassigned
+double	10	0	0	19	1	0	19	1	0	1938
+TOM float	10	2.79766e-07	2.07615e-10	19	1	0	19	1	0	1938
+TOM to float	10	1.4876e-08	4.65153e-11	19	1	0	19	1	0	1938
+1 - TOM float	10	2.98023e-08	1.48979e-08	19	0.971591	52	19	0.979354	59	1964

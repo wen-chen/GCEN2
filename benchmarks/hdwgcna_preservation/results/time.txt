@@ -1,0 +1,4 @@
+gcen2 1 325.03 s 2666968 KB
+hdwgcna 1 2169.37 s 4029972 KB
+gcen2 2 324.83 s 2667044 KB
+hdwgcna 2 2177.97 s 4077688 KB

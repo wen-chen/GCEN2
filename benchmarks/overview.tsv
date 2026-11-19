@@ -1,0 +1,25 @@
+group	data	task	gcen2_s	gcen2_mb	other_s	other_mb	faster	less_memory	agreement
+GCEN v1 0.6.3	32,940 genes × 15 samples, 3.9M edges	build	3.1 s	52 MB	19.1 s	13 MB	6.1×	4.0× more	identical edges (3,892,110), max |Δr| = 0
+GCEN v1 0.6.3	32,940 genes × 15 samples, 3.9M edges	module	2.5 s	101 MB	112 s	748 MB	44×	7.4×	identical modules (1,657)
+GCEN v1 0.6.3	32,940 genes × 15 samples, 3.9M edges	rwr	0.78 s	120 MB	55.0 s	7.54 GB	70×	64×	max |Δp| = 2.5e-09, top 100 identical
+GCEN v1 0.6.3	32,940 genes × 15 samples, 3.9M edges	annotate	2.8 s	252 MB	213 s	281 MB	75×	1.1×	runtime only (one- vs two-sided test)
+GCEN v1 0.6.3	32,940 genes × 15 samples, 3.9M edges	stats	1.6 s	102 MB	140 s	578 MB	89×	5.7×	same statistics
+GCEN v1 0.6.3	32,940 genes × 15 samples, 3.9M edges	extract	0.74 s	58 MB	0.81 s	3 MB	1.1×	21× more	identical edges
+GCEN v1 0.6.3	32,940 genes × 15 samples, 3.9M edges	merge	8.0 s	1.23 GB	12.2 s	1.14 GB	1.5×	1.1× more	same edge count (9,820,818); sums differ by design
+GCEN v1 0.6.3	32,940 genes × 15 samples, 3.9M edges	shuffle	3.8 s	387 MB	126 s	567 MB	33×	1.5×	both keep every degree; different algorithms
+WGCNA 1.74	GTEx whole blood, 11,944 genes × 803 samples	WGCNA modules (`module -e`)	9.1 s	1.45 GB	36.1 s	3.93 GB	4.0×	2.7×	same modules in 6 of 6 runs (ARI 1.0)
+WGCNA 1.74	GTEx whole blood, 11,944 genes × 803 samples	correlation network + modules, FDR (`build` + `module`)	2.8 s	633 MB	36.1 s	3.93 GB	13×	6.4×	different method (r and FDR, not TOM)
+hdWGCNA 0.4.12	PBMC 10k, 6 cell types, 44–1,000 metacells	hdWGCNA modules (`module -e --preset hdwgcna`)	3.5–6.3 s	645–993 MB	38.4–58.6 s	–	9.1–13×	–	same modules in 24 of 24 runs (ARI 1.0); hdWGCNA time: soft power + network only
+hdWGCNA 0.4.12	PBMC 10k, 6 cell types, 355–3,391 cells	correlation network + modules per cell type (`03_gcen2.py`)	1.5–7.3 s	352 MB–1.09 GB	75.9–120 s	4.21–6.02 GB	14–55×	4.0–18×	different method (r, no TOM); whole script vs hdWGCNA's
+hdWGCNA 0.4.12	Human Lung Cell Atlas core (584,944 cells), the 10 largest cell types (430,202 cells)	single-cell workflow (`celltype-modules`)	211 s	11.9 GB	2,952 s	43.9 GB	14×	3.7×	same genes in 10 of 10 types; same modules on hdWGCNA's metacells in 10 of 10 (ARI 1.0)
+hdWGCNA 0.4.12	HLCA natural killer cells, 16,006 cells in 4 datasets, 5,080 genes	consensus network, harmonized MEs, DMEs, traits (`celltype-modules --consensus-by --harmonize-by --dme-by --trait`)	23.7 s	2.51 GB	161 s	8.13 GB	6.8×	3.2×	same modules on hdWGCNA's metacells (ARI 1.0); harmonized MEs r >= 0.997; same DMEs and trait correlations; own metacells: ARI 0.76–0.85, as seed to seed
+hdWGCNA 0.4.12	HLCA natural killer cells, Meyer_2019 (6,732 cells) onto Krasnow_2020 (4,303 cells), 4,898 genes	reference modules, projection and preservation, 500 permutations (`celltype-modules`, `project-modules`, `module-preservation`)	325 s	2.54 GB	2,174 s	3.87 GB	6.7×	1.5×	projected MEs within 2e-13; on hdWGCNA's metacells the same preservation statistics (Z within 7e-08 relative)
+hdWGCNA 0.4.12	Visium DLPFC 151673, 3,611 spots, 9,317 genes	spatial workflow (`spatial-modules`)	9.0 s	1.28 GB	113 s	5.85 GB	13×	4.6×	same modules (ARI 1.0), spot MEs within 5e-09 (TSV precision)
+hdWGCNA 0.4.12	Visium mouse brain anterior, 2,695 spots, 12,861 genes	spatial workflow (`spatial-modules`)	18.9 s	1.94 GB	140 s	10.6 GB	7.4×	5.5×	same modules (ARI 1.0), spot MEs within 5e-09 (TSV precision)
+hdWGCNA 0.4.12	Slide-seqV2 hippocampus (no grid), 41,786 beads, 1,770 genes	spatial workflow, knn metaspots (`spatial-modules -k 100`)	7.2 s	670 MB	220 s	2.97 GB	31×	4.5×	same modules on hdWGCNA's metacells (ARI 1.0); own metacells: ARI 0.66–0.85, as seed to seed
+hdWGCNA 0.4.12	Visium HD mouse brain, 16 µm bins (square grid), 98,917 bins, 4,316 genes	spatial workflow, knn metaspots (`spatial-modules -k 64`)	19.2 s	2.23 GB	570 s	18.8 GB	30×	8.4×	same modules on hdWGCNA's metacells (ARI 1.0); own metacells: ARI 0.92–0.94, as seed to seed
+DGCA 1.0.3	GTEx whole blood, 5,000 genes, 541 male vs 262 female	differential co-expression of every pair, Pearson (`build` × 2 + `diff`)	9.0 s	1.26 GB	23.2 s	4.03 GB	2.6×	3.2×	same test on 12.5M pairs: r within 5e-07 (6 decimals), z within 9e-15 on the same r; 21 pairs differ at p = 0.05, 0 at FDR = 0.05
+DGCA 1.0.3	GTEx whole blood, 5,000 genes, 541 male vs 262 female	differential co-expression of every pair, Spearman (`build` × 2 + `diff`)	8.6 s	1.27 GB	1,582 s	4.33 GB	185×	3.4×	same test on 12.5M pairs: r within 5e-07 (6 decimals), z within 7e-15 on the same r; 19 pairs differ at p = 0.05, 4 at FDR = 0.05
+RandomWalkRestartMH 1.13.2	GTEx co-expression + STRING + TRRUST, 18,082 genes, 3 layers	multiplex RWR (`rwr-multiplex`)	0.49 s	179 MB	28.3 s	383 MB	58×	2.1×	scores within 1e-12, top 100 identical
+R (data.table)	GTEx co-expression + STRING + TRRUST, 18,082 genes, 3 layers	network fusion (`fuse`)	0.42 s	194 MB	0.57 s	153 MB	1.4×	1.3× more	same 376,750 edges, scores within 6e-16
+R (WGCNA)	paul15 myeloid differentiation, 2,730 cells, 2,000 genes, 9 windows	networks along pseudotime (`trajectory`)	1.2 s	329 MB	6.1 s	1.09 GB	5.2×	3.4×	same edges in every window, same patterns of 15,017 edges

@@ -1,0 +1,24 @@
+metric	value
+genes	4898
+modules_hdwgcna	4
+project_gcen2_s	1.59
+project_hdwgcna_s	12.38
+projected_modules	5 / 5
+projected_ME_max_abs_diff	1.6342482922482304e-13
+preservation_gcen2_s	296.0
+preservation_hdwgcna_s	2077.4
+obs_same_modules	True
+obs_columns	20 / 20
+obs_max_rel_diff	1.3124006591694137e-08
+Z_same_modules	True
+Z_columns	20 / 20
+Z_max_rel_diff	7.294769157058685e-08
+Zsummary_hdwgcna	blue:18.96,brown:48.43,gold:12.66,grey:2.79,turquoise:17.73,yellow:3.26
+Zsummary_gcen2_same_input	blue:18.96,brown:48.43,gold:12.66,grey:2.79,turquoise:17.73,yellow:3.26
+modules_gcen2	3
+gcen2_s	324.9
+gcen2_GB	2.54
+hdwgcna_s	2173.7
+hdwgcna_GB	3.87
+speedup	6.7
+memory_ratio	1.5

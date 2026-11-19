@@ -1,0 +1,13 @@
+# GCEN2 website theme for the Sphinx documentation: Sphinx's basic theme
+# inside the site's Bootstrap 5.3.9 frame (navbar, footer, colour mode).
+# basic.css comes from "basic"; layout.html adds Bootstrap and the site's
+# styles after it, then static/gcen2-docs.css.
+[theme]
+inherit = "basic"
+sidebars = []
+pygments_style = { default = "default" }
+
+# docs/conf.py sets these for sphinx_rtd_theme (Read the Docs); accepted and unused here.
+[options]
+navigation_depth = 4
+collapse_navigation = false

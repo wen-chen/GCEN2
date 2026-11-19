@@ -1,0 +1,55 @@
+{% extends "base.html" %}
+{% from "partials/_blocks.html" import page_head %}
+{% block content %}
+{{ page_head("Gallery", "Figures from the example data, each with the command that made it. gcen2 plot has " ~ site.n_plots ~ " figures for the files the analyses write, in journal column widths, as PDF, PNG and SVG with editable text.") }}
+<div class="container-xl py-5">
+  <div class="d-flex flex-wrap align-items-center gap-3 mb-4">
+    <div class="gc-filter d-flex flex-wrap gap-2" data-gc-filter role="group" aria-label="Show figures of">
+      <button type="button" class="btn btn-outline-brand btn-sm active" data-gc-show="all" aria-pressed="true">All</button>
+      {%- for k in gallery_kinds %}
+      <button type="button" class="btn btn-outline-brand btn-sm" data-gc-show="{{ k }}" aria-pressed="false"><span class="gc-dot" style="background: {{ kinds[k][1] }}" aria-hidden="true"></span>{{ kinds[k][0] }}</button>
+      {%- endfor %}
+    </div>
+    <span class="small text-body-secondary ms-auto" id="galleryStatus" aria-live="polite">{{ gallery|length }} figures</span>
+  </div>
+  <div class="row row-cols-1 row-cols-sm-2 row-cols-lg-3 g-4">
+    {%- for g in gallery %}
+    <div class="col" data-gc-kind="{{ g.kind }}">
+      <article class="gc-thumb">
+        <button type="button" class="gc-thumb-img" data-bs-toggle="modal" data-bs-target="#figureModal"
+                data-gc-title="{{ g.title }}" data-gc-src="static/img/gallery/{{ g.id }}.png" data-gc-alt="{{ g.alt }}"
+                data-gc-w="{{ g.w }}" data-gc-h="{{ g.h }}" data-gc-cmd="{{ g.command }}" aria-label="Enlarge: {{ g.title }}">
+          <img src="static/img/gallery/{{ g.id }}.png" width="{{ g.w }}" height="{{ g.h }}" alt="{{ g.alt }}" loading="lazy" decoding="async">
+        </button>
+        <div class="gc-thumb-body">
+          <p class="mb-2"><span class="gc-badge"><span class="gc-dot" style="background: {{ kinds[g.kind][1] }}" aria-hidden="true"></span><span class="visually-hidden">Analysis: </span>{{ kinds[g.kind][0] }}</span></p>
+          <h2 class="h6 fw-bold mb-1">{{ g.title }}</h2>
+          <p class="small text-body-secondary mb-3">{{ g.description }}</p>
+          <code>{{ g.command }}</code>
+        </div>
+      </article>
+    </div>
+    {%- endfor %}
+  </div>
+  <p class="small text-body-secondary mt-5 mb-0">
+    The figures come from the commands of the <a href="docs/tutorials/figures.html">tutorials</a>, run on the example data
+    (<code>$EX</code>, <code>$SC</code> and <code>$SP</code> are the bulk, single-cell and spatial example files).
+    The <a href="docs/cli.html">command-line reference</a> lists all {{ site.n_plots }} figures and their options.
+  </p>
+</div>
+
+<div class="modal fade" id="figureModal" tabindex="-1" aria-labelledby="figureModalTitle" aria-hidden="true">
+  <div class="modal-dialog modal-xl modal-dialog-centered modal-dialog-scrollable">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h2 class="modal-title h5" id="figureModalTitle">Figure</h2>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <img src="static/img/gallery/{{ gallery[0].id }}.png" width="{{ gallery[0].w }}" height="{{ gallery[0].h }}" alt="{{ gallery[0].alt }}">
+        <pre class="small mt-3 mb-0 p-2 rounded-2 border bg-body-tertiary" style="white-space: pre-wrap"><code data-gc-modal-cmd></code></pre>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}

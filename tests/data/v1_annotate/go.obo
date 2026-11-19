@@ -1,0 +1,69 @@
+format-version: 1.2
+
+[Term]
+id: GO:0000001
+name: root process
+namespace: biological_process
+
+[Term]
+id: GO:0000002
+name: signalling
+namespace: biological_process
+is_a: GO:0000001 ! x
+
+[Term]
+id: GO:0000003
+name: receptor signalling
+namespace: biological_process
+is_a: GO:0000002 ! x
+
+[Term]
+id: GO:0000004
+name: metabolism
+namespace: biological_process
+is_a: GO:0000001 ! x
+
+[Term]
+id: GO:0000005
+name: lipid metabolism
+namespace: biological_process
+is_a: GO:0000004 ! x
+
+[Term]
+id: GO:0000006
+name: root function
+namespace: molecular_function
+
+[Term]
+id: GO:0000007
+name: binding
+namespace: molecular_function
+is_a: GO:0000006 ! x
+
+[Term]
+id: GO:0000008
+name: kinase activity
+namespace: molecular_function
+is_a: GO:0000006 ! x
+
+[Term]
+id: GO:0000009
+name: root component
+namespace: cellular_component
+
+[Term]
+id: GO:0000010
+name: membrane
+namespace: cellular_component
+is_a: GO:0000009 ! x
+
+[Term]
+id: GO:0000011
+name: old term
+namespace: biological_process
+is_obsolete: true
+
+[Typedef]
+id: part_of
+name: part of
+

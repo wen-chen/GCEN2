@@ -1,0 +1,35 @@
+cell_type	dir	n_cells	n_metacells	n_genes	power	modules	genes_in_modules	reassigned
+CD8-positive, alpha-beta T cell	CD8-positive_alpha-beta_T_cell	2423	1000	4243	5.0	4	1722	0
+CD4-positive, alpha-beta T cell	CD4-positive_alpha-beta_T_cell	1848	824	4703	6.0	8	2234	2
+alveolar macrophage	alveolar_macrophage	6751	1000	8808	7.0	12	2554	0
+plasma cell	plasma_cell	156	13	7183	12.0	27	4407	94
+capillary endothelial cell	capillary_endothelial_cell	1997	756	5474	7.0	6	3109	0
+vein endothelial cell	vein_endothelial_cell	1055	324	6291	4.0	7	2056	0
+multiciliated columnar cell of tracheobronchial tree	multiciliated_columnar_cell_of_tracheobronchial_tree	3013	1000	10172	7.0	10	3236	0
+respiratory basal cell	respiratory_basal_cell	6840	1000	10626	5.0	7	2467	12
+alveolar adventitial fibroblast	alveolar_adventitial_fibroblast	895	218	9781	5.0	11	5025	0
+classical monocyte	classical_monocyte	1540	550	5657	6.0	7	2762	0
+endothelial cell of lymphatic vessel	endothelial_cell_of_lymphatic_vessel	367	76	7064	10.0	19	2732	2
+club cell	club_cell	3077	1000	8603	10.0	5	3219	0
+elicited macrophage	elicited_macrophage	2488	1000	7859	7.0	10	3777	0
+pulmonary alveolar type 2 cell	pulmonary_alveolar_type_2_cell	5312	1000	8632	8.0	11	2553	0
+mast cell	mast_cell	577	141	4926	7.0	5	1874	6
+tracheobronchial serous cell	tracheobronchial_serous_cell	120	7	4364	22.0	21	3814	78
+alveolar type 1 fibroblast cell	alveolar_type_1_fibroblast_cell	447	77	7964	9.0	9	4118	5
+nasal mucosa goblet cell	nasal_mucosa_goblet_cell	2972	1000	9325	6.0	9	4183	2
+natural killer cell	natural_killer_cell	1438	688	5069	6.0	7	2518	7
+epithelial cell of lower respiratory tract	epithelial_cell_of_lower_respiratory_tract	384	69	8236	18.0	6	1978	5
+B cell	B_cell	380	87	5287	6.0	15	2727	30
+multiciliated epithelial cell	multiciliated_epithelial_cell	519	68	10561	9.0	21	4038	0
+bronchus fibroblast of lung	bronchus_fibroblast_of_lung	139	14	7046	20.0	55	5330	100
+bronchial goblet cell	bronchial_goblet_cell	152	12	9623	8.0	27	5852	64
+pulmonary alveolar type 1 cell	pulmonary_alveolar_type_1_cell	672	174	6434	8.0	10	2743	3
+non-classical monocyte	non-classical_monocyte	792	200	6964	5.0	9	2715	0
+lung macrophage	lung_macrophage	453	96	7464	8.0	19	3191	12
+CD1c-positive myeloid dendritic cell	CD1c-positive_myeloid_dendritic_cell	783	250	7225	9.0	20	3799	9
+pulmonary artery endothelial cell	pulmonary_artery_endothelial_cell	641	163	6686	6.0	18	2816	5
+respiratory tract hillock cell	respiratory_tract_hillock_cell	365	51	11764	14.0	37	6303	65
+tracheobronchial smooth muscle cell	tracheobronchial_smooth_muscle_cell	269	43	6857	12.0	31	4253	49
+lung pericyte	lung_pericyte	243	25	6520	12.0	12	3701	82
+serous secreting cell	serous_secreting_cell	141	12	5315	30.0	8	2844	16
+pulmonary alveolar epithelial cell	pulmonary_alveolar_epithelial_cell	124	11	9251	18.0	80	8239	206

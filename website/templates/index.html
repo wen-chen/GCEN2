@@ -1,0 +1,170 @@
+{% extends "base.html" %}
+{% from "partials/_blocks.html" import code, notice %}
+{% block title %}GCEN2 · Gene co-expression network analysis{% endblock %}
+{% block content %}
+<section class="gc-hero py-5">
+  <div class="container-xl py-lg-4">
+    <div class="row g-4 align-items-center">
+      <div class="col-lg-6">
+        <p class="gc-eyebrow mb-2">Version {{ site.version }} · successor of GCEN</p>
+        <h1 class="mb-3">GCEN2</h1>
+        <p class="gc-tagline mb-3">Gene co-expression network analysis from bulk to single-cell and spatial transcriptomes</p>
+        <p class="lead text-body-secondary mb-4">
+          One command-line tool and Python package for co-expression networks, WGCNA and
+          hdWGCNA modules, single-cell, spatial, trajectory and multi-omics analyses, with
+          publication figures. It gives the same results as the established tools, faster.
+        </p>
+        <div class="d-flex flex-wrap gap-2">
+          <a class="btn btn-brand btn-lg" href="install.html">Install</a>
+          <a class="btn btn-outline-brand btn-lg" href="docs/quickstart.html">Get started</a>
+          <a class="btn btn-outline-quiet btn-lg" href="{{ site.github }}">{{ icon("github") }} GitHub</a>
+        </div>
+      </div>
+      <div class="col-lg-6">
+        <div class="gc-install">
+          <ul class="nav nav-tabs" role="tablist">
+            {%- for key, label in [("pip", "pip"), ("conda", "conda"), ("source", "source")] %}
+            <li class="nav-item" role="presentation">
+              <button class="nav-link{{ ' active' if key == site.install_default }}" id="tab-{{ key }}" data-bs-toggle="tab" data-bs-target="#pane-{{ key }}" type="button" role="tab" aria-controls="pane-{{ key }}" aria-selected="{{ 'true' if key == site.install_default else 'false' }}">{{ label }}</button>
+            </li>
+            {%- endfor %}
+          </ul>
+          <div class="tab-content">
+            <div class="tab-pane{{ ' show active' if site.install_default == 'pip' }}" id="pane-pip" role="tabpanel" aria-labelledby="tab-pip" tabindex="0">
+              {{ code(['pip install "gcen2[all]"'], "the pip command", prompt=True) }}
+            </div>
+            <div class="tab-pane{{ ' show active' if site.install_default == 'conda' }}" id="pane-conda" role="tabpanel" aria-labelledby="tab-conda" tabindex="0">
+              {{ code(["conda install -c conda-forge -c bioconda gcen2"], "the conda command", prompt=True) }}
+            </div>
+            <div class="tab-pane{{ ' show active' if site.install_default == 'source' }}" id="pane-source" role="tabpanel" aria-labelledby="tab-source" tabindex="0">
+              {{ code(["git clone " ~ site.github, "cd GCEN2", 'pip install ".[all]"'], "the source installation", prompt=True) }}
+            </div>
+          </div>
+          <p class="small text-body-secondary mt-2 mb-3">Linux x86-64, Windows x86-64 and macOS on Apple Silicon; Python 3.9–3.14. <a href="install.html">All options</a></p>
+          {{ notice(site) }}
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="gc-section" aria-labelledby="workflow-h">
+  <div class="container-xl">
+    <div class="row mb-4">
+      <div class="col-lg-8">
+        <p class="gc-eyebrow mb-2">Workflow</p>
+        <h2 id="workflow-h">Four kinds of data, one toolkit</h2>
+        <p class="text-body-secondary mb-0">
+          Bulk, single-cell, spatial and trajectory data go from input to modules and their
+          comparison with {{ site.n_commands }} commands; gene function, figures and reports are
+          shared by all. The same analyses can be run from Python.
+        </p>
+      </div>
+    </div>
+    <figure class="mb-0">
+      <div class="gc-figure gc-figure-scroll">
+        <img src="static/img/workflow.png" width="2400" height="1350" fetchpriority="high" alt="GCEN2 workflow. Four lanes (bulk RNA-seq, single cells, spatial, trajectories and multi-omics) pass through input, preprocessing, network construction, module identification and comparison, each step labelled with its gcen2 command; gene function and outputs are shared, on a multithreaded C++ engine.">
+      </div>
+      <figcaption class="small text-body-secondary mt-2">The GCEN2 workflow. Rounded boxes are <code>gcen2</code> commands; snipped boxes are data; dashed boxes are methods inside a command.</figcaption>
+    </figure>
+  </div>
+</section>
+
+<section class="gc-section" aria-labelledby="features-h">
+  <div class="container-xl">
+    <p class="gc-eyebrow mb-2">What it does</p>
+    <h2 id="features-h" class="mb-4">From GCEN's networks to single cells and tissues</h2>
+    <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
+      {%- for c in capabilities %}
+      <div class="col">
+        <article class="gc-card p-4 d-flex flex-column">
+          <h3><span class="gc-dot" style="background: {{ kinds[c.kind][1] }}" aria-hidden="true"></span>{{ c.title }}</h3>
+          <p class="text-body-secondary mb-3">{{ c.text }}</p>
+          <p class="mb-3 d-flex flex-wrap gap-1">{% for cmd in c.commands %}<span class="gc-cmd">{{ cmd }}</span>{% endfor %}</p>
+          <a class="mt-auto fw-semibold" href="{{ c.tutorial }}">Tutorial {{ icon("arrow") }}<span class="visually-hidden">: {{ c.title }}</span></a>
+        </article>
+      </div>
+      {%- endfor %}
+    </div>
+  </div>
+</section>
+
+<section class="gc-section" aria-labelledby="bench-h">
+  <div class="container-xl">
+    <div class="row g-4 align-items-end mb-4">
+      <div class="col-lg-7">
+        <p class="gc-eyebrow mb-2">Benchmarks</p>
+        <h2 id="bench-h">Same results, faster</h2>
+        <p class="text-body-secondary mb-0">Compared on the same data with GCEN v1, WGCNA, hdWGCNA, DGCA and RandomWalkRestartMH, GCEN2 gives the same edges, modules and statistics.</p>
+      </div>
+      <div class="col-lg-5 text-lg-end"><a class="btn btn-outline-brand" href="benchmarks.html">All benchmarks {{ icon("arrow") }}</a></div>
+    </div>
+    <div class="row row-cols-1 row-cols-sm-2 row-cols-lg-4 g-4">
+      {%- for h in headlines %}
+      <div class="col">
+        <div class="gc-stat">
+          <div class="gc-stat-value">{{ h.value }}</div>
+          <div class="gc-stat-label">{{ h.label }}</div>
+        </div>
+      </div>
+      {%- endfor %}
+    </div>
+  </div>
+</section>
+
+<section class="gc-section" aria-labelledby="start-h">
+  <div class="container-xl">
+    <p class="gc-eyebrow mb-2">Quick start</p>
+    <h2 id="start-h" class="mb-3">The GCEN pipeline, in GCEN2</h2>
+    <p class="text-body-secondary">On the GCEN sample data in <code>data/example/bulk/</code>: normalize, filter, build the network, find modules, annotate them, rank genes from seeds, and write a report.</p>
+    <div class="row g-4">
+      <div class="col-lg-7">
+        <h3 class="h6 text-body-secondary">Command line</h3>
+        {{ code([
+          "EX=GCEN2/data/example/bulk",
+          "gcen2 normalize -i $EX/gene_expr.tsv -o norm.tsv -m tmm",
+          "gcen2 filter    -i norm.tsv -o filt.tsv -p 0.75",
+          "gcen2 build     -i filt.tsv -o net.network -m spearman -c 0.8 -p 0.001 -f -t 8",
+          "gcen2 module    -i net.network -o modules.txt -s 0.5 -t 8",
+          "gcen2 annotate  -g $EX/go-basic.obo.gz -a $EX/gene_go.assoc.gz -n net.network -o annotation/",
+          "gcen2 rwr       -n net.network -g $EX/rwr_seed_genes.list -o rwr.tsv",
+          "gcen2 report    -n net.network -m modules.txt -o report.html",
+        ], "the quick start commands") }}
+      </div>
+      <div class="col-lg-5">
+        <h3 class="h6 text-body-secondary">Python</h3>
+        {{ code([
+          "import gcen2",
+          "",
+          'expr = gcen2.read_tsv("filt.tsv")',
+          'net = gcen2.network.build(expr, method="spearman", cor=0.8,',
+          '                          pval=0.001, fdr=True, threads=8)',
+          "modules = gcen2.module.identify(net, similarity=0.5)",
+        ], "the Python example", lang="python") }}
+        <p class="small text-body-secondary mt-3 mb-0">Next: the <a href="docs/tutorials/bulk.html">bulk tutorial</a> adds WGCNA modules; the others cover <a href="docs/tutorials/single_cell.html">single cells</a> and <a href="docs/tutorials/spatial.html">spatial data</a>.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="gc-section" id="cite" aria-labelledby="cite-h">
+  <div class="container-xl">
+    <div class="row g-4">
+      <div class="col-lg-7">
+        <p class="gc-eyebrow mb-2">Cite</p>
+        <h2 id="cite-h" class="mb-3">Citing GCEN2</h2>
+        <p class="text-body-secondary">Please cite the GCEN2 software and the GCEN article:</p>
+        <div class="gc-cite mb-3"><p class="mb-0">{{ citation.software }}</p></div>
+        <div class="gc-cite"><p class="mb-0">{{ citation.v1 }} <a href="https://doi.org/10.3390/cimb44040100">doi:10.3390/cimb44040100</a></p></div>
+        <p class="small text-body-secondary mt-3 mb-0">GCEN2 reimplements methods of WGCNA and hdWGCNA; please also cite their papers when you use those methods.</p>
+      </div>
+      <div class="col-lg-5">
+        <p class="gc-eyebrow mb-2">Contact</p>
+        <h2 class="h4 mb-3">Questions and suggestions</h2>
+        <p class="text-body-secondary">Open an issue on <a href="{{ site.github }}/issues">GitHub</a> or write to <a href="mailto:{{ site.email }}">{{ site.email }}</a>.</p>
+        <p class="text-body-secondary mb-0">GCEN2 is free software under the GNU General Public License, version 3 or later. GCEN (v1) remains available at <a href="https://www.biochen.org/gcen">biochen.org/gcen</a>.</p>
+      </div>
+    </div>
+  </div>
+</section>
+{% endblock %}

@@ -1,0 +1,33 @@
+{%- from "partials/_chrome.html" import icon -%}
+
+{#- A code block with a copy button. `lines` are shell lines; "# ..." becomes a comment.
+    prompt: show "$ " before commands (not copied). -#}
+{% macro code(lines, label="Code", prompt=False, lang="bash") -%}
+<div class="gc-code">
+<pre><code class="language-{{ lang }}">
+{%- for ln in lines -%}
+{%- if ln.startswith("#") -%}<span class="gc-comment">{{ ln }}</span>
+{%- else -%}{% if prompt and not ln.startswith(" ") %}<span class="gc-prompt">$ </span>{% endif %}{{ ln }}{%- endif %}
+{% endfor -%}
+</code></pre>
+<button class="gc-copy" type="button" aria-label="Copy {{ label }}">{{ icon("copy") }}<span class="gc-copy-label d-none d-sm-inline ms-1">Copy</span></button>
+</div>
+{%- endmacro %}
+
+{% macro page_head(title, lead) -%}
+<header class="gc-page-head py-5">
+  <div class="container-xl">
+    <h1 class="display-6 mb-3">{{ title }}</h1>
+    {% if lead %}<p class="lead text-body-secondary mb-0">{{ lead }}</p>{% endif %}
+  </div>
+</header>
+{%- endmacro %}
+
+{% macro notice(site) -%}
+{% if not site.released %}
+<div class="gc-notice rounded-3 px-3 py-2 small" role="note">
+  <strong>Pre-release.</strong> GCEN2 {{ site.version }} is in development; the PyPI and Bioconda
+  packages will be available at the first release. Until then, install it from the source code.
+</div>
+{% endif %}
+{%- endmacro %}

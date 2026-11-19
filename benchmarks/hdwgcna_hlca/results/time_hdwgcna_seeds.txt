@@ -1,0 +1,4 @@
+hdwgcna_top10_seed1 50k 1 813.19 s 8806196 KB
+hdwgcna_top10_seed2 50k 1 813.00 s 7985724 KB
+hdwgcna_top10_seed1 all 1 2897.42 s 45600980 KB
+hdwgcna_top10_seed2 all 1 3008.01 s 47834484 KB

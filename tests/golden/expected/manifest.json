@@ -1,0 +1,230 @@
+{
+ "normalize_tmm": [
+  "norm_tmm.tsv"
+ ],
+ "normalize_deseq": [
+  "norm_deseq.tsv"
+ ],
+ "normalize_upqt_log2": [
+  "norm_upqt.tsv"
+ ],
+ "normalize_median": [
+  "norm_median.tsv"
+ ],
+ "filter": [
+  "filt.tsv"
+ ],
+ "build_pearson": [
+  "pear.network"
+ ],
+ "build_spearman_fdr": [
+  "spear.network"
+ ],
+ "build_gemm_signed": [
+  "gemm.network"
+ ],
+ "build_tom": [
+  "tom.network"
+ ],
+ "build_all_small": [
+  "all.network"
+ ],
+ "stats": [
+  "stats.txt"
+ ],
+ "module_jaccard": [
+  "jaccard.txt"
+ ],
+ "module_wgcna": [
+  "wgcna_dendrogram.json",
+  "wgcna_gs.tsv",
+  "wgcna_hubs.tsv",
+  "wgcna_kme.tsv",
+  "wgcna_me.tsv",
+  "wgcna_modules.tsv",
+  "wgcna_soft_power.tsv",
+  "wgcna_tom_hubs.tsv",
+  "wgcna_trait_cor.tsv"
+ ],
+ "module_hdwgcna": [
+  "hdwgcna_modules.tsv"
+ ],
+ "consensus_modules": [
+  "consensus/dendrogram.json",
+  "consensus/eigengenes.tsv",
+  "consensus/hub_genes.tsv",
+  "consensus/kme.tsv",
+  "consensus/modules.tsv",
+  "consensus/set_eigengenes.tsv",
+  "consensus/sets.tsv",
+  "consensus/soft_power.tsv"
+ ],
+ "merge": [
+  "merged.network"
+ ],
+ "extract": [
+  "sub.network"
+ ],
+ "shuffle": [
+  "shuf.network"
+ ],
+ "diff": [
+  "diff.tsv"
+ ],
+ "diff_spearman_fdr": [
+  "diff_spearman_fdr.tsv"
+ ],
+ "fuse": [
+  "fused.tsv"
+ ],
+ "rwr": [
+  "rwr.tsv"
+ ],
+ "rwr_multiplex": [
+  "rwr_multiplex.tsv"
+ ],
+ "rwr_multiplex_layer": [
+  "rwr_multiplex_layer.tsv"
+ ],
+ "annotate_modules": [
+  "annot_m/module_0.go",
+  "annot_m/module_0.txt",
+  "annot_m/module_1.go",
+  "annot_m/module_1.txt",
+  "annot_m/module_2.go",
+  "annot_m/module_2.txt",
+  "annot_m/module_3.go",
+  "annot_m/module_3.txt"
+ ],
+ "annotate_network": [
+  "annot_n/ENSG00000034510.go",
+  "annot_n/ENSG00000075624.go",
+  "annot_n/ENSG00000100316.go",
+  "annot_n/ENSG00000122406.go",
+  "annot_n/ENSG00000136942.go",
+  "annot_n/ENSG00000142937.go",
+  "annot_n/ENSG00000166710.go",
+  "annot_n/ENSG00000184009.go",
+  "annot_n/ENSG00000198755.go",
+  "annot_n/ENSG00000198804.go",
+  "annot_n/ENSG00000198888.go",
+  "annot_n/ENSG00000231500.go",
+  "annot_n/ENSG00000234745.go",
+  "annot_n/ENSG00000254772.go",
+  "annot_n/ENSG00000265681.go"
+ ],
+ "enrich": [
+  "enrich.tsv"
+ ],
+ "build_h5ad": [
+  "sc_A.network"
+ ],
+ "celltype": [
+  "celltype/A.network",
+  "celltype/B.network",
+  "celltype/celltypes.tsv",
+  "celltype/diff/A__vs__B.tsv",
+  "celltype/diff/summary.tsv"
+ ],
+ "celltype_modules": [
+  "ctm/A/cell_eigengenes.tsv",
+  "ctm/A/cell_harmonized_eigengenes.tsv",
+  "ctm/A/cell_kme.tsv",
+  "ctm/A/dendrogram.json",
+  "ctm/A/dmes.tsv",
+  "ctm/A/eigengenes.tsv",
+  "ctm/A/hub_genes.tsv",
+  "ctm/A/kme.tsv",
+  "ctm/A/metacell_members.tsv",
+  "ctm/A/metacells.tsv",
+  "ctm/A/modules.tsv",
+  "ctm/A/soft_power.tsv",
+  "ctm/A/tom_hubs.tsv",
+  "ctm/A/trait_cor.tsv",
+  "ctm/B/cell_eigengenes.tsv",
+  "ctm/B/cell_harmonized_eigengenes.tsv",
+  "ctm/B/cell_kme.tsv",
+  "ctm/B/dendrogram.json",
+  "ctm/B/dmes.tsv",
+  "ctm/B/eigengenes.tsv",
+  "ctm/B/hub_genes.tsv",
+  "ctm/B/kme.tsv",
+  "ctm/B/metacell_members.tsv",
+  "ctm/B/metacells.tsv",
+  "ctm/B/modules.tsv",
+  "ctm/B/soft_power.tsv",
+  "ctm/B/tom_hubs.tsv",
+  "ctm/B/trait_cor.tsv",
+  "ctm/celltypes.tsv"
+ ],
+ "celltype_modules_consensus": [
+  "ctm_cons/A/cell_eigengenes.tsv",
+  "ctm_cons/A/cell_kme.tsv",
+  "ctm_cons/A/dendrogram.json",
+  "ctm_cons/A/eigengenes.tsv",
+  "ctm_cons/A/hub_genes.tsv",
+  "ctm_cons/A/kme.tsv",
+  "ctm_cons/A/metacell_members.tsv",
+  "ctm_cons/A/modules.tsv",
+  "ctm_cons/A/set_eigengenes.tsv",
+  "ctm_cons/A/sets.tsv",
+  "ctm_cons/A/soft_power.tsv",
+  "ctm_cons/B/cell_eigengenes.tsv",
+  "ctm_cons/B/cell_kme.tsv",
+  "ctm_cons/B/dendrogram.json",
+  "ctm_cons/B/eigengenes.tsv",
+  "ctm_cons/B/hub_genes.tsv",
+  "ctm_cons/B/kme.tsv",
+  "ctm_cons/B/metacell_members.tsv",
+  "ctm_cons/B/modules.tsv",
+  "ctm_cons/B/set_eigengenes.tsv",
+  "ctm_cons/B/sets.tsv",
+  "ctm_cons/B/soft_power.tsv",
+  "ctm_cons/celltypes.tsv"
+ ],
+ "project_modules": [
+  "projected/projected_eigengenes.tsv",
+  "projected/projected_modules.tsv"
+ ],
+ "module_preservation": [
+  "preservation/preservation.tsv",
+  "preservation/preservation_Z.tsv"
+ ],
+ "trajectory": [
+  "trajectory/degree_dynamics.tsv",
+  "trajectory/edge_dynamics.tsv",
+  "trajectory/window_0.network",
+  "trajectory/window_1.network",
+  "trajectory/window_2.network",
+  "trajectory/window_3.network",
+  "trajectory/window_4.network",
+  "trajectory/window_5.network",
+  "trajectory/windows.tsv"
+ ],
+ "spatial_filtered": [
+  "sp_filtered.network",
+  "sp_moran.tsv"
+ ],
+ "spatial_weighted": [
+  "sp_moran_w.tsv",
+  "sp_weighted.network"
+ ],
+ "spatial_regions": [
+  "sp_regions/bottom.network",
+  "sp_regions/middle.network",
+  "sp_regions/top.network"
+ ],
+ "spatial_modules": [
+  "spm/dendrogram.json",
+  "spm/eigengenes.tsv",
+  "spm/group_cor.tsv",
+  "spm/hub_genes.tsv",
+  "spm/kme.tsv",
+  "spm/metaspots.tsv",
+  "spm/modules.tsv",
+  "spm/soft_power.tsv",
+  "spm/spot_eigengenes.tsv",
+  "spm/spot_kme.tsv",
+  "spm/summary.tsv"
+ ]
+}

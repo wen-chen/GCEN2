@@ -1,0 +1,63 @@
+{% set name = "gcen2" %}
+{% set version = "2.0.0" %}
+
+package:
+  name: {{ name|lower }}
+  version: {{ version }}
+
+source:
+  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
+  # sha256: <fill in after first PyPI upload>
+
+build:
+  number: 0
+  script: {{ PYTHON }} -m pip install . --no-deps -vv
+
+requirements:
+  build:
+    - {{ compiler('cxx') }}
+    - cmake >=3.18
+    - make  # [not win]
+  host:
+    - python
+    - pip
+    - scikit-build-core >=0.5
+    - pybind11 >=2.10
+  run:
+    - python >=3.9
+    - numpy >=1.24
+    - pandas >=2.0
+    - scipy >=1.10
+    - threadpoolctl >=3.0
+    - typer >=0.9
+
+test:
+  imports:
+    - gcen2
+    - gcen2.preprocessing
+    - gcen2.network
+    - gcen2.module
+    - gcen2.annotation
+    - gcen2.rwr
+  commands:
+    - gcen2 --help
+
+about:
+  home: https://www.biochen.org/gcen2/
+  license: GPL-3.0-or-later
+  license_family: GPL
+  license_file: LICENSE
+  summary: >-
+    A Python toolkit for gene co-expression network analysis with
+    single-cell resolution and interactive visualization
+  description: |
+    GCEN2 is a major upgrade of GCEN (Gene Co-Expression Network), redesigned
+    with Python as the primary interface while retaining C++ for performance-critical
+    computation. It adds single-cell support, interactive visualization, and
+    automated research report generation.
+  doc_url: https://gcen2.readthedocs.io
+  dev_url: https://github.com/wen-chen/GCEN2
+
+extra:
+  recipe-maintainers:
+    - wen-chen

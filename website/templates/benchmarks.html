@@ -1,0 +1,53 @@
+{% extends "base.html" %}
+{% from "partials/_blocks.html" import page_head %}
+{% block content %}
+{{ page_head("Benchmarks", "GCEN2 against the tools it reimplements, on the same data: whether the results agree, and how long each takes.") }}
+<div class="container-xl py-5">
+  <div class="row g-4 mb-5">
+    {%- for h in headlines %}
+    <div class="col-6 col-lg-3">
+      <div class="gc-stat">
+        <div class="gc-stat-value">{{ h.value }}</div>
+        <div class="gc-stat-label small">{{ h.label }}</div>
+      </div>
+    </div>
+    {%- endfor %}
+  </div>
+
+  <h2 class="h4 mb-3">Results</h2>
+  <div class="table-responsive mb-2">
+    <table class="table gc-table align-middle">
+      <caption class="small">Speed: how many times faster GCEN2 is (wall time), and less memory where stated.</caption>
+      <thead>
+        <tr>{% for h in bench.header %}<th scope="col">{{ h }}</th>{% endfor %}</tr>
+      </thead>
+      <tbody>
+        {%- for row in bench.rows %}
+        <tr>
+          <th scope="row" class="fw-semibold">{{ row[0] }}</th>
+          <td>{{ row[1] }}</td>
+          <td>{{ row[2] }}</td>
+          <td class="gc-speed">{{ row[3] }}</td>
+        </tr>
+        {%- endfor %}
+      </tbody>
+    </table>
+  </div>
+
+  <div class="row g-4 mt-2">
+    <div class="col-lg-6">
+      <h2 class="h4 mb-3">How they were run</h2>
+      <ul class="text-body-secondary">
+        <li>One machine with 16 cores; every time measured while the machine was otherwise idle.</li>
+        <li>The same input files and parameters for both tools; the versions of the reference tools as listed.</li>
+        <li>"Same" means identical edges, module assignments (adjusted Rand index 1) or statistics within the precision of the files; where a step is random (metacells), the tools are compared on the same metacells and seed to seed.</li>
+      </ul>
+    </div>
+    <div class="col-lg-6">
+      <h2 class="h4 mb-3">Reproduce them</h2>
+      <p class="text-body-secondary">Each comparison has its own directory with the scripts, the environment of the reference tools and the result tables in <a href="{{ site.github }}/tree/master/benchmarks"><code>benchmarks/</code></a> on GitHub, and a README that describes the data and the results in detail.</p>
+      <a class="btn btn-outline-brand" href="{{ site.github }}/tree/master/benchmarks">Benchmarks on GitHub {{ icon("arrow") }}</a>
+    </div>
+  </div>
+</div>
+{% endblock %}

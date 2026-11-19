@@ -1,0 +1,36 @@
+name: Bug report
+description: A command or function fails or gives a wrong result
+labels: [bug]
+body:
+  - type: textarea
+    id: what
+    attributes:
+      label: What happened
+      description: What you ran, what you expected and what you got (the full error message, if any).
+    validations:
+      required: true
+  - type: textarea
+    id: reproduce
+    attributes:
+      label: How to reproduce
+      description: >
+        The command or Python code. If possible, use the example data in
+        `data/example/` or a small input you can attach.
+      render: shell
+    validations:
+      required: true
+  - type: textarea
+    id: environment
+    attributes:
+      label: Environment
+      description: The output of the command below.
+      value: |
+        python -c "import gcen2, sys, platform, numpy, pandas; print(gcen2.__version__, sys.version, platform.platform(), numpy.__version__, pandas.__version__)"
+      render: text
+    validations:
+      required: true
+  - type: textarea
+    id: other
+    attributes:
+      label: Anything else
+      description: E.g. how you installed GCEN2 (pip, conda, from source), the size of the data.

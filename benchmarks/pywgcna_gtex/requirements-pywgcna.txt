@@ -1,0 +1,13 @@
+# PyWGCNA environment of 01_pywgcna.py and 04_treecut.py: Python 3.12.16 and
+# the library versions of PyWGCNA 2.2.1's release (February 2025). PyWGCNA
+# 2.2.1 fails with the current versions of the other benchmarks: with
+# pandas 3 (read-only arrays from DataFrame.to_numpy() in TOMsimilarity) and
+# with scipy 1.18 (rankdata returns floats, used as indices in cutreeHybrid).
+PyWGCNA==2.2.1
+numpy==2.2.2
+pandas==2.2.3
+scipy==1.15.1
+scikit-learn==1.6.1
+matplotlib==3.10.0
+anndata==0.11.3
+statsmodels==0.14.4

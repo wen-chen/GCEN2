@@ -1,0 +1,211 @@
+name: CI
+
+on:
+  push:
+    branches: [main, master, develop]
+  pull_request:
+    branches: [main, master, develop]
+
+jobs:
+  test:
+    name: Python ${{ matrix.python-version }} on ${{ matrix.os }}
+    runs-on: ${{ matrix.os }}
+    # a hung test must not use up the minutes (Windows counts double)
+    timeout-minutes: 45
+
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [ubuntu-22.04, macos-15, windows-2022]
+        python-version: ["3.12"]
+        include:
+          # Run full Python matrix only on Linux
+          - os: ubuntu-22.04
+            python-version: "3.9"
+          - os: ubuntu-22.04
+            python-version: "3.10"
+          - os: ubuntu-22.04
+            python-version: "3.11"
+          - os: ubuntu-22.04
+            python-version: "3.13"
+          - os: ubuntu-22.04
+            python-version: "3.14"
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Set up Python ${{ matrix.python-version }}
+        uses: actions/setup-python@v5
+        with:
+          python-version: ${{ matrix.python-version }}
+          cache: pip
+
+      - name: Install build dependencies
+        run: pip install scikit-build-core pybind11 cmake ninja
+
+      - name: Install gcen2 with all extras
+        run: pip install -e ".[dev]"
+
+      # the CPU and the SIMD paths numpy uses: numerical results (and the
+      # golden outputs) can depend on them
+      - name: Machine
+        shell: bash
+        run: |
+          python -c "import platform; print(platform.platform(), platform.machine())"
+          python -c "import numpy; numpy.show_runtime()"
+
+      # unit, integration (data/example) and golden-output tests
+      # faulthandler prints every thread's stack of a test running > 5 min
+      - name: Run tests
+        run: pytest tests/ -q --tb=short -m "not benchmark" -rf -o faulthandler_timeout=300
+
+      - name: TOM and correlation tests with the baseline product kernel (same results as AVX)
+        run: pytest tests/test_tom.py tests/test_tom_modules.py tests/test_gemm_kernel.py -q
+        env:
+          GCEN2_SIMD: baseline
+
+      - name: Run tests with coverage (Linux only)
+        if: matrix.os == 'ubuntu-22.04' && matrix.python-version == '3.12'
+        run: pytest tests/ -q --cov=gcen2 --cov-report=xml -m "not benchmark"
+
+      - name: Upload coverage
+        if: matrix.os == 'ubuntu-22.04' && matrix.python-version == '3.12'
+        uses: codecov/codecov-action@v4
+        with:
+          files: coverage.xml
+
+  minimum-versions:
+    # the oldest versions pyproject.toml allows
+    name: Oldest supported dependencies (Python 3.9)
+    runs-on: ubuntu-22.04
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.9"
+          cache: pip
+
+      - name: Install build dependencies
+        run: pip install scikit-build-core pybind11 cmake ninja
+
+      - name: Install gcen2 with the oldest dependencies
+        run: |
+          pip install "numpy==1.24.*" "pandas==2.0.*" "scipy==1.10.*" "anndata==0.10.*" \
+            "matplotlib==3.7.*" "seaborn==0.12.*" "networkx==3.1" "typer==0.9.*" \
+            "scanpy==1.9.*" "Jinja2==3.1.*" pyvis threadpoolctl pytest
+          pip install --no-build-isolation --no-deps -e .
+
+      # faulthandler prints every thread's stack of a test running > 5 min
+      - name: Run tests
+        run: pytest tests/ -q --tb=short -m "not benchmark" -rf -o faulthandler_timeout=300
+
+  benchmark:
+    name: Benchmark (Linux only)
+    runs-on: ubuntu-22.04
+    if: github.event_name == 'push' && github.ref == 'refs/heads/main'
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+
+      - run: pip install -e ".[dev]"
+
+      - name: Run benchmarks
+        run: pytest tests/ -v -m benchmark --benchmark-json=benchmark_results.json
+
+      - name: Store benchmark results
+        uses: actions/upload-artifact@v4
+        with:
+          name: benchmark-results
+          path: benchmark_results.json
+
+  docs:
+    name: Documentation (Sphinx, warnings are errors)
+    runs-on: ubuntu-22.04
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+
+      - run: pip install scikit-build-core pybind11 cmake ninja
+      - run: pip install --no-build-isolation -e ".[dev]"
+
+      - name: Build
+        run: sphinx-build -W --keep-going -b html docs docs/_build/html
+
+  lint:
+    name: Lint and type check
+    runs-on: ubuntu-22.04
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+
+      - run: pip install "ruff==0.17.4"
+
+      - name: Lint
+        run: ruff check gcen2/ tests/ tools/ benchmarks/
+
+  build-wheels:
+    name: Build wheels (${{ matrix.os }})
+    runs-on: ${{ matrix.os }}
+    if: github.event_name == 'push' && startsWith(github.ref, 'refs/tags/v')
+
+    strategy:
+      matrix:
+        os: [ubuntu-22.04, macos-15, windows-2022]
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Build wheels
+        uses: pypa/cibuildwheel@v3.4.1
+        env:
+          CIBW_BUILD: "cp39-* cp310-* cp311-* cp312-* cp313-* cp314-*"
+          CIBW_SKIP: "*-musllinux_* *-win32 *-manylinux_i686"
+          # supported platforms: Linux x86-64, Windows AMD64, macOS Apple Silicon
+          # (macos-15 runners are arm64)
+          CIBW_ARCHS_LINUX: "x86_64"
+          CIBW_ARCHS_WINDOWS: "AMD64"
+          CIBW_ARCHS_MACOS: "arm64"
+          CIBW_TEST_COMMAND: pytest {project}/tests -q -m "not benchmark"
+          CIBW_TEST_EXTRAS: "single-cell,visualization"
+          CIBW_TEST_REQUIRES: pytest
+
+      - uses: actions/upload-artifact@v4
+        with:
+          name: wheels-${{ matrix.os }}
+          path: wheelhouse/
+
+  publish:
+    name: Publish to PyPI
+    runs-on: ubuntu-22.04
+    needs: [test, lint, build-wheels]
+    if: github.event_name == 'push' && startsWith(github.ref, 'refs/tags/v')
+    environment: pypi
+
+    steps:
+      - uses: actions/download-artifact@v4
+        with:
+          pattern: wheels-*
+          path: wheelhouse/
+          merge-multiple: true
+
+      - name: Publish to PyPI
+        uses: pypa/gh-action-pypi-publish@release/v1
+        with:
+          packages-dir: wheelhouse/

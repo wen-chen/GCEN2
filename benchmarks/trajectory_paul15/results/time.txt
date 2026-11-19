@@ -1,0 +1,4 @@
+gcen2 1.20 s 336872 KB
+r_reference 6.15 s 1145092 KB
+gcen2 1.15 s 337132 KB
+r_reference 6.09 s 1146032 KB

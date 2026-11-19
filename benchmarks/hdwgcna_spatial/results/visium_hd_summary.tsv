@@ -1,0 +1,2 @@
+n_spots	n_metaspots	n_genes	power	modules	genes_in_modules	reassigned	groups	metaspots
+98917	1978	4316	6.0	6	1491	1	R00,R01,R02,R03,R04,R05,R06,R07,R08,R09,R10,R11	knn

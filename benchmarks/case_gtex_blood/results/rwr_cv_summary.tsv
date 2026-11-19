@@ -1,0 +1,6 @@
+method	terms	median_AUROC	mean_AUROC	terms_AUROC_ge_0.7	terms_better_than_shuffled	terms_better_than_degree	median_gain_over_shuffled	wilcoxon_p_vs_rwr
+rwr	2144	0.607	0.617	322	2016	2043	0.087	
+rwr_weighted	2144	0.608	0.617	323	2019	2045	0.088	6.8e-06
+neighbours	2144	0.578	0.592	229	1789	1797	0.067	5.9e-137
+rwr_shuffled	2144	0.515	0.521	31	0	925	0.0	0.0
+degree	2144	0.518	0.523	38	1215	0	0.003	0.0

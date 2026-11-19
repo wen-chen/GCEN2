@@ -1,0 +1,24 @@
+{%- from "partials/_chrome.html" import head_assets, navbar, footer, icon -%}
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{% block title %}{{ title }} · GCEN2{% endblock %}</title>
+  <meta name="description" content="{{ description }}">
+  <link rel="canonical" href="{{ site.url }}{{ canonical }}">
+  <meta property="og:title" content="{{ self.title() }}">
+  <meta property="og:description" content="{{ description }}">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="{{ site.url }}{{ canonical }}">
+  <meta property="og:image" content="{{ site.url }}static/img/workflow.png">
+  {{ head_assets(root) }}
+</head>
+<body>
+{{ navbar(root, active, site.github) }}
+<main id="content" tabindex="-1">
+{% block content %}{% endblock %}
+</main>
+{{ footer(root, site.github, site.year) }}
+</body>
+</html>

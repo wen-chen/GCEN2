@@ -1,0 +1,5 @@
+set	samples	power	calibration_quantile	calibration_power
+Banovich_Kropski_2020	1000	8	0.007291620529	1
+Krasnow_2020	1000	5	0.04263356803	1.559699735
+Lafyatis_Rojas_2019_10Xv2	361	6	0.02392326456	1.318284537
+Meyer_2019	1000	4	0.08164588785	1.964197541

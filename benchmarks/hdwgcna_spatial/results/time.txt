@@ -1,0 +1,8 @@
+hdwgcna dlpfc 1 115.97 s 6057856 KB
+hdwgcna dlpfc 2 110.97 s 6217216 KB
+hdwgcna mouse_anterior 1 140.19 s 11128900 KB
+hdwgcna mouse_anterior 2 140.79 s 11128528 KB
+gcen2 dlpfc 1 7.98 s 1344572 KB
+gcen2 dlpfc 2 10.00 s 1344436 KB
+gcen2 mouse_anterior 1 19.90 s 2035956 KB
+gcen2 mouse_anterior 2 17.88 s 2036032 KB

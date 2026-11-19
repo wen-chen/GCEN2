@@ -1,0 +1,41 @@
+metric	value
+genes_hdwgcna	5080
+genes_gcen2	5080
+same_genes	True
+network_step_gcen2_s	5.78
+powers_hdwgcna	8,5,6,4
+powers_gcen2	8,5,6,4
+network_step_ARI	1.0
+network_modules	3 / 3
+network_step_hdwgcna_s	58.03
+cell_level_gcen2_s	12.37
+ME_max_abs_diff	1.0302869668521453e-13
+hME_r_gcen2_vs_hdwgcna_min	0.997
+hME_r_gcen2_vs_hdwgcna	0.9970,0.9981,0.9976
+hME_r_gcen2_seed1_vs_hdwgcna_min	0.9971
+hME_r_gcen2_seed2_vs_hdwgcna_min	0.997
+hME_r_gcen2_seeds_min	0.9970,0.9970
+hME_r_ME_min	0.9651
+kME_max_abs_diff	0.006
+kME_r	0.99994
+DME_rows	12 / 12
+DME_same_order	True
+DME_p_val_max_rel_diff	7.572741667192849e-14
+DME_avg_log2FC_max_rel_diff	2.8054140658773145e-14
+DME_p_val_adj_max_rel_diff	7.568193473999339e-14
+DME_pct_same	True
+trait_rows	45 / 45
+trait_cor_max_abs_diff	1.0547118733938987e-14
+trait_p_max_rel_diff	1.1530431930862485e-07
+trait_p_r_zero	12
+trait_fdr_max_rel_diff	5.2348064040464055e-08
+stats_hdwgcna_s	0.47
+ARI_gcen2_vs_hdwgcna	0.851,0.855,0.832,0.764,0.762,0.791,0.837,0.845,0.802
+ARI_gcen2_seeds	0.785,0.844,0.817
+ARI_hdwgcna_seeds	0.863,0.831,0.845
+gcen2_s	23.7
+gcen2_GB	2.51
+hdwgcna_s	161.0
+hdwgcna_GB	8.13
+speedup	6.8
+memory_ratio	3.2

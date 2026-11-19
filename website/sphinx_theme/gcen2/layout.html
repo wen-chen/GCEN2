@@ -1,0 +1,53 @@
+{#- GCEN2 website frame around the Sphinx documentation (theme "gcen2", inherits "basic").
+    Site root: one level above the documentation root, which _static/ marks. -#}
+{%- extends "basic/layout.html" %}
+{%- from "_chrome.html" import head_assets, navbar, footer, icon %}
+{%- set docroot = pathto('_static/', 1)|replace('_static/', '') %}
+{%- set siteroot = docroot ~ '../' %}
+{%- set active = 'tutorials' if pagename.startswith('tutorials/') else 'docs' %}
+
+{%- block htmltitle %}
+<title>{{ title|striptags|e }}{% if pagename != master_doc %} · GCEN2 documentation{% else %} · GCEN2{% endif %}</title>
+<meta name="description" content="GCEN2 documentation: {{ title|striptags|e }}">
+{%- endblock %}
+
+{%- block extrahead %}
+{{ head_assets(siteroot) }}
+<link rel="stylesheet" href="{{ pathto('_static/gcen2-docs.css', 1) }}">
+<link rel="stylesheet" href="{{ pathto('_static/pygments-dark.css', 1) }}">
+{%- endblock %}
+
+{%- block header %}{{ navbar(siteroot, active, github) }}{% endblock %}
+{%- block relbar1 %}{% endblock %}
+{%- block relbar2 %}{% endblock %}
+
+{%- block content %}
+<div class="container-xl py-4 py-lg-5" id="content" tabindex="-1">
+  <div class="row g-4">
+    <aside class="col-lg-3 gc-docs-sidebar">
+      <div class="gc-docs-sidebar-inner">
+        <form class="mb-3" action="{{ pathto('search') }}" method="get" role="search">
+          <label class="visually-hidden" for="gcDocSearch">Search the documentation</label>
+          <input class="form-control form-control-sm" type="search" name="q" id="gcDocSearch" placeholder="Search the documentation" autocomplete="off">
+        </form>
+        <button class="btn btn-sm btn-outline-quiet w-100 d-lg-none mb-2" type="button" data-bs-toggle="collapse" data-bs-target="#gcDocToc" aria-expanded="false" aria-controls="gcDocToc">Contents</button>
+        <nav class="collapse d-lg-block gc-docs-toc" id="gcDocToc" aria-label="Documentation">
+          <a class="gc-docs-home{{ ' current' if pagename == master_doc }}" href="{{ pathto(master_doc) }}">GCEN2 documentation</a>
+          {{ toctree(collapse=False, maxdepth=2, titles_only=True, includehidden=True) }}
+        </nav>
+      </div>
+    </aside>
+    <article class="col-lg-9 gc-docs-body" role="main">
+      {% block body %}{% endblock %}
+      {%- if prev or next %}
+      <nav class="d-flex flex-wrap justify-content-between gap-3 border-top pt-4 mt-5" aria-label="Previous and next page">
+        {%- if prev %}<a class="gc-pager" href="{{ prev.link|e }}"><span class="small text-body-secondary d-block">Previous</span>{{ prev.title }}</a>{% else %}<span></span>{% endif %}
+        {%- if next %}<a class="gc-pager text-end ms-auto" href="{{ next.link|e }}"><span class="small text-body-secondary d-block">Next</span>{{ next.title }}</a>{% endif %}
+      </nav>
+      {%- endif %}
+    </article>
+  </div>
+</div>
+{%- endblock %}
+
+{%- block footer %}{{ footer(siteroot, github, site_year) }}{% endblock %}

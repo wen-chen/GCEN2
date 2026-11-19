@@ -1,0 +1,8 @@
+gcen2_rwrm 0.50 s 183816 KB
+rwrmh 28.38 s 389560 KB
+gcen2_fuse 0.43 s 198056 KB
+r_fuse 0.57 s 156380 KB
+gcen2_rwrm 0.48 s 183840 KB
+rwrmh 28.27 s 395096 KB
+gcen2_fuse 0.41 s 197356 KB
+r_fuse 0.57 s 155084 KB

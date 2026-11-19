@@ -1,0 +1,78 @@
+cff-version: 1.2.0
+message: >-
+  If you use GCEN2, please cite it as below. GCEN2 reimplements methods of
+  GCEN, WGCNA and hdWGCNA; please also cite the papers of the methods you use.
+title: "GCEN2: a toolkit for gene co-expression network analysis with single-cell resolution"
+type: software
+authors:
+  - given-names: Wen Harold
+    family-names: Chen
+    affiliation: Hunan University of Chinese Medicine
+version: 2.0.0.dev0
+license: GPL-3.0-or-later
+url: "https://www.biochen.org/gcen2/"
+repository-code: "https://github.com/wen-chen/GCEN2"
+keywords:
+  - gene co-expression network
+  - WGCNA
+  - single-cell RNA-seq
+  - spatial transcriptomics
+  - bioinformatics
+references:
+  - type: article
+    title: "GCEN: An Easy-to-Use Toolkit for Gene Co-Expression Network Analysis and lncRNAs Annotation"
+    authors:
+      - family-names: Chen
+        given-names: Wen
+      - family-names: Li
+        given-names: Jing
+      - family-names: Huang
+        given-names: Shulan
+      - family-names: Li
+        given-names: Xiaodeng
+      - family-names: Zhang
+        given-names: Xuan
+      - family-names: Hu
+        given-names: Xiang
+      - family-names: Xiang
+        given-names: Shuanglin
+      - family-names: Liu
+        given-names: Changning
+    journal: Current Issues in Molecular Biology
+    year: 2022
+    volume: 44
+    issue: 4
+    start: 1479
+    end: 1487
+    doi: 10.3390/cimb44040100
+  - type: article
+    title: "WGCNA: an R package for weighted correlation network analysis"
+    authors:
+      - family-names: Langfelder
+        given-names: Peter
+      - family-names: Horvath
+        given-names: Steve
+    journal: BMC Bioinformatics
+    year: 2008
+    volume: 9
+    start: 559
+    doi: 10.1186/1471-2105-9-559
+  - type: article
+    title: "hdWGCNA identifies co-expression networks in high-dimensional transcriptomics data"
+    authors:
+      - family-names: Morabito
+        given-names: Samuel
+      - family-names: Reese
+        given-names: Fairlie
+      - family-names: Rahimzadeh
+        given-names: Negin
+      - family-names: Miyoshi
+        given-names: Emily
+      - family-names: Swarup
+        given-names: Vivek
+    journal: Cell Reports Methods
+    year: 2023
+    volume: 3
+    issue: 6
+    start: 100498
+    doi: 10.1016/j.crmeth.2023.100498

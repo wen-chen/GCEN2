@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+{% from "partials/_blocks.html" import page_head %}
+{% block content %}
+{{ page_head("Frequently asked questions", "") }}
+<div class="container-xl py-5">
+  <div class="row">
+    <div class="col-lg-9">
+      <div class="accordion gc-faq" id="faq">
+        {%- for q in faq %}
+        <div class="accordion-item">
+          <h2 class="accordion-header" id="q{{ loop.index }}">
+            <button class="accordion-button{{ ' collapsed' if not loop.first }}" type="button" data-bs-toggle="collapse" data-bs-target="#a{{ loop.index }}" aria-expanded="{{ 'true' if loop.first else 'false' }}" aria-controls="a{{ loop.index }}">{{ q.question }}</button>
+          </h2>
+          <div id="a{{ loop.index }}" class="accordion-collapse collapse{{ ' show' if loop.first }}" aria-labelledby="q{{ loop.index }}">
+            <div class="accordion-body">{{ q.answer|safe }}</div>
+          </div>
+        </div>
+        {%- endfor %}
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}
