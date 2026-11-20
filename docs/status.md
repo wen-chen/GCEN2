@@ -46,7 +46,6 @@
 
 ## 6. 尚未完成或尚未验证
 
-1. **发布**：2.0.0 已于 2026-11-20 发布到 PyPI（sdist 和 18 个 wheel，由 `release.yml` 推送 `v2.0.0` 标签发布；本地 `pip install "gcen2[all]==2.0.0"` 全部测试通过）。Bioconda 配方已提交（bioconda-recipes PR #71954，CI 全部通过，等待维护者合并），网站和 README 已按可用处理。文档发布在网站 <https://www.biochen.org/gcen2/docs/>，不使用 Read the Docs。
+1. **发布**：2.0.0 已于 2026-11-20 发布到 PyPI（sdist 和 18 个 wheel，由 `release.yml` 推送 `v2.0.0` 标签发布；本地 `pip install "gcen2[all]==2.0.0"` 全部测试通过）。Bioconda 配方已提交（bioconda-recipes PR #71954，CI 全部通过，等待维护者合并），网站（已部署，2026-11-20）、README 和 GitHub Release（v2.0.0）已按可用处理。文档发布在网站 <https://www.biochen.org/gcen2/docs/>，不使用 Read the Docs。
 2. **Bioconda 合并后**：验证 `conda install -c conda-forge -c bioconda gcen2`（Linux、macOS arm64）。
 3. **编译器**：文档只写已测试的版本（GCC 11、14、15，Clang 19，Apple Clang 17，MSVC 19.44 / Visual Studio 2022），不声明最低版本。
-4. **PDF / SVG 的可编辑性**未在 Illustrator / Inkscape 中人工检查（PNG 已逐张检查）。

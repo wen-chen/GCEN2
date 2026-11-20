@@ -39,7 +39,7 @@
 | 两种实现一致 | C++ 内核与 pandas / numpy 参考实现的输出逐字节相同（pandas 2 下到 1e-12）；多线程结果与单线程逐字节相同（例如 `diff` 用 1、3、4 线程和不同读块大小） | `test_network.py`、`test_build_file.py`、`test_gemm_kernel.py`、`test_multilayer.py` |
 | 单元测试 | 预处理、相关、网络、模块、富集、RWR、差异、轨迹、多组学、单细胞、空间、consensus、保守性、DME、Harmony 等各函数的结果、边界情况和错误处理 | 其余 `test_*.py` |
 | 命令行 | 每个命令的参数、输出文件、错误信息（缺失输入一律为 `ERROR:` 而非 traceback，警告为 `WARNING:`）；输出目录不存在时自动创建；Python 3.9 可用的类型注解；`python -m gcen2.cli` | `test_cli.py`、`test_golden.py`、`test_api_gaps.py` |
-| 绘图与报告 | 全部 43 个 `gcen2 plot` 命令都生成 PDF / PNG / SVG；报告（HTML）包含全部章节和图 | `test_plot_commands.py`、`test_plot_*.py`、`test_report.py` |
+| 绘图与报告 | 全部 43 个 `gcen2 plot` 命令都生成 PDF / PNG / SVG（PNG 逐张检查；PDF、SVG 在矢量编辑软件中人工确认可编辑，2026-11-20）；报告（HTML）包含全部章节和图 | `test_plot_commands.py`、`test_plot_*.py`、`test_report.py` |
 | 文档与数据 | CLI 参考与代码一致；示例数据存在且可读；`gcen2` 的所有子模块可访问 | `test_cli_docs.py`、`test_example_data.py`、`test_api_gaps.py` |
 | 性能比较代码 | 汇总表的生成；小规模的性能基准（pytest-benchmark） | `test_benchmark.py`、`test_benchmark_overview.py` |
 
@@ -100,7 +100,6 @@
 ## 6. 尚未测试
 
 - 早于下列版本的编译器：未测试。已测试的编译器：GCC 11（CI，Ubuntu 22.04）、GCC 14（manylinux_2_28 wheel）、GCC 15 和 Clang 19（本机）、Apple Clang 17（macOS 15）、MSVC 19.44（Visual Studio 2022）。wheel 打包（cibuildwheel，三个平台 18 个 wheel）已在 2.0.0 发布时运行并逐个测试通过。
-- PDF / SVG 在 Illustrator、Inkscape 中能否编辑：需要人工检查（PNG 已逐张检查）。
 
 ## 7. 如何复现
 
