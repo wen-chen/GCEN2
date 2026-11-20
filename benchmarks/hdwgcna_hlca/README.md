@@ -32,7 +32,7 @@ bash .../run_all.sh     # both sizes; then 04_compare.py
 ```
 
 Download: `https://datasets.cellxgene.cziscience.com/688185ad-11c2-4172-a53a-f4f1f4076860.h5ad`
-(5.9 GB; counts in `raw.X`).
+(5.9 GB; counts in `raw.X`; SHA-256 `1cbdde1e513a31bdb6a3f70296e2d0612760d2af4032e239c94596ea87b44007`).
 
 For the metacell seeds (below), `celltype-modules ... --seed 1` and `--seed 2` on
 the same 10 types, into `runs/gcen2/<size>_top10_seed<s>`, and

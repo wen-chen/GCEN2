@@ -32,8 +32,8 @@ bash .../run_all.sh        # both tools twice per sample, then 04_compare.py
 ```
 
 Downloads:
-- **DLPFC**: `https://spatial-dlpfc.s3.us-east-2.amazonaws.com/h5/151673_filtered_feature_bc_matrix.h5`. From `github.com/LieberInstitute/HumanPilot`: `10X/151673/{tissue_positions_list.txt, scalefactors_json.json, tissue_lowres_image.png}` and `10X/barcode_level_layer_map.tsv`.
-- **Mouse brain**: `https://cf.10xgenomics.com/samples/spatial-exp/1.1.0/V1_Mouse_Brain_Sagittal_Anterior/V1_Mouse_Brain_Sagittal_Anterior_{filtered_feature_bc_matrix.h5,spatial.tar.gz}`.
+- **DLPFC**: `https://spatial-dlpfc.s3.us-east-2.amazonaws.com/h5/151673_filtered_feature_bc_matrix.h5`. From `github.com/LieberInstitute/HumanPilot`: `10X/151673/{tissue_positions_list.txt, scalefactors_json.json, tissue_lowres_image.png}` and `10X/barcode_level_layer_map.tsv`. SHA-256: matrix `216e8010e1c313925afa0f174207da7c8947497c960e81b07edbd16176460413`; positions `c1ce0eafc855982bb2a9773f147ce6c5aef68dfd06600caa8a7e7a0e6f7cc5e8`; scale factors `91c4beb9ca8145855a6a6df0a00eda6541931fc12d82d09cf8f01c9c15179dbc`; image `2ca692ceb00b205bd2f75182935a018753b08c63fbba7e142fd154db22547fcf`; layer map `b5d81f0e61810bb74d8a02495eda8f84e0eb9335211dcdd03513d747036e5ca9`.
+- **Mouse brain**: `https://cf.10xgenomics.com/samples/spatial-exp/1.1.0/V1_Mouse_Brain_Sagittal_Anterior/V1_Mouse_Brain_Sagittal_Anterior_{filtered_feature_bc_matrix.h5,spatial.tar.gz}`. SHA-256: matrix `56078d8d6fe6c13de248fdb1c518b691cdef78fb00021b659786b4a47c6656d5`; spatial `5f41a803e2bd69fa4dfca6abc8fa2d4e0d76aeb6c72d7038a5fdcf9cc50a36f8`.
 
 Machine: Intel Core i7-13700, 123 GB RAM, Ubuntu 26.04.1; 8 threads for both tools. Time and peak memory cover the whole command, reading the data included, with `--plot`. hdWGCNA's time also includes attaching enrichR, which contacts maayanlab.cloud.
 
@@ -97,7 +97,7 @@ bash .../run_slideseq.sh   # both tools twice, then metacell seeds 1 and 2; 05_c
 ```
 
 Download: `https://ndownloader.figshare.com/files/28242783` (squidpy's
-`slideseqv2`).
+`slideseqv2`; SHA-256 `224a0f2b3d4f6c0ac1583c93bb6bfa910a986df82302c4a927d61883b8b63d8b`).
 
 | | GCEN2 | hdWGCNA |
 |---|---|---|
@@ -176,7 +176,7 @@ bash .../run_visium_hd.sh   # both tools twice, then metacell seeds 1 and 2; 05_
 ```
 
 Download: `https://cf.10xgenomics.com/samples/spatial-exp/3.0.0/Visium_HD_Mouse_Brain/Visium_HD_Mouse_Brain_binned_outputs.tar.gz`
-(4.6 GB). The parquet positions need pyarrow; without it in the GCEN2
+(4.6 GB; SHA-256 `0f3a8a5cc796230413dd3c66f886936a9b8152f6407b74d9bd9a2c9ce41dc076`). The parquet positions need pyarrow; without it in the GCEN2
 environment, convert them once to `spatial/tissue_positions.csv` with any
 Python that has it, and `01_prepare_visium_hd.py` reads the CSV.
 
