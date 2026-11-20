@@ -1,7 +1,7 @@
 {% extends "base.html" %}
 {% from "partials/_blocks.html" import code, page_head, notice %}
 {% block content %}
-{{ page_head("Install GCEN2", "GCEN2 is distributed as source code, on PyPI with pre-built wheels and on Bioconda, for Linux, Windows and macOS on Apple Silicon, with Python 3.9 to 3.14.") }}
+{{ page_head("Install GCEN2", "GCEN2 is distributed on PyPI with pre-built wheels, on Bioconda and as source code, for Linux, Windows and macOS on Apple Silicon, with Python 3.9 to 3.14.") }}
 <div class="container-xl py-5">
   <div class="row g-4">
     <div class="col-lg-8">
@@ -22,17 +22,17 @@
 
       <p class="small text-body-secondary mb-5">{% for n in matrix_notes %}— {{ n }}.{% endfor %}</p>
 
-      <h2 class="h4" id="source">From the source code</h2>
-      <p>Needs a C++17 compiler and CMake (<code>pip</code> fetches CMake if it is missing): GCC or Clang on Linux, Xcode command-line tools on macOS, Visual Studio Build Tools on Windows.</p>
-      {{ code(["git clone " ~ site.github, "cd GCEN2", 'pip install ".[all]"'], "the source installation", prompt=True) }}
-
-      <h2 class="h4 mt-5" id="pypi">From PyPI</h2>
+      <h2 class="h4" id="pypi">From PyPI</h2>
       <p>Pre-built wheels for the three platforms; no compiler needed.</p>
       {{ code(['pip install "gcen2[all]"'], "the pip command", prompt=True) }}
 
       <h2 class="h4 mt-5" id="bioconda">From Bioconda</h2>
       <p>On Linux and macOS. Bioconda does not build packages for Windows; use <code>pip</code> there.</p>
       {{ code(["conda install -c conda-forge -c bioconda gcen2"], "the conda command", prompt=True) }}
+
+      <h2 class="h4 mt-5" id="source">From the source code</h2>
+      <p>Needs a C++17 compiler and CMake (<code>pip</code> fetches CMake if it is missing): GCC or Clang on Linux, Xcode command-line tools on macOS, Visual Studio Build Tools on Windows.</p>
+      {{ code(["git clone " ~ site.github, "cd GCEN2", 'pip install ".[all]"'], "the source installation", prompt=True) }}
 
       <h2 class="h4 mt-5" id="extras">Optional parts</h2>
       <p>The core package has the network, module and function analyses. The extras add the rest; <code>all</code> installs everything.</p>
@@ -68,9 +68,9 @@
         <nav aria-label="On this page">
           <ul class="list-unstyled mb-4">
             <li class="mb-1"><a href="#platforms">Platforms</a></li>
-            <li class="mb-1"><a href="#source">From the source code</a></li>
             <li class="mb-1"><a href="#pypi">From PyPI</a></li>
             <li class="mb-1"><a href="#bioconda">From Bioconda</a></li>
+            <li class="mb-1"><a href="#source">From the source code</a></li>
             <li class="mb-1"><a href="#extras">Optional parts</a></li>
             <li class="mb-1"><a href="#check">Check the installation</a></li>
             <li class="mb-1"><a href="#data">Example data</a></li>

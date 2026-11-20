@@ -4,9 +4,9 @@ Facts that are kept elsewhere (version, benchmark table, number of commands,
 citation) are read by ``build.py`` from the repository itself.
 """
 
-# False until GCEN2 is on PyPI and Bioconda: the pages then show a
-# pre-release notice and give the installation from source first.
-RELEASED = False
+# True once GCEN2 is on PyPI and Bioconda. False shows a pre-release notice
+# and gives the installation from source first.
+RELEASED = True
 
 SITE_URL = "https://www.biochen.org/gcen2/"
 GITHUB = "https://github.com/wen-chen/GCEN2"

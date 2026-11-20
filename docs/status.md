@@ -46,7 +46,7 @@
 
 ## 6. 尚未完成或尚未验证
 
-1. **发布**：上传 PyPI；bioconda 配方的 sha256（上传后才有）；在 ReadTheDocs 上导入仓库发布文档（配置 `.readthedocs.yaml` 已写好并验证可构建）。
-2. **wheel 打包**（cibuildwheel，三个平台）和发布尚未在 GitHub 上运行：`release.yml` 手动运行发布到 TestPyPI，推送 `v*` 标签发布到 PyPI。本地已检查 sdist（从 sdist 安装后在源码树外运行测试，936 个通过）和 wheel（`twine check --strict`）。源码编译和测试已在三个平台的 CI 上通过（见第 2 节）。
+1. **发布**：2.0.0 已于 2026-11-20 发布到 PyPI（sdist 和 18 个 wheel，由 `release.yml` 推送 `v2.0.0` 标签发布；本地 `pip install "gcen2[all]==2.0.0"` 全部测试通过）。Bioconda 配方已提交（bioconda-recipes PR #71954，CI 全部通过，等待维护者合并），网站和 README 已按可用处理。尚未在 ReadTheDocs 上导入仓库发布文档（配置 `.readthedocs.yaml` 已写好并验证可构建）。
+2. **Bioconda 合并后**：验证 `conda install -c conda-forge -c bioconda gcen2`（Linux、macOS arm64）。
 3. **编译器最低版本**（文档写 GCC 7、Clang 5、MSVC 2017）未验证；本机只用 GCC 15 编译过。
 4. **PDF / SVG 的可编辑性**未在 Illustrator / Inkscape 中人工检查（PNG 已逐张检查）。
