@@ -37,9 +37,10 @@ results in `docs/test_report.md`, the history in `docs/development_log.md`.
 
 ## 1. Build
 
-**Toolchain.** Python 3.9 to 3.14, a C++17 compiler (built and tested with
-GCC 15; GCC 7, Clang 5 and MSVC 2017 are the stated minimums, not yet
-verified), CMake >= 3.18, scikit-build-core and pybind11. The extension
+**Toolchain.** Python 3.9 to 3.14, a C++17 compiler (tested with GCC 11 on the
+Ubuntu 22.04 CI, GCC 14 for the manylinux_2_28 wheels, GCC 15 and Clang 19
+locally, Apple Clang 17 on macOS 15 and MSVC 19.44 / Visual Studio 2022 on
+Windows; older compilers are not tested), CMake >= 3.18, scikit-build-core and pybind11. The extension
 `_gcen_core` is one shared library built from `src/` (kernels) and
 `src/bindings/` (one binding file per submodule: `correlation`,
 `enrichment`, `module`, `network`, `rwr`), installed into `gcen2/core/`.

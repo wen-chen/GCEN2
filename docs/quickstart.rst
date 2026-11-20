@@ -41,7 +41,9 @@ Building from Source
    cd GCEN2
    pip install -e ".[dev]" --no-build-isolation
 
-Requirements: Python ≥ 3.9, C++17 compiler (GCC ≥ 7, Clang ≥ 5, MSVC 2017).
+Requirements: Python ≥ 3.9 and a C++17 compiler. Tested with GCC 11, 14 and 15,
+Clang 19, Apple Clang 17 and MSVC 19.44 (Visual Studio 2022); older C++17
+compilers may work but are not tested.
 
 Example data
 ------------

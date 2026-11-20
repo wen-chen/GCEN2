@@ -99,8 +99,7 @@
 
 ## 6. 尚未测试
 
-- wheel 打包（cibuildwheel）：CI 已配置，尚未运行（只在推送版本标签时运行）。macOS、Windows 上的源码编译和测试已在 CI 上通过。
-- 编译器最低版本（GCC 7、Clang 5、MSVC 2017）：只用 GCC 15 编译过。
+- 早于下列版本的编译器：未测试。已测试的编译器：GCC 11（CI，Ubuntu 22.04）、GCC 14（manylinux_2_28 wheel）、GCC 15 和 Clang 19（本机）、Apple Clang 17（macOS 15）、MSVC 19.44（Visual Studio 2022）。wheel 打包（cibuildwheel，三个平台 18 个 wheel）已在 2.0.0 发布时运行并逐个测试通过。
 - PDF / SVG 在 Illustrator、Inkscape 中能否编辑：需要人工检查（PNG 已逐张检查）。
 
 ## 7. 如何复现

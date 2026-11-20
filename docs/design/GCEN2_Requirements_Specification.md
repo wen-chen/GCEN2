@@ -346,7 +346,7 @@ steps take `--seed` (there are no global options).
 ### 5.2 Compatibility
 
 - Python >= 3.9; tested on 3.9, 3.10, 3.11, 3.12, 3.13 and 3.14, and on 3.9 with the oldest supported dependencies
-- C++ compiler supporting **C++17** (GCC >= 7, Clang >= 5, MSVC >= 2017; built and tested with GCC 15 so far)
+- C++ compiler supporting **C++17** (tested: GCC 11, 14 and 15, Clang 19, Apple Clang 17, MSVC 19.44 / Visual Studio 2022; older compilers are not tested)
 - Supported platforms (project goal): Linux x86-64 (AMD64), Windows x86-64 (AMD64) and macOS on Apple Silicon (arm64); built from source and tested on all three by the CI (2026-11-18: Windows Server 2022 and macOS 15 with Python 3.12, Linux with Python 3.9-3.14 and the oldest dependencies). Other platforms are not targets.
 - Distribution (project goal): source code (GitHub, https://github.com/wen-chen/GCEN2), PyPI (pre-built wheels for the three platforms; `pip install gcen2`) and Bioconda (Linux and macOS; Bioconda does not build for Windows; `conda install -c conda-forge -c bioconda gcen2`). Website: https://www.biochen.org/gcen2/
 

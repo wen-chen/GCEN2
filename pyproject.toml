@@ -99,7 +99,7 @@ wheel.packages = ["gcen2"]
 sdist.include = ["data/example", "docs/*.rst", "docs/tutorials/*.rst", "docs/conf.py"]
 sdist.exclude = [
     "benchmarks", "website", "docs", ".github", "conda-recipe", "build",
-    ".pre-commit-config.yaml", ".readthedocs.yaml", "tools/*.sh", "/*.pptx", "/*.png",
+    ".pre-commit-config.yaml", "tools/*.sh", "/*.pptx", "/*.png",
     "*.docx",
 ]
 install.components = ["python"]
