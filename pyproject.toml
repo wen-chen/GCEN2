@@ -21,7 +21,10 @@ keywords = [
 classifiers = [
     "Development Status :: 3 - Alpha",
     "Intended Audience :: Science/Research",
-    "License :: OSI Approved :: GNU General Public License v3 (GPLv3)",
+    "License :: OSI Approved :: GNU General Public License v3 or later (GPLv3+)",
+    "Operating System :: POSIX :: Linux",
+    "Operating System :: Microsoft :: Windows",
+    "Operating System :: MacOS",
     "Programming Language :: Python :: 3",
     "Programming Language :: Python :: 3.9",
     "Programming Language :: Python :: 3.10",
@@ -88,8 +91,17 @@ build.verbose = false
 build-dir = "build"
 wheel.packages = ["gcen2"]
 # data/* is gitignored except data/example, which the tests need; scikit-build-core
-# does not follow the negated .gitignore pattern, so it is included here
-sdist.include = ["data/example"]
+# does not follow the negated .gitignore pattern, so it is included here.
+# The source distribution holds what building and testing need: the C++ and
+# Python sources, tests, example data, the reStructuredText documentation and
+# tools/. sdist.include takes precedence over sdist.exclude, so of docs/ only
+# the files listed in include are kept.
+sdist.include = ["data/example", "docs/*.rst", "docs/tutorials/*.rst", "docs/conf.py"]
+sdist.exclude = [
+    "benchmarks", "website", "docs", ".github", "conda-recipe", "build",
+    ".pre-commit-config.yaml", ".readthedocs.yaml", "tools/*.sh", "/*.pptx", "/*.png",
+    "*.docx",
+]
 install.components = ["python"]
 editable.mode = "redirect"
 editable.rebuild = false

@@ -582,7 +582,10 @@ C++ 扩展构建配置：
 ## 七、CI / 开发配置
 
 ### `.github/workflows/ci.yml`
-GitHub Actions CI：Linux 上 Python 3.9–3.14、macOS 14/15 与 Windows 上 3.12 的全部测试；最老依赖版本；Sphinx 文档（`-W`）；ruff；性能微基准；打 tag 时用 cibuildwheel 构建 cp39–cp314 的 wheel 并发布到 PyPI。尚未在 GitHub 上实际运行过。
+GitHub Actions CI：Linux 上 Python 3.9–3.14、macOS 15 与 Windows 上 3.12 的全部测试；最老依赖版本；Sphinx 文档（`-W`）；ruff；性能微基准。已在 GitHub 上全部通过。
+
+### `.github/workflows/release.yml`
+发布：构建 sdist 和 cp39–cp314 的 wheel（cibuildwheel；Linux x86-64、Windows AMD64、macOS arm64），每个 wheel 在不含源码的目录里跑 golden 与 CLI 测试。手动运行发布到 TestPyPI 并在三个平台上安装验证；推送 `v*` 标签（须与 `pyproject.toml` 的版本一致）发布到 PyPI。用 trusted publishing，不存 token。
 
 ### `.pre-commit-config.yaml`
 pre-commit hooks：行尾空格、文件结尾、YAML/TOML 检查、大文件检查（`data/example/` 和 `tests/golden/` 除外）、ruff。

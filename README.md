@@ -2,7 +2,7 @@
 
 [![platforms](https://img.shields.io/badge/platforms-Linux%20%7C%20Windows%20%7C%20macOS-yellowgreen)](https://www.biochen.org/gcen2/install.html)
 [![Python](https://img.shields.io/badge/python-3.9%E2%80%933.14-blue)](https://www.biochen.org/gcen2/install.html)
-[![license GPL-3.0-or-later](https://img.shields.io/badge/license-GPL--3.0--or--later-blue)](LICENSE)
+[![license GPL-3.0-or-later](https://img.shields.io/badge/license-GPL--3.0--or--later-blue)](https://github.com/wen-chen/GCEN2/blob/master/LICENSE)
 [![CI](https://github.com/wen-chen/GCEN2/actions/workflows/ci.yml/badge.svg)](https://github.com/wen-chen/GCEN2/actions/workflows/ci.yml)
 [![PyPI](https://img.shields.io/pypi/v/gcen2)](https://pypi.org/project/gcen2/)
 [![Bioconda](https://img.shields.io/conda/vn/bioconda/gcen2?label=bioconda)](https://anaconda.org/bioconda/gcen2)
@@ -74,7 +74,7 @@ targets; installing from source may work but is not tested.
 ## Quick start
 
 The GCEN v1 pipeline on the GCEN v1 sample data
-([`data/example/bulk/`](data/example/README.md); run in an empty directory):
+([`data/example/bulk/`](https://github.com/wen-chen/GCEN2/blob/master/data/example/README.md); run in an empty directory):
 
 ```bash
 EX=/path/to/GCEN2/data/example/bulk
@@ -114,13 +114,13 @@ wgcna = gcen2.tom_modules.tom_modules(gcen2.read_tsv("var.tsv"), log="log2", sig
 
 | | |
 |---|---|
-| [Quickstart](docs/quickstart.rst) | installation, first analysis |
-| Tutorials on the example data | [bulk](docs/tutorials/bulk.rst), [single cell](docs/tutorials/single_cell.rst), [spatial](docs/tutorials/spatial.rst), [trajectories and multi-omics](docs/tutorials/trajectory_multiomics.rst), [figures and reports](docs/tutorials/figures.rst) |
-| [Command-line reference](docs/cli.rst) | every command and option |
-| [Python API](docs/api.rst) | every module and function |
-| [Migration from GCEN v1](docs/migration.rst) | command mapping, verified equivalence, deliberate differences |
-| [Example data](data/example/README.md) | bulk, single-cell and spatial data, with sources and licences |
-| [For developers](docs/README.md) | requirements, design and implementation documents, code guide, status, test report |
+| [Quickstart](https://github.com/wen-chen/GCEN2/blob/master/docs/quickstart.rst) | installation, first analysis |
+| Tutorials on the example data | [bulk](https://github.com/wen-chen/GCEN2/blob/master/docs/tutorials/bulk.rst), [single cell](https://github.com/wen-chen/GCEN2/blob/master/docs/tutorials/single_cell.rst), [spatial](https://github.com/wen-chen/GCEN2/blob/master/docs/tutorials/spatial.rst), [trajectories and multi-omics](https://github.com/wen-chen/GCEN2/blob/master/docs/tutorials/trajectory_multiomics.rst), [figures and reports](https://github.com/wen-chen/GCEN2/blob/master/docs/tutorials/figures.rst) |
+| [Command-line reference](https://github.com/wen-chen/GCEN2/blob/master/docs/cli.rst) | every command and option |
+| [Python API](https://github.com/wen-chen/GCEN2/blob/master/docs/api.rst) | every module and function |
+| [Migration from GCEN v1](https://github.com/wen-chen/GCEN2/blob/master/docs/migration.rst) | command mapping, verified equivalence, deliberate differences |
+| [Example data](https://github.com/wen-chen/GCEN2/blob/master/data/example/README.md) | bulk, single-cell and spatial data, with sources and licences |
+| [For developers](https://github.com/wen-chen/GCEN2/blob/master/docs/README.md) | requirements, design and implementation documents, code guide, status, test report |
 
 Build the documentation site with `pip install -r docs/requirements.txt` and
 `sphinx-build -b html docs docs/_build/html`.
@@ -128,7 +128,7 @@ Build the documentation site with `pip install -r docs/requirements.txt` and
 ## Benchmarks
 
 On one 16-core machine (data, scripts and the full table in
-[`benchmarks/`](benchmarks/README.md); all times measured on an idle machine):
+[`benchmarks/`](https://github.com/wen-chen/GCEN2/blob/master/benchmarks/README.md); all times measured on an idle machine):
 
 | Compared with | Data | Results | Speed |
 |---|---|---|---|
@@ -144,16 +144,16 @@ On one 16-core machine (data, scripts and the full table in
 
 ## Contributing
 
-See [`CONTRIBUTING.md`](CONTRIBUTING.md) (setup, tests, rules) and the
-[code of conduct](CODE_OF_CONDUCT.md). Changes are listed in [`CHANGELOG.md`](CHANGELOG.md).
+See [`CONTRIBUTING.md`](https://github.com/wen-chen/GCEN2/blob/master/CONTRIBUTING.md) (setup, tests, rules) and the
+[code of conduct](https://github.com/wen-chen/GCEN2/blob/master/CODE_OF_CONDUCT.md). Changes are listed in [`CHANGELOG.md`](https://github.com/wen-chen/GCEN2/blob/master/CHANGELOG.md).
 
 ## Citation
 
-Please cite GCEN2 as described in [`CITATION.cff`](CITATION.cff) (GCEN v1: Chen W. et al.,
+Please cite GCEN2 as described in [`CITATION.cff`](https://github.com/wen-chen/GCEN2/blob/master/CITATION.cff) (GCEN v1: Chen W. et al.,
 *Curr. Issues Mol. Biol.* 2022, doi:10.3390/cimb44040100), and WGCNA / hdWGCNA when you use
 their methods.
 
 ## License
 
-GNU General Public License, version 3 or later (GPL-3.0-or-later); see [LICENSE](LICENSE).
-The example data keep their own licences ([`data/example/README.md`](data/example/README.md)).
+GNU General Public License, version 3 or later (GPL-3.0-or-later); see [LICENSE](https://github.com/wen-chen/GCEN2/blob/master/LICENSE).
+The example data keep their own licences ([`data/example/README.md`](https://github.com/wen-chen/GCEN2/blob/master/data/example/README.md)).

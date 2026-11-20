@@ -47,6 +47,6 @@
 ## 6. 尚未完成或尚未验证
 
 1. **发布**：上传 PyPI；bioconda 配方的 sha256（上传后才有）；在 ReadTheDocs 上导入仓库发布文档（配置 `.readthedocs.yaml` 已写好并验证可构建）。
-2. **wheel 打包**（cibuildwheel，三个平台）和发布到 PyPI 尚未运行（下一阶段；CI 中只在推送版本标签时运行）。源码编译和测试已在三个平台的 CI 上通过（见第 2 节）。
+2. **wheel 打包**（cibuildwheel，三个平台）和发布尚未在 GitHub 上运行：`release.yml` 手动运行发布到 TestPyPI，推送 `v*` 标签发布到 PyPI。本地已检查 sdist（从 sdist 安装后在源码树外运行测试，936 个通过）和 wheel（`twine check --strict`）。源码编译和测试已在三个平台的 CI 上通过（见第 2 节）。
 3. **编译器最低版本**（文档写 GCC 7、Clang 5、MSVC 2017）未验证；本机只用 GCC 15 编译过。
 4. **PDF / SVG 的可编辑性**未在 Illustrator / Inkscape 中人工检查（PNG 已逐张检查）。

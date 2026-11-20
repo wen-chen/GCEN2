@@ -178,12 +178,12 @@ pushed):
 | Job | Platform | Python | Content |
 |---|---|---|---|
 | test | Ubuntu 22.04 | 3.9 to 3.14 | all tests; TOM tests again with `GCEN2_SIMD=baseline`; coverage on 3.12 |
-| test | macOS 14, macOS 15 (ARM64), Windows Server 2022 | 3.12 | all tests |
+| test | macOS 15 (ARM64), Windows Server 2022 | 3.12 | all tests |
 | minimum versions | Ubuntu 22.04 | 3.9 | numpy 1.24, pandas 2.0, scipy 1.10, anndata 0.10, matplotlib 3.7, typer 0.9 |
 | docs | Ubuntu 22.04 | 3.12 | `sphinx-build -W` |
 | lint | Ubuntu 22.04 | 3.12 | `ruff check` |
 | benchmark | Ubuntu 22.04 | 3.12 | pytest-benchmark (pushes to main) |
-| wheels / publish | Linux, macOS, Windows | cp39 to cp314 | cibuildwheel, tests on the wheels; PyPI on a `v*` tag |
+| release (`release.yml`) | Linux, Windows, macOS | cp39 to cp314 | sdist and wheels; by hand: TestPyPI; `v*` tag: PyPI |
 
 ---
 
@@ -193,7 +193,14 @@ pushed):
    (`benchmarks/RETIMING_PLAN.md`; done on 2026-11-17).
 2. Update `CHANGELOG.md` and the version (`pyproject.toml`, `docs/conf.py`,
    `CITATION.cff`); tag `v2.0.0`.
-3. The CI builds the sdist and wheels and uploads them to PyPI.
+3. `.github/workflows/release.yml` builds the sdist and the wheels (cibuildwheel,
+   cp39 to cp314 for Linux x86-64, Windows AMD64 and macOS arm64; each wheel
+   runs the golden and CLI tests in a copy of `tests/`, `data/`, `docs/` and
+   `tools/` without the sources, so that the installed wheel is tested).
+   Run by hand, it publishes to TestPyPI and installs the result on the three
+   platforms; on a `v*` tag (equal to the version in `pyproject.toml`) it
+   publishes to PyPI. Uploads use trusted publishing (environments `testpypi`
+   and `pypi`); a version can be uploaded only once.
 4. Fill the sha256 of the bioconda recipe (`conda-recipe/meta.yaml`) and
    submit it.
 5. GitHub release with the changelog; import the repository on Read the Docs.
