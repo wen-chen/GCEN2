@@ -174,8 +174,6 @@ def check_c3_files() -> None:
         "docs/design/GCEN2_Implementation_Document.md",
         "docs/design/GCEN2_Requirements_Specification.md",
         "conda-recipe/meta.yaml",
-        "conda-recipe/build.sh",
-        "conda-recipe/bld.bat",
         ".github/workflows/ci.yml",
     ]
     for rel in paths:

@@ -573,9 +573,7 @@ C++ 扩展构建配置：
 
 | 文件 | 说明 |
 |------|------|
-| `meta.yaml` | Bioconda 打包配方（构建依赖、运行依赖、测试导入） |
-| `build.sh` | Linux/macOS 构建脚本（`pip install .`） |
-| `bld.bat` | Windows 构建脚本 |
+| `meta.yaml` | Bioconda 打包配方（从 PyPI 的 sdist 构建；构建脚本写在 `build.script` 中，`pip install .`；构建依赖、运行依赖、测试导入）。只构建 Linux x86-64 和 macOS arm64，Windows 用 PyPI。提交在 bioconda-recipes 的 `recipes/gcen2/` |
 
 ---
 
@@ -599,8 +597,8 @@ pre-commit hooks：行尾空格、文件结尾、YAML/TOML 检查、大文件检
 ### `website/`
 项目网站 <https://www.biochen.org/gcen2/>（静态，Bootstrap 5.3.9，英文；设计与实现见 `GCEN2_Website_Design.md`、`GCEN2_Website_Implementation.md`）。`build.py` 把 `templates/`（Jinja2）与 `content.py` 渲染成 `_site/`，版本、benchmark 表、安装矩阵、命令数和图数从 `pyproject.toml`、`README.md` 和 CLI 读取；文档用 `sphinx_theme/gcen2/`（继承 basic，套上网站的导航栏和页脚）构建到 `_site/docs/`。`static/`：样式、脚本、logo、workflow 图和图库图片，以及自带的 Bootstrap（不用 CDN）。`gallery/make_gallery.py` 在示例数据上运行教程命令生成图库，`workflow/make_workflow.py` 画 workflow 图。`tests/check_site.py`（链接、图片、页面结构）和 `tests/visual_test.py`（Playwright：三种宽度 × 浅色/深色截图、溢出、控制台错误、对比度、交互）。
 
-### `.readthedocs.yaml`、`docs/requirements.txt`
-Read the Docs 的构建配置：只装 `docs/requirements.txt` 中的纯 Python 依赖，不编译 C++ 扩展（文档构建不需要），警告视为错误。
+### `docs/requirements.txt`
+文档构建的依赖：只有纯 Python 包，不编译 C++ 扩展（文档构建不需要）。文档不在 Read the Docs 上发布，由 `website/build.py` 构建到网站的 `docs/`，发布在 <https://www.biochen.org/gcen2/docs/>。
 
 ### `.gitignore`
 忽略 `build/`、`*.so`、`*.egg-info`、`__pycache__` 等构建产物。

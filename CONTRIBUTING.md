@@ -84,8 +84,8 @@ formatted with black.
 - `python tools/check_doc_consistency.py` checks that the documents and the
   code agree (commands, modules, files); run it before committing.
 - Build the documentation with `sphinx-build -W -b html docs docs/_build/html`
-  (`pip install -r docs/requirements.txt` is enough; Read the Docs builds it
-  that way, `.readthedocs.yaml`).
+  (`pip install -r docs/requirements.txt` is enough). The published
+  documentation is built by `website/build.py` into the website.
 - Add a line to `CHANGELOG.md` for every user-visible change.
 
 ## Benchmarks

@@ -83,8 +83,8 @@ the tests were run with):
 | `all` | all of the above (`cli` is kept as an empty group) |
 | `dev` | pytest, pytest-benchmark, pytest-cov, sphinx, sphinx-rtd-theme, ruff, pre-commit |
 
-The documentation builds without the extension (`docs/requirements.txt`,
-`.readthedocs.yaml`). The source distribution includes the example data
+The documentation builds without the extension (`docs/requirements.txt`); it is
+published on the website (`website/build.py`). The source distribution includes the example data
 (`sdist.include`), so its tests run.
 
 ---
