@@ -4,7 +4,7 @@ build-backend = "scikit_build_core.build"
 
 [project]
 name = "gcen2"
-version = "2.0.0.dev0"
+version = "2.0.0"
 description = "A Python Toolkit for Gene Co-Expression Network Analysis with Single-Cell Resolution and Interactive Visualization"
 readme = "README.md"
 license = { text = "GPL-3.0-or-later" }
@@ -19,7 +19,7 @@ keywords = [
     "network analysis",
 ]
 classifiers = [
-    "Development Status :: 3 - Alpha",
+    "Development Status :: 4 - Beta",
     "Intended Audience :: Science/Research",
     "License :: OSI Approved :: GNU General Public License v3 or later (GPLv3+)",
     "Operating System :: POSIX :: Linux",

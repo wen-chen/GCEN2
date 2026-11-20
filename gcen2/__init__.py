@@ -8,7 +8,7 @@ from importlib.metadata import PackageNotFoundError, version
 try:
     __version__ = version("gcen2")
 except PackageNotFoundError:
-    __version__ = "2.0.0.dev0"
+    __version__ = "2.0.0"
 
 __author__ = "Wen Harold Chen"
 __email__ = "chenwen@biochen.org"

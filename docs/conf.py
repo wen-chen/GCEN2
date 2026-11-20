@@ -9,7 +9,7 @@ sys.path.insert(0, os.path.abspath('..'))
 project = 'GCEN2'
 copyright = '2026, Wen Harold Chen'
 author = 'Wen Harold Chen'
-release = '2.0.0.dev0'
+release = '2.0.0'
 version = '2.0'
 
 extensions = [

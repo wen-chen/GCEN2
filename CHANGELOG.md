@@ -4,7 +4,7 @@ All notable changes to GCEN2. The format follows
 [Keep a Changelog](https://keepachangelog.com/en/1.1.0/); versions follow
 [PEP 440](https://peps.python.org/pep-0440/).
 
-## [Unreleased] — 2.0.0.dev0
+## [2.0.0] — 2026-11-20
 
 GCEN2 is a rewrite of [GCEN v1](https://github.com/wen-chen/GCEN) (C++
 command-line tools) as a Python package with a C++ extension. It keeps every
