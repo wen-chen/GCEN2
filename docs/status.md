@@ -46,6 +46,6 @@
 
 ## 6. 尚未完成或尚未验证
 
-1. **发布**：2.0.0 已于 2026-11-20 发布到 PyPI（sdist 和 18 个 wheel，由 `release.yml` 推送 `v2.0.0` 标签发布；本地 `pip install "gcen2[all]==2.0.0"` 全部测试通过）。Bioconda 配方已提交（bioconda-recipes PR #71954，CI 全部通过，等待维护者合并），网站（已部署，2026-11-20）、README 和 GitHub Release（v2.0.0）已按可用处理。文档发布在网站 <https://www.biochen.org/gcen2/docs/>，不使用 Read the Docs。
-2. **Bioconda 合并后**：验证 `conda install -c conda-forge -c bioconda gcen2`（Linux、macOS arm64）。
+1. **发布**：2.0.0 已于 2026-11-20 发布到 PyPI（sdist 和 18 个 wheel，由 `release.yml` 推送 `v2.0.0` 标签发布；本地 `pip install "gcen2[all]==2.0.0"` 全部测试通过）。Bioconda：bioconda-recipes PR #71954 已于 2026-11-22 合并，频道上有 linux-64 和 osx-arm64 的包（Python 3.10–3.13）。网站（已部署，2026-11-20）、README 和 GitHub Release（v2.0.0）均已上线。文档发布在网站 <https://www.biochen.org/gcen2/docs/>，不使用 Read the Docs。
+2. **Bioconda 验证**：Linux 已验证（2026-11-23）：新环境 `mamba create -c conda-forge -c bioconda gcen2` 装到 gcen2 2.0.0（Python 3.13、numpy 2.5.5、pandas 3.1.1），C++ 扩展正常加载；`data/example/README.md` 的 18 条命令（bulk、单细胞、空间）全部通过；`build`、`module`、`rwr` 的结果与开发环境逐字节一致。macOS arm64 的 conda 包尚未在本机验证。
 3. **编译器**：文档只写已测试的版本（GCC 11、14、15，Clang 19，Apple Clang 17，MSVC 19.44 / Visual Studio 2022），不声明最低版本。
