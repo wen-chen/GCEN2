@@ -38,6 +38,16 @@ def sample_tsv(tmp_path):
 
 
 @requires_typer
+@pytest.mark.parametrize("flag", ["--version", "-V"])
+def test_version_option(runner, flag):
+    import gcen2
+
+    result = runner.invoke(app, [flag])
+    assert result.exit_code == 0
+    assert result.output.strip() == f"gcen2 {gcen2.__version__}"
+
+
+@requires_typer
 class TestNormalizeCommand:
     def test_tmm_produces_output(self, runner, sample_tsv, tmp_path):
         out = tmp_path / "norm.tsv"

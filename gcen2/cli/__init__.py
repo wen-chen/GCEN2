@@ -39,8 +39,21 @@ for _name in ("network", "modules", "single_cell", "spatial", "trajectory", "mul
 app.add_typer(plot_app, name="plot")
 
 
+def _print_version(value: bool) -> None:
+    if value:
+        from gcen2 import __version__
+
+        typer.echo(f"gcen2 {__version__}")
+        raise typer.Exit()
+
+
 @app.callback()
-def main() -> None:
+def main(
+    version: bool = typer.Option(
+        False, "--version", "-V", callback=_print_version, is_eager=True,
+        help="Show the version and exit.",
+    ),
+) -> None:
     """GCEN2 - Gene Co-Expression Network Analysis Toolkit."""
 
 
