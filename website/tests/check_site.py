@@ -55,6 +55,11 @@ class Page(HTMLParser):
             self.meta[a["name"]] = a.get("content", "")
         elif tag == "form" and "action" in a:
             self.links.append(a["action"])
+        elif tag == "video":
+            # posters are in the site; the MP4 files are served from media/, outside it
+            for k in ("poster", "data-gc-poster-light", "data-gc-poster-dark"):
+                if k in a:
+                    self.links.append(a[k])
 
     def handle_endtag(self, tag):
         if tag == "title":

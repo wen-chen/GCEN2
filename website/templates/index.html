@@ -19,6 +19,7 @@
           <a class="btn btn-outline-brand btn-lg" href="docs/quickstart.html">Get started</a>
           <a class="btn btn-outline-quiet btn-lg" href="{{ site.github }}">{{ icon("github") }} GitHub</a>
         </div>
+        <p class="mt-3 mb-0"><a class="gc-watch" href="#video">{{ icon("play") }} Watch the introduction ({{ video.duration }})</a></p>
       </div>
       <div class="col-lg-6">
         <div class="gc-install">
@@ -45,6 +46,40 @@
         </div>
       </div>
     </div>
+  </div>
+</section>
+
+<section class="gc-section" id="video" aria-labelledby="video-h">
+  <div class="container-xl">
+    <div class="row mb-4">
+      <div class="col-lg-8">
+        <p class="gc-eyebrow mb-2">Video</p>
+        <h2 id="video-h">GCEN2 in under four minutes</h2>
+        <p class="text-body-secondary mb-0">
+          What co-expression networks are, why GCEN2 was built, how its results and speed compare
+          with WGCNA, hdWGCNA and the other reference tools, and how to use it. With captions;
+          the full text is in the transcript below.
+        </p>
+      </div>
+    </div>
+    <div class="gc-video-frame">
+      <video class="gc-video" controls preload="none" playsinline width="1920" height="1080"
+             src="{{ video.light }}" poster="{{ video.poster_light }}"
+             data-gc-video-light="{{ video.light }}" data-gc-video-dark="{{ video.dark }}"
+             data-gc-poster-light="{{ video.poster_light }}" data-gc-poster-dark="{{ video.poster_dark }}"
+             aria-label="GCEN2 introduction video, {{ video.duration }}, narrated in English with captions">
+        Your browser cannot play this video; the transcript below has its full text.
+      </video>
+      <button type="button" class="gc-video-play" data-gc-video-play hidden>{{ icon("play") }}<span>Watch the introduction</span><span class="gc-video-time">{{ video.duration }}</span></button>
+    </div>
+    <details class="gc-transcript mt-3">
+      <summary>Transcript</summary>
+      <div class="mt-3">
+        {%- for para in video.transcript %}
+        <p>{{ para }}</p>
+        {%- endfor %}
+      </div>
+    </details>
   </div>
 </section>
 

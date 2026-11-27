@@ -34,6 +34,11 @@ faster and mostly with less memory (see [Benchmarks](#benchmarks)).
 *The GCEN2 workflow: four kinds of data, from input to modules and their comparison, each
 step labelled with its `gcen2` command.*
 
+[![Watch the GCEN2 introduction (3:40)](https://www.biochen.org/gcen2/static/img/video_cover.jpg)](https://www.biochen.org/gcen2/#video)
+
+*A 3:40 introduction: what GCEN2 does, how its results and speed compare with the reference
+tools, and how to use it (on the website, with a transcript).*
+
 - Website: <https://www.biochen.org/gcen2/>
 - Source code: <https://github.com/wen-chen/GCEN2>
 - GCEN v1: <https://www.biochen.org/gcen/> and <https://github.com/wen-chen/GCEN>

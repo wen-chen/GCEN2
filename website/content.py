@@ -15,6 +15,59 @@ GCEN_V1_GITHUB = "https://github.com/wen-chen/GCEN"
 BIOCHEN = "https://www.biochen.org/"
 CONTACT_EMAIL = "chenwen@biochen.org"
 
+# The introduction video on the home page. The MP4 files are not in the repository:
+# they are served from media/ next to the site (/gcen2/media/), which a deployment of
+# _site/ must leave in place. The posters are in static/img/. The site's light and dark
+# modes each get the video in their colours.
+VIDEO = dict(
+    light="media/GCEN2_intro.mp4",
+    dark="media/GCEN2_intro_dark.mp4",
+    poster_light="static/img/video_poster.jpg",
+    poster_dark="static/img/video_poster_dark.jpg",
+    duration="3:40",
+    seconds=220,
+    transcript=[
+        "Genes that work together tend to be switched on together. Follow that idea across "
+        "thousands of genes, and you get a gene co-expression network: a map of how a cell "
+        "organizes its work. This is GCEN2.",
+        "Starting from an expression matrix, GCEN2 measures how strongly every pair of genes is "
+        "correlated, keeps the connections that are significant, and groups tightly connected "
+        "genes into modules. Modules can then be linked to cell types, traits and biological "
+        "functions, and used to predict the roles of genes we know little about.",
+        "For years, these analyses have been split across separate tools: WGCNA and hdWGCNA for "
+        "modules, DGCA for differential co-expression, RandomWalkRestartMH for multi-layer "
+        "networks, and our own C++ tool, GCEN. Meanwhile, data sets have grown to hundreds of "
+        "thousands of cells, and single-cell analysis has largely moved to Python. On the ten "
+        "largest cell types of the Human Lung Cell Atlas, hdWGCNA needed 49 minutes and 44 "
+        "gigabytes of memory.",
+        "GCEN2 brings all of this together in one toolkit: a Python package and a command-line "
+        "tool, with multithreaded C++ kernels underneath. One workflow covers bulk RNA-seq, "
+        "single cells and spatial transcriptomics, as well as networks along trajectories and "
+        "across omics layers, from preprocessing and network construction to modules, "
+        "comparisons and gene function.",
+        "Speed means nothing if the answers change. So we checked GCEN2 against each reference "
+        "tool, analysis by analysis, on public data. It finds the same modules as WGCNA and "
+        "hdWGCNA in every comparison, and reproduces the statistics of the other tools to "
+        "within rounding error.",
+        "And it is fast. Most analyses run 4 to 89 times faster, mostly with less memory, and "
+        "up to 185 times faster for one differential test. On the lung atlas, the same ten "
+        "cell types take three and a half minutes, and less than five gigabytes. The whole "
+        "atlas, nearly 600,000 cells in 49 cell types, finishes in under eight minutes, on a "
+        "single workstation.",
+        "Getting started takes one line: install it with pip or conda, on Linux, Windows or "
+        "macOS. Each step of an analysis is a single command. Normalize and filter the data, "
+        "build the network, find the modules, and annotate them with gene functions and "
+        "pathways. For single cells, one command builds metacells and modules for every cell "
+        "type. For spatial data, another works on spots and tissue regions. And every step is "
+        "also available from Python.",
+        "Every analysis comes with publication-ready figures, as editable vector graphics, and "
+        "an HTML report you can share with your collaborators.",
+        "GCEN2 is free and open source. Tutorials, documentation and every benchmark are on our "
+        "website. GCEN2: fast and faithful co-expression networks, from bulk to single cells "
+        "and space.",
+    ],
+)
+
 # Analysis kinds: the lanes of the workflow figure, with its colours.
 KINDS = {
     "networks": ("Networks", "#0072B2"),

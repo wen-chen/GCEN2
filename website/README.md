@@ -38,3 +38,10 @@ the interactions; then look at the screenshots.
 Copy `website/_site/` to the directory served at `/gcen2/`; serve `404.html`
 for missing pages under `/gcen2/`. Everything (Bootstrap included) is in
 `_site/`; nothing is loaded from other hosts.
+
+The introduction video on the home page is not in the repository: its two MP4 files
+(`GCEN2_intro.mp4`, light; `GCEN2_intro_dark.mp4`, dark) are served from
+`/gcen2/media/` (paths in `content.VIDEO`). Keep that directory when deploying, e.g.
+`rsync -a --delete --exclude media/ website/_site/ SERVER:/path/to/gcen2/`.
+Serve them as `video/mp4` with range requests (the default of Apache and nginx), so
+browsers can seek.

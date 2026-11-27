@@ -18,6 +18,16 @@
   }
   function apply(mode) {
     document.documentElement.setAttribute("data-bs-theme", mode);
+    // the introduction video in the colours of the mode, unless it is already playing
+    document.querySelectorAll("video[data-gc-video-light]").forEach(function (v) {
+      if (!v.paused || v.currentTime > 0) return;
+      var which = mode === "dark" ? "dark" : "light";
+      var src = v.getAttribute("data-gc-video-" + which);
+      if (v.getAttribute("src") !== src) {
+        v.setAttribute("src", src);
+        v.setAttribute("poster", v.getAttribute("data-gc-poster-" + which));
+      }
+    });
     document.querySelectorAll("[data-gc-theme-toggle]").forEach(function (b) {
       var dark = mode === "dark";
       b.setAttribute("aria-pressed", dark ? "true" : "false");
@@ -40,6 +50,16 @@
     });
     window.matchMedia("(prefers-color-scheme: dark)").addEventListener("change", function () {
       if (!stored()) apply(preferred());
+    });
+
+    // The play button over the video poster: until the video first plays, it replaces
+    // the browser's controls (without JavaScript the controls stay, and the button hidden).
+    document.querySelectorAll("[data-gc-video-play]").forEach(function (btn) {
+      var v = btn.parentElement.querySelector("video");
+      v.controls = false;
+      btn.hidden = false;
+      btn.addEventListener("click", function () { v.controls = true; v.play(); });
+      v.addEventListener("play", function () { v.controls = true; btn.hidden = true; });
     });
 
     // Copy buttons: copy the text of the <pre> next to the button, without prompts.

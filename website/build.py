@@ -194,6 +194,7 @@ def context() -> dict:
         matrix_notes=[c.split(" (", 1)[1].rstrip(")") for r in inst_rows for c in r[1:]
                       if " (" in c],
         extras=extra_rows, faq=faq, gallery=gallery, gallery_kinds=kinds_used,
+        video=content.VIDEO,
         citation=dict(software=read_citation(version), v1=V1_CITATION),
     )
 
