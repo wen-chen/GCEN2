@@ -1,6 +1,6 @@
 # GCEN2 开发状态
 
-> 更新日期：2026-11-18。
+> 更新日期：2026-11-26。
 > 各项变化见 `CHANGELOG.md`，详细过程见 `git log`。
 
 ## 1. 功能
@@ -43,9 +43,12 @@
 - **分发方式**：源代码、PyPI（三个平台的预编译 wheel）、Bioconda（Linux、macOS；Bioconda 不为 Windows 构建）。
 - **支持平台**：Linux x86-64（AMD64）、Windows x86-64（AMD64）、macOS Apple Silicon（arm64）。其他平台（Linux ARM、Intel Mac）不是目标；CI 的 wheel 构建按这三个平台配置。
 - **命名**：GCEN2 之后的版本在同一仓库发布（3.x、4.x 仍叫 GCEN2）；只有不兼容的重写才换名并另开仓库。
+- **介绍视频**（2026-11-26 上线）：英文，3:40，1920×1080，字幕烧录在画面中，响度 −16 LUFS。两个版本：亮色 `GCEN2_intro.mp4`（网站亮色配色，28 MB）和暗色 `GCEN2_intro_dark.mp4`（31 MB），放在服务器的 `/gcen2/media/`，不进仓库。网站首页在顶部介绍之后有“Video”一节：按网站的亮/暗模式播放对应版本（播放中切换模式不打断），点击“Watch the introduction”后才开始下载，下面附完整文稿；顶部按钮下有跳到这一节的链接。README（也是 PyPI 的项目描述）在流程图下放封面图，链接到网站的视频。路径、时长和文稿在 `website/content.py` 的 `VIDEO`；部署网站时保留服务器上的 `media/`（见 `website/README.md`）。
+- **视频的制作**：画面用 Remotion 制作（9 个场景：共表达网络是什么、为什么做 GCEN2、一个工具覆盖四类数据、与参考工具结果一致、速度、用法、图和报告、获取方式）；画面上的数字全部来自 README 和 `benchmarks/README.md`。旁白先由美式英语男声 TTS（Kokoro-82M）生成，再用 CosyVoice2 的语音转换换成作者的音色；50 句旁白都用 Whisper 转写回文本与稿子核对一致。制作工程不在仓库中（本地）；改动画面或旁白后需重新渲染两个版本，并同步更新网站的封面和海报（`website/static/img/video_cover.jpg`、`video_poster.jpg`、`video_poster_dark.jpg`）。
 
 ## 6. 尚未完成或尚未验证
 
 1. **发布**：2.0.0 已于 2026-11-20 发布到 PyPI（sdist 和 18 个 wheel，由 `release.yml` 推送 `v2.0.0` 标签发布；本地 `pip install "gcen2[all]==2.0.0"` 全部测试通过）。Bioconda：bioconda-recipes PR #71954 已于 2026-11-22 合并，频道上有 linux-64 和 osx-arm64 的包（Python 3.10–3.13）。网站（已部署，2026-11-20）、README 和 GitHub Release（v2.0.0）均已上线。文档发布在网站 <https://www.biochen.org/gcen2/docs/>，不使用 Read the Docs。
 2. **Bioconda 验证**：Linux 已验证（2026-11-23）：新环境 `mamba create -c conda-forge -c bioconda gcen2` 装到 gcen2 2.0.0（Python 3.13、numpy 2.5.5、pandas 3.1.1），C++ 扩展正常加载；`data/example/README.md` 的 18 条命令（bulk、单细胞、空间）全部通过；`build`、`module`、`rwr` 的结果与开发环境逐字节一致。macOS arm64 的 conda 包尚未在本机验证。
 3. **编译器**：文档只写已测试的版本（GCC 11、14、15，Clang 19，Apple Clang 17，MSVC 19.44 / Visual Studio 2022），不声明最低版本。
+4. **介绍视频**：已核实服务器上的两个 MP4 与本地文件逐字节一致、可完整解码，首页与本地构建一致，网站检查（57 页，0 个问题）和浏览器视觉测试（72 个页面视图，0 个失败）通过；视频在亮/暗模式下的切换、点击后播放已在浏览器中测试。最后一次改动（播放前隐藏浏览器自带的播放控件，点击后再显示）因本机无头浏览器停止渲染，未能用自动测试点击验证，需在真实浏览器里点一次确认。
